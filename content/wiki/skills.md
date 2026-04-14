@@ -35,4 +35,8 @@ favicon: "maven.svg"
 
 [huashu-skills](https://github.com/alchaincyf/huashu-skills) 花叔的 Claude Code Skills 合集。21个经过实战验证的内容创作技能，覆盖从选题到发布的完整工作流
 
-[blueprinter](https://github.com/yofine/skills/blob/main/blueprinter) 画图
+[blueprinter](https://github.com/yofine/skills/blob/main/blueprinter) 画图 Skill
+
+橙皮书创作：https://github.com/ZeroxZhang/huashu-bookwritermd2book 
+
+Md 转书籍：https://github.com/ZeroxZhang/md2book

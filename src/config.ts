@@ -1,6 +1,6 @@
 /**
  * 对象存储自定义域名（R2 / COS，无末尾斜杠）。
- * - **dist**：Artalk、KaTeX、lazy-list 等 CSS/JS
+ * - **dist**：KaTeX、lazy-list 等 CSS/JS
  * - **图片**：dev/prod 与 CDN 开关见 `src/utils/blogImages/`（`shouldUseCdnForPublicImagePaths`、`siteImageHref` 等）
  */
 export const CDN_ORIGIN = "https://cos.chensoul.cc";
@@ -118,25 +118,10 @@ export const SITE = {
     { name: "RSS", url: "/rss.xml", icon: "rss" },
   ],
 
-  /**
-   * Artalk 评论
-   *
-   * - **enabled**：为 false 时不渲染评论区、不加载 Artalk 脚本（与单篇 `comments: true` 无关，全局关则整站无评论）
-   * - **server** 留空时同样不初始化
-   */
-  artalk: {
+  giscus: {
     enabled: true,
-    server: "https://artalk.chensoul.cc",
-    site: "ChenSoul Blog",
-    scriptUrl: `${CDN_ORIGIN}/dist/artalk/Artalk.js`,
-    cssUrl: `${CDN_ORIGIN}/dist/artalk/Artalk.css`,
-    vote: false,
   },
 
-  /**
-   * Umami 统计
-   *
-   */
   umami: {
     enabled: true,
     websiteId: "2311be4b-ebe4-4a94-9c69-b2e841584d0d",
