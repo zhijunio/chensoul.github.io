@@ -159,7 +159,80 @@ gpg --import ~/backup/gpg-secret-keys.asc
 cat ~/backup/age-key.txt >> ~/.age-key.txt
 ```
 
-## 六、常用命令速查
+## 六、当前配置示例
+
+### 6.1 Sheldon 插件管理器
+
+使用 **Sheldon** 替代 oh-my-zsh 管理 zsh 插件，配置更简洁、加载更快。
+
+**plugins.toml**（`~/.config/sheldon/plugins.toml`）：
+
+```toml
+shell = "zsh"
+
+[templates]
+source = """{% for file in files %}source "{{ file }}"\n{% endfor %}"""
+
+# zsh-completions - 额外补全定义 (Homebrew)
+[plugins.zsh-completions]
+inline = '''fpath=(
+  "/opt/homebrew/share/zsh-completions"
+  "/opt/homebrew/Cellar/zsh/5.9/share/zsh/functions"
+  $fpath
+)'''
+
+# zsh-syntax-highlighting - 语法高亮 (Homebrew)
+[plugins.zsh-syntax-highlighting]
+inline = 'source "/opt/homebrew/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"'
+
+# zsh-autosuggestions - 自动建议 (Homebrew)
+[plugins.zsh-autosuggestions]
+inline = 'source "/opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh"'
+
+# Starship 提示符 (Homebrew)
+[plugins.starship]
+inline = 'eval "$(starship init zsh)"'
+
+# zoxide 目录跳转 (Homebrew)
+[plugins.zoxide]
+inline = 'eval "$(zoxide init zsh)"'
+```
+
+**.zshrc** 只需一行：
+
+```bash
+eval "$(command sheldon source)"
+```
+
+**优势**：
+- 所有插件通过 Homebrew 安装，`brew upgrade` 统一更新
+- Lock 文件固定版本，跨机器一致
+- 无需 git clone 插件仓库
+
+### 6.2 Ghostty 终端配置
+
+**config**（`~/.config/ghostty/config`）：
+
+```ini
+# 窗口设置
+window-width = 120
+window-height = 40
+background-opacity = 0.95
+
+# 字体
+font-family = "JetBrainsMono Nerd Font"
+font-size = 14
+
+# 链接打开（Cmd+Click）
+open-url = true
+open-url-modifier = cmd
+
+# 行为
+copy-on-select = true
+confirm-close-surface = true
+```
+
+## 七、常用命令速查
 
 ```bash
 # ===== 基础操作 =====
