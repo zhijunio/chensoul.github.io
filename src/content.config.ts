@@ -1,7 +1,7 @@
 /**
  * Astro 内容集合配置文件
  *
- * @fileoverview 四类文章型内容：`posts`（技术/生活等）、`briefs`（周报）、`translation`（译文）、`wiki`（知识库）；共享同一 Zod schema。
+ * @fileoverview 三类内容：`posts`（技术/生活等）、`briefs`（周报）、`wiki`（知识库）；共享同一 Zod schema。
  *
  * @see https://docs.astro.build/en/guides/content-collections/
  */
@@ -16,9 +16,6 @@ export const POSTS_CONTENT_PATH = "content/posts";
 
 /** 周报 */
 export const BRIEFS_CONTENT_PATH = "content/briefs";
-
-/** 译文 */
-export const TRANSLATION_CONTENT_PATH = "content/translation";
 
 /** 知识库*/
 export const WIKI_CONTENT_PATH = "content/wiki";
