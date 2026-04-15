@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_runs": 258,
-    "total_distance": 1000.79,
-    "total_duration": "128小时13分钟",
+    "total_runs": 259,
+    "total_distance": 1006.81,
+    "total_duration": "129小时1分钟",
     "avg_pace": "7'41\"",
     "longest_run": 15.2,
-    "avg_vdot": 23.8,
-    "total_training_load": 13230,
+    "avg_vdot": 23.7,
+    "total_training_load": 13334,
     "period_stats": {
       "yesterday": {
         "total_activities": 1,
@@ -18,45 +18,116 @@
         "total_training_load": 70
       },
       "week": {
-        "total_activities": 1,
-        "total_distance": 6.02,
-        "total_duration_hours": 0.7,
-        "avg_pace": "6'58\"",
-        "avg_heart_rate": 129,
-        "avg_vdot": 25.9,
-        "total_training_load": 70
+        "total_activities": 2,
+        "total_distance": 12.04,
+        "total_duration_hours": 1.5,
+        "avg_pace": "7'23\"",
+        "avg_heart_rate": 140,
+        "avg_vdot": 24.0,
+        "total_training_load": 174
       },
       "month": {
-        "total_activities": 12,
-        "total_distance": 67.16,
-        "total_duration_hours": 8.8,
+        "total_activities": 13,
+        "total_distance": 73.17,
+        "total_duration_hours": 9.6,
         "avg_pace": "7'53\"",
-        "avg_heart_rate": 130,
-        "avg_vdot": 22.5,
-        "total_training_load": 853
+        "avg_heart_rate": 132,
+        "avg_vdot": 22.4,
+        "total_training_load": 957
       },
       "year": {
-        "total_activities": 93,
-        "total_distance": 412.0,
-        "total_duration_hours": 51.7,
+        "total_activities": 94,
+        "total_distance": 418.02,
+        "total_duration_hours": 52.5,
         "avg_pace": "7'31\"",
         "avg_heart_rate": 141,
         "avg_vdot": 23.9,
-        "total_training_load": 5662
+        "total_training_load": 5766
       },
       "total": {
-        "total_activities": 258,
-        "total_distance": 999.51,
-        "total_duration_hours": 126.1,
+        "total_activities": 259,
+        "total_distance": 1005.53,
+        "total_duration_hours": 126.9,
         "avg_pace": "7'34\"",
         "avg_heart_rate": 140,
-        "avg_vdot": 23.8,
-        "total_training_load": 13230
+        "avg_vdot": 23.7,
+        "total_training_load": 13334
       }
     },
-    "statistics_time": "2026-04-15 18:54:37"
+    "statistics_time": "2026-04-15 20:58:45"
   },
   "runs": [
+    {
+      "date": "2026-04-15 19:13:47",
+      "distance": 6.02,
+      "duration": "47分钟",
+      "pace": "7'57\"",
+      "heart_rate": 150.0,
+      "max_heart_rate": 174,
+      "cadence": 166,
+      "stride_length": 0.79,
+      "avg_power": 152,
+      "max_power": 165,
+      "calories": 655,
+      "elevation_gain": 3.0,
+      "route": "湖北省武汉市江岸区",
+      "weather": "19°C",
+      "activity_type": "户外跑步",
+      "workout_name": "Run from keep",
+      "vdot": 22.1,
+      "training_load": 104,
+      "hr_zone": 4,
+      "segments": [
+        {
+          "km": 1,
+          "pace": "8'38\"",
+          "gap": "8'38\"",
+          "heart_rate": 155,
+          "hr_zone": 4,
+          "cadence": 165
+        },
+        {
+          "km": 2,
+          "pace": "7'33\"",
+          "gap": "7'33\"",
+          "heart_rate": 156,
+          "hr_zone": 4,
+          "cadence": 172
+        },
+        {
+          "km": 3,
+          "pace": "7'29\"",
+          "gap": "7'29\"",
+          "heart_rate": 139,
+          "hr_zone": 3,
+          "cadence": 165
+        },
+        {
+          "km": 4,
+          "pace": "8'32\"",
+          "gap": "8'32\"",
+          "heart_rate": 151,
+          "hr_zone": 4,
+          "cadence": 159
+        },
+        {
+          "km": 5,
+          "pace": "8'11\"",
+          "gap": "8'11\"",
+          "heart_rate": 150,
+          "hr_zone": 4,
+          "cadence": 165
+        },
+        {
+          "km": 6,
+          "pace": "7'20\"",
+          "gap": "7'20\"",
+          "heart_rate": 153,
+          "hr_zone": 4,
+          "cadence": 173
+        }
+      ]
+    },
     {
       "date": "2026-04-14 19:53:33",
       "distance": 6.02,
