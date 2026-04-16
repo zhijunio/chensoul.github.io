@@ -7,7 +7,7 @@ tags: [ "maven", "github" ]
 description: "记录如何将 Maven 生成的站点发布到 GitHub Pages，包括项目创建、站点生成和发布流程配置。"
 ---
 
-本文源代码：[https://github.com/chensoul/maven-site-github-example/](https://github.com/chensoul/maven-site-github-example/) 。
+本文源代码：[https://github.com/zhijunio/maven-site-github-example/](https://github.com/zhijunio/maven-site-github-example/) 。
 
 ## 创建 Java Maven 项目
 
@@ -395,7 +395,7 @@ mvn clean site scm-publish:publish-scm
 
 ![maven-my-app-github-skin-index](publishing-a-maven-site-to-github-pages/04.webp)
 
-可以在 <https://github.com/chensoul/maven-site-github-example/actions> 查看网站的部署：
+可以在 <https://github.com/zhijunio/maven-site-github-example/actions> 查看网站的部署：
 
 ![maven-my-app-github-page-deploy](publishing-a-maven-site-to-github-pages/05.webp)
 
@@ -530,7 +530,7 @@ and the repository exists.
 从日志可以看到 git 从 `git@github.com:chensoul/maven-site-github-example.git`下载代码，没有权限，原因是没有配置 ssh。故需要修改  scmpublish.pubScmUrl 为 https 协议，将 `<scmpublish.pubScmUrl>scm:git:git@github.com:chensoul/maven-site-github-example.git</scmpublish.pubScmUrl>`改为：
 
 ```xml
-<scmpublish.pubScmUrl>scm:git:https://github.com/chensoul/maven-site-github-example.git</scmpublish.pubScmUrl>
+<scmpublish.pubScmUrl>scm:git:https://github.com/zhijunio/maven-site-github-example.git</scmpublish.pubScmUrl>
 ```
 
 再次提交代码，action 运行成功。

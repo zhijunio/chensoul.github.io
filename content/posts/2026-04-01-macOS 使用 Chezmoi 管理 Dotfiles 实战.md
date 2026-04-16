@@ -264,5 +264,5 @@ chezmoi cd                  # 进入源码目录
 
 - [Chezmoi 官方文档](https://www.chezmoi.io/)
 - [Chezmoi GitHub](https://github.com/twpayne/chezmoi)
-- [我的 Dotfiles 仓库](https://github.com/chensoul/dotfiles)
+- [我的 Dotfiles 仓库](https://github.com/zhijunio/dotfiles)
 - [Awesome Dotfiles](https://github.com/webpro/awesome-dotfiles)

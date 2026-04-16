@@ -23,7 +23,7 @@ favicon: "openclaw.svg"
 
 - 公众号：发表内容 10 篇文，原创文章 6 篇，图文 4 篇。阅览量 281 次，被分享 18 次。累计关注用户数 7 人，比上周增加 4 人。
   
-  - 公众号贴图的封面图使用 [封面生成器 · Cover Maker](https://chensoul.github.io/article-tools/cover.html) 工具制作，其源码在 [github](https://github.com/chensoul/article-tools)。
+  - 公众号贴图的封面图使用 [封面生成器 · Cover Maker](https://chensoul.github.io/article-tools/cover.html) 工具制作，其源码在 [github](https://github.com/zhijunio/article-tools)。
   
 - Wiki：发布一篇 wiki。
 

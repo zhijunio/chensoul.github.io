@@ -15,7 +15,7 @@ favicon: "sql.svg"
 
 ## 源代码
 
-如果您想亲自尝试，可以随时查看我的源代码。为此，您必须克隆我的示例 [GitHub 仓库](https://github.com/chensoul/spring-ai-text2sql-showcase)。然后，您只需按照我的说明进行操作即可。
+如果您想亲自尝试，可以随时查看我的源代码。为此，您必须克隆我的示例 [GitHub 仓库](https://github.com/zhijunio/spring-ai-text2sql-showcase)。然后，您只需按照我的说明进行操作即可。
 
 ## 为什么选择 Text2SQL
 
@@ -1383,4 +1383,4 @@ public class SqlUtils {
 
 ---
 
-*本文基于 Spring AI 1.1.2 版本编写，[项目代码已开源](https://github.com/chensoul/spring-ai-text2sql-showcase)，欢迎 Star 和 Fork！*
+*本文基于 Spring AI 1.1.2 版本编写，[项目代码已开源](https://github.com/zhijunio/spring-ai-text2sql-showcase)，欢迎 Star 和 Fork！*

@@ -14,7 +14,7 @@ description: "介绍如何在 Spring AI 中结合 RAG 与向量存储构建 Spri
 
 ## 源代码
 
-如果您想自己尝试，可以查看我的源代码。为此，您必须克隆我的示例   [GitHub 仓库](https://github.com/chensoul/spring-ai-chat-rag-samples)。然后，您只需按照我的说明操作即可。
+如果您想自己尝试，可以查看我的源代码。为此，您必须克隆我的示例   [GitHub 仓库](https://github.com/zhijunio/spring-ai-chat-rag-samples)。然后，您只需按照我的说明操作即可。
 
 ## 使用 Spring AI 实现 RAG 的动机
 

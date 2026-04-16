@@ -54,7 +54,7 @@ def html_to_md(html: str) -> str:
 def fetch_feed(url: str) -> bytes:
     req = urllib.request.Request(
         url,
-        headers={"User-Agent": "feed_to_md/1.0 (+https://github.com/chensoul/chensoul.github.io)"},
+        headers={"User-Agent": "feed_to_md/1.0 (+https://github.com/zhijunio/chensoul.github.io)"},
     )
     with urllib.request.urlopen(req, timeout=60) as resp:
         return resp.read()

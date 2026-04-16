@@ -180,7 +180,7 @@ recipeList:
 
 #### 0. 示例项目
 
-[spring-boot-2-to-3-demo](https://github.com/chensoul/spring-boot-2-to-3-demo) 是一个用于练习升级的 Maven 示例项目。项目信息：
+[spring-boot-2-to-3-demo](https://github.com/zhijunio/spring-boot-2-to-3-demo) 是一个用于练习升级的 Maven 示例项目。项目信息：
 
 - **Spring Boot**: 2.7.18
 - **Java**: 11
@@ -244,7 +244,7 @@ spring-boot-2-to-3-demo/
 #### 1. 克隆示例项目并确认环境
 
 ```bash
-git clone https://github.com/chensoul/spring-boot-2-to-3-demo.git
+git clone https://github.com/zhijunio/spring-boot-2-to-3-demo.git
 cd spring-boot-2-to-3-demo
 ```
 
@@ -367,7 +367,7 @@ java -jar --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/jav
 **示例**（以本文示例项目为例）：
 
 ```bash
-git clone https://github.com/chensoul/spring-boot-2-to-3-demo.git
+git clone https://github.com/zhijunio/spring-boot-2-to-3-demo.git
 
 # 在项目外执行（或把 jar 路径写全）
 java -jar --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED ~/tools/spring-boot-upgrade.jar spring-boot-2-to-3-demo
@@ -450,7 +450,7 @@ apply initialize-spring-boot-migration
 
 ## 使用 spring-boot-2-to-3 技能
 
-[spring-boot-2-to-3](https://github.com/chensoul/spring-boot-2-to-3) 是我写的一个 AI Agent Skill，自动化整个迁移过程。
+[spring-boot-2-to-3](https://github.com/zhijunio/spring-boot-2-to-3) 是我写的一个 AI Agent Skill，自动化整个迁移过程。
 
 ### 主要功能
 
@@ -493,13 +493,13 @@ apply initialize-spring-boot-migration
 - **升级目标**：Spring Boot 2.7.x → 3.5.x，伴随 Jakarta EE 10、Java 17+、Spring Framework 6 等变化。
 - **推荐方式**：在 Maven 项目中配置 **OpenRewrite** 插件与 **rewrite-spring**，使用一条组合配方 `UpgradeSpringBoot_3_5`，执行 `mvn rewrite:run` 即可完成依赖与代码的自动化迁移；建议先 `mvn rewrite:dryRun` 预览再应用。
 - **其他方式**：**Spring Boot Migrator (SBM)** 提供一键 JAR 与 CLI（scan/apply），不改 pom，需 JDK 17、仅支持 Maven；**spring-boot-2-to-3** Skill 可在 AI 助手中一键完成整库迁移与验证。
-- **示例项目**：[spring-boot-2-to-3-demo](https://github.com/chensoul/spring-boot-2-to-3-demo) 覆盖常见迁移场景，可按文中「OpenRewrite 迁移实战」步骤练手。
+- **示例项目**：[spring-boot-2-to-3-demo](https://github.com/zhijunio/spring-boot-2-to-3-demo) 覆盖常见迁移场景，可按文中「OpenRewrite 迁移实战」步骤练手。
 - **注意**：迁移前确保项目在 2.7.x 且 `mvn compile test` 通过；运行 OpenRewrite 或 SBM 需 JDK 17+；迁移后务必再跑编译、测试与启动验证，必要时做少量手动收尾。
 
 ## 参考资料
 
-- [spring-boot-2-to-3 Skill](https://github.com/chensoul/spring-boot-2-to-3)
-- [spring-boot-2-to-3-demo 示例项目](https://github.com/chensoul/spring-boot-2-to-3-demo)
+- [spring-boot-2-to-3 Skill](https://github.com/zhijunio/spring-boot-2-to-3)
+- [spring-boot-2-to-3-demo 示例项目](https://github.com/zhijunio/spring-boot-2-to-3-demo)
 - [OpenRewrite 官方文档](https://docs.openrewrite.org/)
 - [Spring Boot Migrator (SBM)](https://github.com/spring-projects-experimental/spring-boot-migrator)（官方实验性迁移工具，CLI/Web UI）
 - [Spring Boot 3.0 Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide)（官方迁移指南）

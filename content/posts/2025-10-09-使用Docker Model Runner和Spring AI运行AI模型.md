@@ -18,7 +18,7 @@ favicon: "docker.svg"
 
 ## 📦 项目源码
 
-完整的项目源码已上传到GitHub仓库，包含所有配置文件和示例代码：**GitHub仓库** [https://github.com/chensoul/docker-ai-app](https://github.com/chensoul/docker-ai-app)
+完整的项目源码已上传到GitHub仓库，包含所有配置文件和示例代码：**GitHub仓库** [https://github.com/zhijunio/docker-ai-app](https://github.com/zhijunio/docker-ai-app)
 
 ## 🤔 为什么选择Docker Model Runner？
 

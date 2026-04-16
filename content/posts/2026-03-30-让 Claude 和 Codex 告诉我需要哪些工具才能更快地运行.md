@@ -158,7 +158,7 @@ dev:
 
 ## dotfiles 与 Brewfile
 
-我有一份 macOS 重装后的初始化配置 **[dotfiles](https://github.com/chensoul/dotfiles)**（私有仓库时以本地为准），并让 Claude 按**已装软件**对齐 **Brewfile**。
+我有一份 macOS 重装后的初始化配置 **[dotfiles](https://github.com/zhijunio/dotfiles)**（私有仓库时以本地为准），并让 Claude 按**已装软件**对齐 **Brewfile**。
 
 ![让 Claude 按已装软件对齐 Brewfile](06.webp)
 

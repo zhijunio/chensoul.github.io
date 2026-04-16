@@ -162,7 +162,7 @@ openclaw pairing approve telegram DH4Q43VM
 **告诉机器人当前项目的 github 地址，每当完成编码任务后，都将变更 push 到仓库：**
 
 ```bash
-当前的 github 仓库地址是 https://github.com/chensoul/test-openclaw，每当完成编码任务后，都将变更 push 到仓库
+当前的 github 仓库地址是 https://github.com/zhijunio/test-openclaw，每当完成编码任务后，都将变更 push 到仓库
 ```
 
 告诉机器人开发注意事项：

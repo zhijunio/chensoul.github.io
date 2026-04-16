@@ -23,7 +23,7 @@ description: "介绍如何通过 GitHub Action 自动发布 Jar 包到 Maven 中
 
 ## 创建 Maven 项目
 
-首先在Github上面创建项目：[https://github.com/chensoul/maven-hello-world](https://github.com/chensoul/maven-hello-world)
+首先在Github上面创建项目：[https://github.com/zhijunio/maven-hello-world](https://github.com/zhijunio/maven-hello-world)
 
 增加两个 Maven 插件：
 
@@ -55,7 +55,7 @@ description: "介绍如何通过 GitHub Action 自动发布 Jar 包到 Maven 中
 </plugin>
 ```
 
-可以将上面的两个插件加入到 pom.xml 的 build 节点下面，也可以配置到 profile 节点下。[https://github.com/chensoul/maven-hello-world](https://github.com/chensoul/maven-hello-world) 项目中使用的是第二种方式，具体见 <https://github.com/chensoul/chensoul-parent> 的 pom.xml 文件。
+可以将上面的两个插件加入到 pom.xml 的 build 节点下面，也可以配置到 profile 节点下。[https://github.com/zhijunio/maven-hello-world](https://github.com/zhijunio/maven-hello-world) 项目中使用的是第二种方式，具体见 <https://github.com/zhijunio/chensoul-parent> 的 pom.xml 文件。
 
 ```xml
 <profiles>

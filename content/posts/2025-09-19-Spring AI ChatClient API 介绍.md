@@ -8,13 +8,13 @@ favicon: "spring-ai.svg"
 description: "围绕 Spring AI 的 ChatClient API，介绍其创建方式、调用链设计、提示模板与结构化输出等核心能力。"
 ---
 
-ChatClient 是 Spring AI 提供的核心 API，提供流畅的调用方式，用于与各类大模型交互。本文结合 [chat-model](https://github.com/chensoul/spring-ai-chat-model-samples/tree/main/chat-model) 示例，介绍 ChatClient 的创建方式、调用链、提示模板与结构化输出等能力。
+ChatClient 是 Spring AI 提供的核心 API，提供流畅的调用方式，用于与各类大模型交互。本文结合 [chat-model](https://github.com/zhijunio/spring-ai-chat-model-samples/tree/main/chat-model) 示例，介绍 ChatClient 的创建方式、调用链、提示模板与结构化输出等能力。
 
 <!--more-->
 
 ## 源代码
 
-如果您想自己尝试，可以查看我的源代码。为此，您必须克隆我的示例 [GitHub 仓库](https://github.com/chensoul/spring-ai-chat-model-samples)。然后，您只需按照我的说明操作即可。
+如果您想自己尝试，可以查看我的源代码。为此，您必须克隆我的示例 [GitHub 仓库](https://github.com/zhijunio/spring-ai-chat-model-samples)。然后，您只需按照我的说明操作即可。
 
 ## 核心概念
 

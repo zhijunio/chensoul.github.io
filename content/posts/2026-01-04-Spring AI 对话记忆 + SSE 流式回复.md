@@ -13,7 +13,7 @@ description: "在 《Spring AI 对话记忆 》中我们用 MessageChatMemoryAdv
 
 ## 源代码
 
-如果您想自己尝试，可以查看我的源代码。为此，您必须克隆我的示例  [GitHub 仓库](https://github.com/chensoul/spring-ai-chat-memory-samples) 。然后，您只需按照我的说明操作即可。
+如果您想自己尝试，可以查看我的源代码。为此，您必须克隆我的示例  [GitHub 仓库](https://github.com/zhijunio/spring-ai-chat-memory-samples) 。然后，您只需按照我的说明操作即可。
 
 ## 为什么需要“记忆 + 流式输出”
 

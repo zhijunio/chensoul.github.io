@@ -15,7 +15,7 @@ favicon: "astro.svg"
 
 花了一个多星期将[博客从 Hugo 迁移到了 Astro](/posts/2026/02/26/from-hugo-to-astro-blog)，并美化主题。当然，这篇文章只记录迁移的部分内容，后续我又对 Astro 主题做了进一步重构。
 
-初始的 Hugo 搭建的博客如下图，使用的是 [rose-hugo](https://github.com/chensoul/rose-hugo) 主题，这个主题是我基于 [Mainroad](https://github.com/Vimux/Mainroad) 主题做了一些修改。
+初始的 Hugo 搭建的博客如下图，使用的是 [rose-hugo](https://github.com/zhijunio/rose-hugo) 主题，这个主题是我基于 [Mainroad](https://github.com/Vimux/Mainroad) 主题做了一些修改。
 
 ![blog-hugo-rose-theme](/images/20260301-week-review/01.webp)
 
@@ -86,7 +86,7 @@ No scheduled events or tasks found in memory. This is a fresh start — perfect 
 Have a productive day! 🦞
 ```
 
-这个回复比较简单，或许可以做一些更复杂的简报，甚至可以替代 [Github 每日简报代码](https://github.com/chensoul/chensoul/blob/main/daily_review.py)，完成以下信息的推送。
+这个回复比较简单，或许可以做一些更复杂的简报，甚至可以替代 [Github 每日简报代码](https://github.com/zhijunio/chensoul/blob/main/daily_review.py)，完成以下信息的推送。
 
 ```markdown
 📅 每日简报 | 2026年03月05日，今年第 64 天。武汉天气:  阴 4°C ~ 16°C

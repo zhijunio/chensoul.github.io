@@ -18,7 +18,7 @@ Docker 打包。
 是一个优秀的自托管书签管理器，以其简洁、快速和易用性而受到社区喜爱。而 [linkding-cn](https://github.com/WooHooDai/linkding-cn)
 是一个针对中文用户优化的 fork 版本，添加了许多实用功能。
 
-合并后的代码在 [chensoul/linkding](https://github.com/chensoul/linkding/)，**示例项目：** <https://linkding.chensoul.cc/>。
+合并后的代码在 [chensoul/linkding](https://github.com/zhijunio/linkding/)，**示例项目：** <https://linkding.chensoul.cc/>。
 
 ## 一、项目对比分析
 
@@ -112,8 +112,8 @@ linkding-cn 相比官方版本添加了以下主要功能：
 ### 2.3 迁移方式
 
 让 AI
-对比两个仓库的区别，生成 [linkding-cn 与当前项目对比及合并可行性分析](https://github.com/chensoul/linkding/blob/master/docs/linkding-cn-merge-analysis.md)
-文档，然后制定[迁移计划](https://github.com/chensoul/linkding/blob/master/docs/linkding-cn-migration-plan.md)。
+对比两个仓库的区别，生成 [linkding-cn 与当前项目对比及合并可行性分析](https://github.com/zhijunio/linkding/blob/master/docs/linkding-cn-merge-analysis.md)
+文档，然后制定[迁移计划](https://github.com/zhijunio/linkding/blob/master/docs/linkding-cn-migration-plan.md)。
 
 ## 三、Docker 镜像构建
 

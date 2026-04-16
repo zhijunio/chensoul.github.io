@@ -111,9 +111,9 @@ export const SITE = {
    * icon 需与 SocialIcon 支持的 name 一致：github | rss | twitter | x | linkedin | facebook | mail | telegram | whatsapp | pinterest
    */
   socialLinks: [
-    { name: "GitHub", url: "https://github.com/chensoul", icon: "github" },
-    { name: "Twitter", url: "https://twitter.com/ichensoul", icon: "twitter" },
-    { name: "Telegram", url: "https://t.me/ichensoul", icon: "telegram" },
+    { name: "GitHub", url: "https://github.com/zhijunio", icon: "github" },
+    { name: "Twitter", url: "https://twitter.com/zhijunio", icon: "twitter" },
+    { name: "Telegram", url: "https://t.me/zhijunio", icon: "telegram" },
     { name: "Email", url: "mailto:ichensoul@gmail.com", icon: "mail" },
     { name: "RSS", url: "/rss.xml", icon: "rss" },
   ],
