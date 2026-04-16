@@ -19,7 +19,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run feeds-aggregator
-        uses: chensoul/feeds-aggregator@main
+        uses: zhijunio/feeds-aggregator@main
         with:
           sources: public/data/rss.txt
           output: public/data/feeds.json

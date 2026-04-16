@@ -161,7 +161,7 @@ spring:
 logging:
   level:
     org.springframework.ai: INFO
-    cc.chensoul.ai: DEBUG
+    cc.zhijunio.ai: DEBUG
   file:
     name: logs/ai-app.log
 ```
@@ -363,7 +363,7 @@ curl http://localhost:8080/actuator/health/ai
 
 ```
 docker-ai-app/
-├── src/main/java/cc/chensoul/ai/
+├── src/main/java/cc/zhijunio/ai/
 │   ├── Application.java              # 主应用类
 │   ├── AIChatService.java           # AI聊天服务
 │   ├── ChatController.java          # REST控制器

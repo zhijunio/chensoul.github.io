@@ -9,7 +9,7 @@ description: "记录博客从 Hugo 迁移到 Astro 的过程，以及基于 astr
 ---
 
 最近将博客从 Hugo 迁移到了 Astro，并选择了 [astro-lhasa](https://github.com/achuanya/astro-lhasa)
-做为博客主题，我还对该主题做了一些修改（修改后的主题在 [chensoul/astro-lhasa](https://github.com/zhijunio/astro-lhasa)
+做为博客主题，我还对该主题做了一些修改（修改后的主题在 [zhijunio/astro-lhasa](https://github.com/zhijunio/astro-lhasa)
 ）。此文主要记录修改了哪些内容，方便以后查询。
 
 <!--more-->
@@ -113,9 +113,9 @@ ls -la src/pages/posts 2>/dev/null || echo "No posts dir"
 #### 1. 站点与作者信息（`src/config.ts`）
 
 - **website**：`https://blog.lhasa.icu` → `https://blog.zhijun.io`
-- **author**：`lhasa` → `chensoul`
+- **author**：`lhasa` → `zhijunio`
 - **profile**：`https://github.com/achuanya` → `https://github.com/zhijunio`
-- **title**：`游钓四方` → `ChenSoul Blog`
+- **title**：`游钓四方` → `ZhiJun Blog`
 - **description**：改为技术向描述（Java、Spring、MicroServices 等）。
 - **timezone**：`Asia/Taipei` → `Asia/Shanghai`
 - **icp**：移除备案号（设为空字符串）。
@@ -212,7 +212,7 @@ ls -la src/pages/posts 2>/dev/null || echo "No posts dir"
 
 ## 总结
 
-总结一下，我的 [chensoul/astro-lhasa](https://github.com/zhijunio/astro-lhasa) 主题，对原主题做了以下改动：
+总结一下，我的 [zhijunio/astro-lhasa](https://github.com/zhijunio/astro-lhasa) 主题，对原主题做了以下改动：
 
 - 删除订阅、留言、日志等页面；收藏页面改为链接页面
 - 修改 css 样式，以适应宽屏（web 端，主体部分 960px）；修改文章主题色为蓝色；代码库支持自动换行；调整了导航菜单
@@ -220,5 +220,5 @@ ls -la src/pages/posts 2>/dev/null || echo "No posts dir"
 - 文章链接改为 `/posts/YYYY/MM/DD/slug` 格式
 - 添加对 Mermaid 图表 的支持
 - 参考[zdyxry.github.io](https://github.com/zdyxry/zdyxry.github.io)
-  ，添加[跑步](/running)页面（该页面样式同样做了一些调整）。跑步数据使用 [get_keep_data.py](https://github.com/zhijunio/chensoul/blob/main/get_keep_data.py)
-  从 Keep 读取跑步数据并生成与 Garmin 脚本兼容的 [running.json](https://github.com/zhijunio/chensoul/blob/main/data/running.json)。
+  ，添加[跑步](/running)页面（该页面样式同样做了一些调整）。跑步数据使用 [get_keep_data.py](https://github.com/zhijunio/zhijunio/blob/main/get_keep_data.py)
+  从 Keep 读取跑步数据并生成与 Garmin 脚本兼容的 [running.json](https://github.com/zhijunio/zhijunio/blob/main/data/running.json)。

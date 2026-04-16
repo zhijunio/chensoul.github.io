@@ -97,10 +97,10 @@ curl https://api.openai.com/v1/chat/completions \
 </dependency>
 ```
 
-首先，创建 Java Record 表示请求和响应的 JSON（与仓库 [PlainChatDemo.java](https://github.com/zhijunio/langchain4j-samples/blob/main/01-chat-openai/src/main/java/cc/chensoul/ai/PlainChatDemo.java) 一致）：
+首先，创建 Java Record 表示请求和响应的 JSON（与仓库 [PlainChatDemo.java](https://github.com/zhijunio/langchain4j-samples/blob/main/01-chat-openai/src/main/java/cc/zhijunio/ai/PlainChatDemo.java) 一致）：
 
 ```java
-package cc.chensoul.ai;
+package cc.zhijunio.ai;
 
 record Message(String role, String content) {}
 
@@ -170,15 +170,15 @@ public class PlainChatDemo {
 
 ```bash
 export OPENAI_API_KEY=your_openai_api_key
-mvn compile exec:java -Dexec.mainClass="cc.chensoul.ai.PlainChatDemo"
+mvn compile exec:java -Dexec.mainClass="cc.zhijunio.ai.PlainChatDemo"
 ```
 
 ### 使用 LangChain4j
 
-使用 [LangChainChatDemo.java](https://github.com/zhijunio/langchain4j-samples/blob/main/01-chat-openai/src/main/java/cc/chensoul/ai/LangChainChatDemo.java) 时，只需几行即可完成同样效果。**先以 OpenAI 为例**：
+使用 [LangChainChatDemo.java](https://github.com/zhijunio/langchain4j-samples/blob/main/01-chat-openai/src/main/java/cc/zhijunio/ai/LangChainChatDemo.java) 时，只需几行即可完成同样效果。**先以 OpenAI 为例**：
 
 ```java title="LangChainChatDemo.java（OpenAI）"
-package cc.chensoul.ai;
+package cc.zhijunio.ai;
 
 public class LangChainChatDemo {
     public static void main(String[] args) {
@@ -211,7 +211,7 @@ System.out.println(answer);
 I am Qwen, a large-scale language model developed by Alibaba Group...
 ```
 
-`OpenAiChatModel` 还支持温度、超时、重试以及请求/响应监听器等配置，便于调试与监控。仓库中的 [LangChainChatDemo](https://github.com/zhijunio/langchain4j-samples/blob/main/01-chat-openai/src/main/java/cc/chensoul/ai/LangChainChatDemo.java) 即在此基础上增加了 `ChatModelListener` 示例：
+`OpenAiChatModel` 还支持温度、超时、重试以及请求/响应监听器等配置，便于调试与监控。仓库中的 [LangChainChatDemo](https://github.com/zhijunio/langchain4j-samples/blob/main/01-chat-openai/src/main/java/cc/zhijunio/ai/LangChainChatDemo.java) 即在此基础上增加了 `ChatModelListener` 示例：
 
 ```java
 ChatModel model = OpenAiChatModel.builder()
@@ -265,7 +265,7 @@ Response<Image> response = model.generate(
 System.out.println(response.content().url());
 ```
 
-**使用阿里云百炼（通义万相）** 时，需在 `pom.xml` 中增加 `langchain4j-community-dashscope` 依赖（仓库 [01-chat-openai/pom.xml](https://github.com/zhijunio/langchain4j-samples/blob/main/01-chat-openai/pom.xml) 已包含），然后使用 `WanxImageModel`，见仓库 [LangChainImageDemo.java](https://github.com/zhijunio/langchain4j-samples/blob/main/01-chat-openai/src/main/java/cc/chensoul/ai/LangChainImageDemo.java)：
+**使用阿里云百炼（通义万相）** 时，需在 `pom.xml` 中增加 `langchain4j-community-dashscope` 依赖（仓库 [01-chat-openai/pom.xml](https://github.com/zhijunio/langchain4j-samples/blob/main/01-chat-openai/pom.xml) 已包含），然后使用 `WanxImageModel`，见仓库 [LangChainImageDemo.java](https://github.com/zhijunio/langchain4j-samples/blob/main/01-chat-openai/src/main/java/cc/zhijunio/ai/LangChainImageDemo.java)：
 
 ```xml title="pom.xml"
 <dependency>
@@ -275,7 +275,7 @@ System.out.println(response.content().url());
 ```
 
 ```java title="LangChainImageDemo.java"
-package cc.chensoul.ai;
+package cc.zhijunio.ai;
 
 ImageModel model = WanxImageModel.builder()
         .apiKey(System.getenv("DASHSCOPE_API_KEY"))
@@ -301,10 +301,10 @@ langchain4j:
       base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
 ```
 
-**启动类与演示**（[ChatOpenAIApplication.java](https://github.com/zhijunio/langchain4j-samples/blob/main/01-chat-openai/src/main/java/cc/chensoul/ai/ChatOpenAIApplication.java)）：应用启动后通过 `CommandLineRunner` 调用一次聊天并打印结果。
+**启动类与演示**（[ChatOpenAIApplication.java](https://github.com/zhijunio/langchain4j-samples/blob/main/01-chat-openai/src/main/java/cc/zhijunio/ai/ChatOpenAIApplication.java)）：应用启动后通过 `CommandLineRunner` 调用一次聊天并打印结果。
 
 ```java title="ChatOpenAIApplication.java"
-package cc.chensoul.ai;
+package cc.zhijunio.ai;
 
 @SpringBootApplication
 public class ChatOpenAIApplication {
@@ -327,4 +327,4 @@ public class ChatOpenAIApplication {
 
 ## 总结
 
-本文示例均可在 [chensoul/langchain4j-samples · 01-chat-openai](https://github.com/zhijunio/langchain4j-samples/tree/main/01-chat-openai) 中查看与运行；从原生 Java 调用 OpenAI，到 LangChain4j 封装聊天/图像，再到 Spring Boot 集成，可按需选用。
+本文示例均可在 [zhijunio/langchain4j-samples · 01-chat-openai](https://github.com/zhijunio/langchain4j-samples/tree/main/01-chat-openai) 中查看与运行；从原生 Java 调用 OpenAI，到 LangChain4j 封装聊天/图像，再到 Spring Boot 集成，可按需选用。

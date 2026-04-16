@@ -258,13 +258,13 @@ kubectl apply -f letsencrypt-staging.yaml
 创建证书：
 
 ```yaml
-cat <<EOF > chensoul-cc-tls.yaml
+cat <<EOF > zhijunio-cc-tls.yaml
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: chensoul-cc-tls
+  name: zhijunio-cc-tls
 spec:
-  secretName: chensoul-cc-tls
+  secretName: zhijunio-cc-tls
   issuerRef:
     name: letsencrypt-staging
   commonName: test.zhijun.io
@@ -276,8 +276,8 @@ EOF
 创建证书：
 
 ```bash
-$ kubectl apply -f chensoul-cc-tls.yaml
-certificate.cert-manager.io/chensoul-cc-tls created
+$ kubectl apply -f zhijunio-cc-tls.yaml
+certificate.cert-manager.io/zhijunio-cc-tls created
 ```
 
 查看状态：
@@ -288,10 +288,10 @@ kubectl get secret,certificate,Issuer,ClusterIssuer
 kubectl describe Issuer letsencrypt-staging
 kubectl describe Secret cloudflare-api-token-secret
 
-kubectl describe certificate chensoul-cc-tls
-kubectl describe CertificateRequest chensoul-cc-tls
-kubectl describe order chensoul-cc-tls
-kubectl describe Challenge chensoul-cc-tls
+kubectl describe certificate zhijunio-cc-tls
+kubectl describe CertificateRequest zhijunio-cc-tls
+kubectl describe order zhijunio-cc-tls
+kubectl describe Challenge zhijunio-cc-tls
 ```
 
 等待一段时间，直到证书状态变为True：
@@ -299,12 +299,12 @@ kubectl describe Challenge chensoul-cc-tls
 ```bash
 $ kubectl get secret,certificate,Issuer,ClusterIssuer
 NAME                                 TYPE                DATA   AGE
-secret/chensoul-cc-tls               kubernetes.io/tls   2      47s
+secret/zhijunio-cc-tls               kubernetes.io/tls   2      47s
 secret/cloudflare-api-token-secret   Opaque              1      2m39s
 secret/letsencrypt-staging           Opaque              1      5m34s
 
 NAME                                          READY   SECRET            AGE
-certificate.cert-manager.io/chensoul-cc-tls   True    chensoul-cc-tls   2m31s
+certificate.cert-manager.io/zhijunio-cc-tls   True    zhijunio-cc-tls   2m31s
 
 NAME                                         READY   AGE
 issuer.cert-manager.io/letsencrypt-staging   True    2m39s
@@ -313,15 +313,15 @@ issuer.cert-manager.io/letsencrypt-staging   True    2m39s
 还可以查看证书的 TLS Base64 键值对：
 
 ```bash
-kubectl get secret chensoul-cc-tls -o yaml
+kubectl get secret zhijunio-cc-tls -o yaml
 ```
 
 删除相关资源：
 
 ```bash
-kubectl delete Secret cloudflare-api-token-secret letsencrypt-staging chensoul-cc-tls
+kubectl delete Secret cloudflare-api-token-secret letsencrypt-staging zhijunio-cc-tls
 kubectl delete Issuers letsencrypt-staging
-kubectl delete certificate chensoul-cc-tls
+kubectl delete certificate zhijunio-cc-tls
 ```
 
 #### ACME 颁发证书并使用 DNS 验证
@@ -383,13 +383,13 @@ issuer.cert-manager.io/letsencrypt-staging created
 创建一个证书：
 
 ```yaml
-cat <<EOF > chensoul-cc-tls.yaml
+cat <<EOF > zhijunio-cc-tls.yaml
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: chensoul-cc-tls
+  name: zhijunio-cc-tls
 spec:
-  secretName: chensoul-cc-tls
+  secretName: zhijunio-cc-tls
   issuerRef:
     name: letsencrypt-staging
     kind: Issuer
@@ -402,8 +402,8 @@ EOF
 创建证书：
 
 ```bash
-$ kubectl apply -f chensoul-cc-tls.yaml
-certificate.cert-manager.io/chensoul-cc-tls created
+$ kubectl apply -f zhijunio-cc-tls.yaml
+certificate.cert-manager.io/zhijunio-cc-tls created
 ```
 
 查看状态：
@@ -414,10 +414,10 @@ kubectl get secret,certificate,Issuer,ClusterIssuer
 kubectl describe Issuer letsencrypt-staging
 kubectl describe Secret cloudflare-api-token-secret
 
-kubectl describe certificate chensoul-cc-tls
-kubectl describe CertificateRequest chensoul-cc-tls
-kubectl describe order chensoul-cc-tls
-kubectl describe Challenge chensoul-cc-tls
+kubectl describe certificate zhijunio-cc-tls
+kubectl describe CertificateRequest zhijunio-cc-tls
+kubectl describe order zhijunio-cc-tls
+kubectl describe Challenge zhijunio-cc-tls
 ```
 
 等待一段时间，直到证书状态变为True：
@@ -425,12 +425,12 @@ kubectl describe Challenge chensoul-cc-tls
 ```bash
 $ kubectl get secret,certificate,Issuer,ClusterIssuer
 NAME                                 TYPE                DATA   AGE
-secret/chensoul-cc-tls               kubernetes.io/tls   2      47s
+secret/zhijunio-cc-tls               kubernetes.io/tls   2      47s
 secret/cloudflare-api-token-secret   Opaque              1      2m39s
 secret/letsencrypt-staging           Opaque              1      5m34s
 
 NAME                                          READY   SECRET            AGE
-certificate.cert-manager.io/chensoul-cc-tls   True    chensoul-cc-tls   2m31s
+certificate.cert-manager.io/zhijunio-cc-tls   True    zhijunio-cc-tls   2m31s
 
 NAME                                         READY   AGE
 issuer.cert-manager.io/letsencrypt-staging   True    2m39s
@@ -439,15 +439,15 @@ issuer.cert-manager.io/letsencrypt-staging   True    2m39s
 还可以查看证书的 TLS Base64 键值对：
 
 ```bash
-kubectl get secret chensoul-cc-tls -o yaml
+kubectl get secret zhijunio-cc-tls -o yaml
 ```
 
 删除相关资源：
 
 ```bash
-kubectl delete Secret cloudflare-api-token-secret letsencrypt-staging chensoul-cc-tls
+kubectl delete Secret cloudflare-api-token-secret letsencrypt-staging zhijunio-cc-tls
 kubectl delete Issuers letsencrypt-staging
-kubectl delete certificate chensoul-cc-tls
+kubectl delete certificate zhijunio-cc-tls
 ```
 
 #### 校验方式对比

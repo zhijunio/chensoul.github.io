@@ -13,10 +13,10 @@ export const CDN_KATEX_STYLESHEET = `${CDN_ORIGIN}/dist/katex/0.16.38/dist/katex
 
 export const SITE = {
   website: "https://blog.zhijun.io",
-  author: "ChenSoul",
+  author: "ZhiJun",
   description:
     "记录 Java、Spring、MicroServices、Architecture、Kubernetes、DevOps、AI 编码工具、架构与个人周报的博客",
-  title: "ChenSoul Blog",
+  title: "ZhiJun Blog",
 
   googleSiteVerification: "702mzR8WJvXKVdS3ergTkQEIWAMuwniGMAIeE6wPRhc",
   bingSiteVerification: "5995FAD202DE5A364D652266E4C4E0E0",

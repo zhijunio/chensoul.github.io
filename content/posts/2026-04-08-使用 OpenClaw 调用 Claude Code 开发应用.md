@@ -18,7 +18,7 @@ openclaw 内置 coding-agent 技能，启用该技能之后，使用 coding-agen
 使用 coding-agent 技能让 claude code 做一个 Todo List 的小 web 应用原型
 ```
 
-我的 openclaw 是在 root 用户下安装的，如何改为在其他用户，比如 chensoul 用户权限下运行 openclaw 呢？请参考附录。
+我的 openclaw 是在 root 用户下安装的，如何改为在其他用户，比如 zhijunio 用户权限下运行 openclaw 呢？请参考附录。
 
 ## 自建一个带有 Spec 规范的技能
 
@@ -42,8 +42,8 @@ openclaw 内置 coding-agent 技能，启用该技能之后，使用 coding-agen
 
 创建了一个可在 OpenClaw 里复用的 skill：
 
-• skill 目录：/home/chensoul/.openclaw/workspace/skills/claude-code
-• 打包文件：/home/chensoul/.openclaw/workspace/claude-code.skill
+• skill 目录：/home/zhijunio/.openclaw/workspace/skills/claude-code
+• 打包文件：/home/zhijunio/.openclaw/workspace/claude-code.skill
 
 还做了这些事：
 
@@ -71,7 +71,7 @@ openclaw 内置 coding-agent 技能，启用该技能之后，使用 coding-agen
 
 默认使用的 Claude Code 可执行文件
 
-• /home/chensoul/.nvm/versions/node/v25.8.0/bin/claude
+• /home/zhijunio/.nvm/versions/node/v25.8.0/bin/claude
 
 后续你可以这样使唤我
 
@@ -95,7 +95,7 @@ openclaw 内置 coding-agent 技能，启用该技能之后，使用 coding-agen
 这次我只改了新 skill：
 
 • skills/claude-code/SKILL.md
-• 重新打包：/home/chensoul/.openclaw/workspace/claude-code.skill
+• 重新打包：/home/zhijunio/.openclaw/workspace/claude-code.skill
 
 这次增强的重点
 
@@ -162,7 +162,7 @@ openclaw 内置 coding-agent 技能，启用该技能之后，使用 coding-agen
 
 已重新打包成功
 
-• /home/chensoul/.openclaw/workspace/claude-code.skill
+• /home/zhijunio/.openclaw/workspace/claude-code.skill
 
 最新提交
 
@@ -247,23 +247,23 @@ OpenSpec 的使用经验和技巧，你是否也同步更新到了调用 Claude 
 
 ### OpenClaw 改为普通用户执行
 
-以下是将 OpenClaw 从 root 用户迁移到 chensoul 用户的步骤：
+以下是将 OpenClaw 从 root 用户迁移到 zhijunio 用户的步骤：
 
-1. 复制 OpenClaw 目录到 chensoul 用户
+1. 复制 OpenClaw 目录到 zhijunio 用户
 
 ```bash
 # 复制 workspace 目录
-sudo cp -r /root/.openclaw/workspace /home/chensoul/.openclaw/
+sudo cp -r /root/.openclaw/workspace /home/zhijunio/.openclaw/
 
 # 复制其他 OpenClaw 数据目录
-sudo cp -r /root/.openclaw/credentials /home/chensoul/
-sudo cp -r /root/.openclaw/skills /home/chensoul/
-sudo cp -r /root/.openclaw/telegram /home/chensoul/
-sudo cp -r /root/.openclaw/cron /home/chensoul/
-sudo cp /root/.openclaw/openclaw.json /home/chensoul/.openclaw/
+sudo cp -r /root/.openclaw/credentials /home/zhijunio/
+sudo cp -r /root/.openclaw/skills /home/zhijunio/
+sudo cp -r /root/.openclaw/telegram /home/zhijunio/
+sudo cp -r /root/.openclaw/cron /home/zhijunio/
+sudo cp /root/.openclaw/openclaw.json /home/zhijunio/.openclaw/
 
 # 设置 ownership
-sudo chown -R chensoul:chensoul /home/chensoul/.openclaw/
+sudo chown -R zhijunio:zhijunio /home/zhijunio/.openclaw/
 ```
 
 2. 更新技能目录权限
@@ -273,18 +273,18 @@ sudo chown -R chensoul:chensoul /home/chensoul/.openclaw/
 node -v
 
 # 注意 node 安装版本 
-sudo chown -R chensoul:chensoul /root/.nvm/versions/node/v25.8.0/lib/node_modules/openclaw/skills/
+sudo chown -R zhijunio:zhijunio /root/.nvm/versions/node/v25.8.0/lib/node_modules/openclaw/skills/
 ```
 
-3. 切换到 chensoul 用户
+3. 切换到 zhijunio 用户
 
 ```bash
-sudo su - chensoul
+sudo su - zhijunio
 ```
 
 4. 重新安装或链接 CLI
 
-如果 openclaw 命令不可用，需要在 chensoul 用户下安装：
+如果 openclaw 命令不可用，需要在 zhijunio 用户下安装：
 
 ```bash
 # 在当前用户安装 nvm
@@ -302,22 +302,22 @@ curl -fsSL --proto "=https" --tlsv1.2 https://openclaw.ai/install.sh | bash
 
 5. 更新环境变量
 
-在 /home/chensoul/.bashrc 中添加：
+在 /home/zhijunio/.bashrc 中添加：
 
 ```bash
-export OPENCLAW_WORKSPACE=/home/chensoul/.openclaw/workspace
+export OPENCLAW_WORKSPACE=/home/zhijunio/.openclaw/workspace
 ```
 
 并使配置生效：
 
 ```bash
-source /home/chensoul/.bashrc
+source /home/zhijunio/.bashrc
 ```
 
-现在需要更新 openclaw.json 的配置，将 /root/.openclaw 改为 /home/chensoul/.openclaw
+现在需要更新 openclaw.json 的配置，将 /root/.openclaw 改为 /home/zhijunio/.openclaw
 
 ```bash
-sed -i "s|/root/\.openclaw|/home/chensoul/.openclaw|g" /home/chensoul/.openclaw/openclaw.json
+sed -i "s|/root/\.openclaw|/home/zhijunio/.openclaw|g" /home/zhijunio/.openclaw/openclaw.json
 ```
 
 6. 复制并更新 crontab
@@ -327,9 +327,9 @@ sed -i "s|/root/\.openclaw|/home/chensoul/.openclaw|g" /home/chensoul/.openclaw/
 sudo crontab -l > /tmp/root-crontab.txt
 
 # 编辑 crontab 中的路径
-# 将 /root/.openclaw 替换为 /home/chensoul/.openclaw
+# 将 /root/.openclaw 替换为 /home/zhijunio/.openclaw
 
-# 切换到 chensoul 用户后导入
+# 切换到 zhijunio 用户后导入
 crontab /tmp/root-crontab.txt
 ```
 

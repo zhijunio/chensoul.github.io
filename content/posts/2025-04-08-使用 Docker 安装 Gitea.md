@@ -48,7 +48,7 @@ server {
     server_name     gitea.zhijun.io;
 
     ssl_certificate      /etc/nginx/ssl/fullchain.cer;
-    ssl_certificate_key  /etc/nginx/ssl/chensoul.cc.key;
+    ssl_certificate_key  /etc/nginx/ssl/zhijun.io.key;
 
     ssl_session_cache    shared:SSL:1m;
     ssl_session_timeout  5m;

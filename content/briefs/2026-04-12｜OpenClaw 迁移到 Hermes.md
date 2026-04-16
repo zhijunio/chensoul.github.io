@@ -23,7 +23,7 @@ favicon: "openclaw.svg"
 
 - 公众号：发表内容 10 篇文，原创文章 6 篇，图文 4 篇。阅览量 281 次，被分享 18 次。累计关注用户数 7 人，比上周增加 4 人。
   
-  - 公众号贴图的封面图使用 [封面生成器 · Cover Maker](https://chensoul.github.io/article-tools/cover.html) 工具制作，其源码在 [github](https://github.com/zhijunio/article-tools)。
+  - 公众号贴图的封面图使用 [封面生成器 · Cover Maker](https://zhijunio.github.io/article-tools/cover.html) 工具制作，其源码在 [github](https://github.com/zhijunio/article-tools)。
   
 - Wiki：发布一篇 wiki。
 
@@ -60,7 +60,7 @@ favicon: "openclaw.svg"
 ## 分享
 
 我使用 [Linkding](https://linkding.zhijun.io/)
-书签来保存我认为不错的资源，包括文章、视频等等。虽然大部分有意思的输入都会自动同步到「[ChenSoul Share](https://t.me/s/zhijun_share)
+书签来保存我认为不错的资源，包括文章、视频等等。虽然大部分有意思的输入都会自动同步到「[ZhiJun Share](https://t.me/s/zhijun_share)
 」Telegram 频道，但我还是想在这里额外挑一部分出来。单独列出来之后，这篇周报就更像一份 newsletter 了。
 
 ### 技巧

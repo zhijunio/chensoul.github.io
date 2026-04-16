@@ -44,7 +44,7 @@ mvn clean install -Dmaven.test.skip=true -Dlicense.skip=true
 >
 > ```
 > * What went wrong:
-> Could not compile build file "/Users/chensoul/Codes/github/thingsboard/packaging/java/build.gradle".
+> Could not compile build file "/Users/zhijunio/Codes/github/thingsboard/packaging/java/build.gradle".
 > > startup failed:
 >   General error during conversion: Unsupported class file major version 65
 > 

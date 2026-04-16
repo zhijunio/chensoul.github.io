@@ -127,7 +127,7 @@ chezmoi add --encrypt ~/.wakatime.cfg
 
 ```bash
 # 新机器初始化
-chezmoi init --apply chensoul
+chezmoi init --apply zhijunio
 
 # 查看状态
 chezmoi status

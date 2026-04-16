@@ -55,7 +55,7 @@ description: "介绍如何通过 GitHub Action 自动发布 Jar 包到 Maven 中
 </plugin>
 ```
 
-可以将上面的两个插件加入到 pom.xml 的 build 节点下面，也可以配置到 profile 节点下。[https://github.com/zhijunio/maven-hello-world](https://github.com/zhijunio/maven-hello-world) 项目中使用的是第二种方式，具体见 <https://github.com/zhijunio/chensoul-parent> 的 pom.xml 文件。
+可以将上面的两个插件加入到 pom.xml 的 build 节点下面，也可以配置到 profile 节点下。[https://github.com/zhijunio/maven-hello-world](https://github.com/zhijunio/maven-hello-world) 项目中使用的是第二种方式，具体见 <https://github.com/zhijunio/zhijunio-parent> 的 pom.xml 文件。
 
 ```xml
 <profiles>
@@ -171,13 +171,13 @@ There is NO WARRANTY, to the extent permitted by law.
 
 GnuPG 需要构建用户标识以辨认您的密钥。
 
-真实姓名： chensoul
+真实姓名： zhijunio
 电子邮件地址： zhijun.lab@gmail.com
 您选定了此用户标识：
-    “chensoul <zhijun.lab@gmail.com>”
+    “zhijunio <zhijun.lab@gmail.com>”
 ```
 
-按提示输入两次密码，这里我使用 chensoul 作为密码 。
+按提示输入两次密码，这里我使用 zhijunio 作为密码 。
 
 查看生成的 key：
 
@@ -187,7 +187,7 @@ GnuPG 需要构建用户标识以辨认您的密钥。
 ---------
 sec   ed25519/93C5993B9F7B43EE 2024-05-08 [SC] [有效至：2027-05-08]
       C83119F1B90238633D766D4B93C5993B9F7B43EE
-uid                   [ 绝对 ] chensoul <zhijun.lab@gmail.com>
+uid                   [ 绝对 ] zhijunio <zhijun.lab@gmail.com>
 ssb   cv25519/116B95FF0068A7E8 2024-05-08 [E] [有效至：2027-05-08]
 ```
 
@@ -221,13 +221,13 @@ mvn -P release clean deploy
 mvn -P release clean deploy
 ```
 
-如果当前项目的版本为快照版，则发布后的 jar 在 [https://s01.oss.sonatype.org/content/repositories/snapshots/com/chensoul/maven-hello-world/](https://s01.oss.sonatype.org/content/repositories/snapshots/com/chensoul/maven-hello-world/)
+如果当前项目的版本为快照版，则发布后的 jar 在 [https://s01.oss.sonatype.org/content/repositories/snapshots/com/zhijunio/maven-hello-world/](https://s01.oss.sonatype.org/content/repositories/snapshots/com/zhijunio/maven-hello-world/)
 
 如果当前项目的版本为正式版，稍等几分钟，可以在以下仓库查看发布的 jar:
 
-- <https://central.sonatype.com/artifact/com.chensoul/maven-hello-world>
-- <https://s01.oss.sonatype.org/service/local/repositories/releases/content/com/chensoul/maven-hello-world>
-- <https://repo.maven.apache.org/maven2/com/chensoul/maven-hello-world>
+- <https://central.sonatype.com/artifact/com.zhijunio/maven-hello-world>
+- <https://s01.oss.sonatype.org/service/local/repositories/releases/content/com/zhijunio/maven-hello-world>
+- <https://repo.maven.apache.org/maven2/com/zhijunio/maven-hello-world>
 
 ## 配置Github Actions
 
@@ -297,7 +297,7 @@ $ gpg --list-keys
 ---------
 pub   ed25519 2024-05-08 [SC] [有效至：2027-05-08]
       C83119F1B90238633D766D4B93C5993B9F7B43EE
-uid             [ 绝对 ] chensoul <zhijun.lab@gmail.com>
+uid             [ 绝对 ] zhijunio <zhijun.lab@gmail.com>
 sub   cv25519 2024-05-08 [E] [有效至：2027-05-08]
 
 
@@ -348,7 +348,7 @@ jobs:
           JAVA_HOME: /usr/lib/jvm/java-1.8-openjdk/
         with:
           git-release-bot-name: "release-bot"
-          git-release-bot-email: "release-bot@chensoul.cc"
+          git-release-bot-email: "release-bot@zhijun.io"
           release-branch-name: "main"
   
           maven-args: "-ntp -B -U -P release"
@@ -381,7 +381,7 @@ jobs:
   },
   {
     "id": "gpg.passphrase",
-    "passphrase": "chensoul"
+    "passphrase": "zhijunio"
   }
 ]
 ```
@@ -442,7 +442,7 @@ $ gpg --list-secret-keys --keyid-format LONG
 ---------
 sec   ed25519/93C5993B9F7B43EE 2024-05-08 [SC] [有效至：2027-05-08]
       C83119F1B90238633D766D4B93C5993B9F7B43EE
-uid                   [ 绝对 ] chensoul <zhijun.lab@gmail.com>
+uid                   [ 绝对 ] zhijunio <zhijun.lab@gmail.com>
 ssb   cv25519/116B95FF0068A7E8 2024-05-08 [E] [有效至：2027-05-08]
 ```
 

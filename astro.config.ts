@@ -110,6 +110,10 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      // 提高 chunk 大小警告阈值，避免大型库（如 pagefind）触发警告
+      chunkSizeWarningLimit: 1000,
+    },
     optimizeDeps: {
       include: ["mermaid", "dayjs", "markdown-it"],
       /**

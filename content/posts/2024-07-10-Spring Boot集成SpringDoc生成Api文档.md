@@ -89,7 +89,7 @@ public class SpringdocConfig {
 
   Contact contact = new Contact();
   contact.setEmail("zhijun.lab@gmail.com");
-  contact.setName("ChenSoul");
+  contact.setName("ZhiJun");
   contact.setUrl("https://blog.zhijun.io");
 
   License mitLicense = new License().name("Apache License").url("https://www.apache.org/licenses/LICENSE-2.0.txt");

@@ -53,7 +53,7 @@ git init
 git add .
 git commit -m "first commit"
 git branch -M main
-git remote add origin git@github.com:chensoul/maven-site-github-example.git
+git remote add origin git@github.com:zhijunio/maven-site-github-example.git
 git push -u origin main
 ```
 
@@ -68,7 +68,7 @@ echo "It works" > index.html
 git add . && git commit -m "initial site content" && git push origin gh-pages 
 ```
 
-相应的网站将发布在你的 GitHub 项目的相应 URL 中；访问地址：<https://chensoul.github.io/maven-site-github-example：>
+相应的网站将发布在你的 GitHub 项目的相应 URL 中；访问地址：<https://zhijunio.github.io/maven-site-github-example：>
 
 ![maven-my-app-github-page-index](publishing-a-maven-site-to-github-pages/02.webp)
 
@@ -191,7 +191,7 @@ maven-scm-publish-plugin 插件需要以下参数，参考 <https://maven.apache
   <distributionManagement>
       <site>
           <id>github</id>
-          <url>scm:git:git@github.com:chensoul/maven-site-github-example.git</url>
+          <url>scm:git:git@github.com:zhijunio/maven-site-github-example.git</url>
       </site>
   </distributionManagement>
   ```
@@ -202,7 +202,7 @@ maven-scm-publish-plugin 插件需要以下参数，参考 <https://maven.apache
   <servers>
       <server>
           <id>github</id>
-          <username>chensoul</username>
+          <username>zhijunio</username>
           <password>ghp_XXXXXXXXXXXXXXXXXX</password>
       </server>
   </servers>
@@ -248,11 +248,11 @@ mvn clean site scm-publish:publish-scm
   >
   > Maven 将执行 SCM Publish 插件，将项目发布到指定的 SCM 提供商。
 
-从日志可以看出 git 推送提交的命令：`"git" "push" "git@github.com:chensoul/maven-site-github-example.git" "refs/heads/gh-pages:refs/heads/gh-pages"`
+从日志可以看出 git 推送提交的命令：`"git" "push" "git@github.com:zhijunio/maven-site-github-example.git" "refs/heads/gh-pages:refs/heads/gh-pages"`
 
 ```bash
-[INFO] Executing: /bin/sh -c cd "/Users/chensoul/Codes/github/maven-site-github-example/target/scmpublish-checkout" && "git" "push" "git@github.com:chensoul/maven-site-github-example.git" "refs/heads/gh-pages:refs/heads/gh-pages"
-[INFO] Working directory: /Users/chensoul/Codes/github/maven-site-github-example/target/scmpublish-checkout
+[INFO] Executing: /bin/sh -c cd "/Users/zhijunio/Codes/github/maven-site-github-example/target/scmpublish-checkout" && "git" "push" "git@github.com:zhijunio/maven-site-github-example.git" "refs/heads/gh-pages:refs/heads/gh-pages"
+[INFO] Working directory: /Users/zhijunio/Codes/github/maven-site-github-example/target/scmpublish-checkout
 [INFO] Checked in 24 file(s) to revision null in 0 h 0 m 4 s
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
@@ -273,14 +273,14 @@ mvn clean site scm-publish:publish-scm
 ```xml
 <properties>
   <scmpublish.content>${project.reporting.outputDirectory}</scmpublish.content>
-  <scmpublish.pubScmUrl>scm:git:git@github.com:chensoul/maven-site-github-example.git</scmpublish.pubScmUrl>
+  <scmpublish.pubScmUrl>scm:git:git@github.com:zhijunio/maven-site-github-example.git</scmpublish.pubScmUrl>
   <scmpublish.scm.branch>gh-pages</scmpublish.scm.branch>
 </properties>
 
 <!--    <distributionManagement>-->
 <!--        <site>-->
 <!--            <id>github</id>-->
-<!--            <url>scm:git:git@github.com:chensoul/maven-site-github-example.git</url>-->
+<!--            <url>scm:git:git@github.com:zhijunio/maven-site-github-example.git</url>-->
 <!--        </site>-->
 <!--    </distributionManagement>-->
 ```
@@ -517,7 +517,7 @@ java.lang.NoClassDefFoundError: org/apache/maven/doxia/siterenderer/DocumentCont
 再次提交代码，发现 Github action 还是运行失败，异常日志：
 
 ```bash
-[INFO] Executing: /bin/sh -c cd "/home/runner/work/maven-site-github-example/maven-site-github-example/target" && "git" "clone" "--branch" "gh-pages" "git@github.com:chensoul/maven-site-github-example.git" "/home/runner/work/maven-site-github-example/maven-site-github-example/target/scmpublish-checkout"
+[INFO] Executing: /bin/sh -c cd "/home/runner/work/maven-site-github-example/maven-site-github-example/target" && "git" "clone" "--branch" "gh-pages" "git@github.com:zhijunio/maven-site-github-example.git" "/home/runner/work/maven-site-github-example/maven-site-github-example/target/scmpublish-checkout"
 [INFO] Working directory: /home/runner/work/maven-site-github-example/maven-site-github-example/target
 Error:  Failed to check out from SCM: The git-clone command failed. Cloning into "/home/runner/work/maven-site-github-example/maven-site-github-example/target/scmpublish-checkout"...
 git@github.com: Permission denied (publickey).
@@ -527,7 +527,7 @@ Please make sure you have the correct access rights
 and the repository exists.
 ```
 
-从日志可以看到 git 从 `git@github.com:chensoul/maven-site-github-example.git`下载代码，没有权限，原因是没有配置 ssh。故需要修改  scmpublish.pubScmUrl 为 https 协议，将 `<scmpublish.pubScmUrl>scm:git:git@github.com:chensoul/maven-site-github-example.git</scmpublish.pubScmUrl>`改为：
+从日志可以看到 git 从 `git@github.com:zhijunio/maven-site-github-example.git`下载代码，没有权限，原因是没有配置 ssh。故需要修改  scmpublish.pubScmUrl 为 https 协议，将 `<scmpublish.pubScmUrl>scm:git:git@github.com:zhijunio/maven-site-github-example.git</scmpublish.pubScmUrl>`改为：
 
 ```xml
 <scmpublish.pubScmUrl>scm:git:https://github.com/zhijunio/maven-site-github-example.git</scmpublish.pubScmUrl>
