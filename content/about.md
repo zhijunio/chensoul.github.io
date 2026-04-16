@@ -5,29 +5,22 @@ description: 关于 ZhiJun：开发背景、正在使用的工具、联系方式
 
 ## 自我介绍
 
-你好，欢迎来到我的个人博客。
-
-我是 ZhiJun，一个来自中国武汉的 Java 开发者，曾就职于阿里，目前就职于武汉多点，从事新零售、物联网相关的开发工作。
+你好，我是 zhijun，一个来自中国武汉的 Java 开发者，曾就职于阿里，目前就职于武汉多点，从事新零售、物联网相关的开发工作。
 
 > 健康，爱情和使命，按照这个顺序，其它的都不重要。 ------纳瓦尔
 
 ## 找到我
 
-如果有任何工作机会、合作想法或只是想打个招呼，欢迎通过以下方式找到我。我也有一些闲聊的兴趣群，有意向的话可以添加微信并备注来意，目前还在折腾的兴趣群包括生产力工具、AI、Vibe Coding 等。
+如果有任何工作机会、合作想法或只是想打个招呼，欢迎通过以下方式找到我。
 
-| 平台           | 联系方式                                | 备注                       |
-| -------------- | --------------------------------------- | -------------------------- |
-| 📧 **Email**    | zhijun.lab@gmail.com                     | -                          |
-| 🐦 **Twitter**  | [zhijunio](https://x.com/zhijunio)    | 更新比较随意，私信开放！   |
-| 🐳 **Telegram** | [zhijunio](https://t.me/zhijunio)     | 分享所见、所感             |
-| 🐙 **GitHub**   | [zhijunio](https://github.com/zhijunio) | 独立开发者 with AI Coding  |
-| 💬 **Wechat**   | [zhijunio](/images/my-wechat.webp)     | 请备注来意和多一点自我介绍 |
+我的邮箱：zhijun.lab@gmail.com；我的社交账号：[Twitter](https://x.com/zhijunio)、[Telegram](https://t.me/zhijunio)、[GitHub](https://github.com/zhijunio)、[Wechat](/images/my-wechat.webp)
+
+我也有一些闲聊的兴趣群，有意向的话可以添加微信并备注来意，目前还在折腾的兴趣群包括生产力工具、AI、Vibe Coding 等。
 
 另外，我在 [VPS](/posts/notes-about-deploy-services-in-vps) 上自建了一些服务：[跑步](https://run.zhijun.io/)、[书签](https://linkding.zhijun.io/)、[Memos](https://memos.zhijun.io/)。
 
 ## 博客
 
-我关注的 Java 博客：
 - [SivaLabs](https://www.sivalabs.in/blog/) - Java、Spring Boot、微服务、云计算和DevOps教程
 - [Piotr's TechBlog](https://piotrminkowski.com/) - Java, Spring, Kotlin, microservices, Kubernetes, containers
 - [Dan Vega](https://www.danvega.dev/)- Java 冠军、Spring 开发者布道师、YouTuber 及终身学习者
@@ -39,8 +32,6 @@ description: 关于 ZhiJun：开发背景、正在使用的工具、联系方式
 - [艾逗笔](https://idoubi.ai/) - 独立开发者、全栈工程师
 
 ## 文章
-
-以下是我觉得值得收藏、反复阅读的文章。
 
 - [Teach Yourself Programming in Ten Years](https://norvig.com/21-days.html) - 十年自学编程
 - [Get better at programming by learning how things work](https://jvns.ca/blog/learn-how-things-work/) - 通过学习事物运作原理来提高编程技能。
@@ -69,8 +60,6 @@ description: 关于 ZhiJun：开发背景、正在使用的工具、联系方式
 
 ## 我的日常工具包
 
-经过多年的调整和优化，我最终确定了一套既能最大程度提升效率又能提升乐趣的开发配置。
-
 2026 年，我使用的软件工具：
 
 | 分类        | 软件                               | 备注             |
@@ -92,18 +81,6 @@ description: 关于 ZhiJun：开发背景、正在使用的工具、联系方式
 | **测试**    | Insomnia                         |                  |
 | **终端**    | Ghostty + StarShip + Fish        |                  |
 | **知识管理**  | Obsidian                         |                  |
-
-2026 年，我开通的付费服务：
-
-| 分类                  | 费用                       | 类型 | 备注         |
-| --------------------- | -------------------------- | ---- | ------------ |
-| **电信卡**                | 主 29 元 + 流量 39 元 | 月费 |              |
-| **VPS**          | $45                        | 年费 |       CloudCone       |
-| **1Password**             | $35.88                     | 年费 | 8 月 17 到期 |
-| **良心云 VPN**            | 24 元                      | 年费 |              |
-| **iCloud  50G**           | 6 元                       | 月费 |              |
-| **腾讯视频会员**          | 150 元                     | 年费 |              |
-| **京东 Plus + B 站大会员** | 148 元                     | 年费 |              |
 
 ## 博客更新日志
 
