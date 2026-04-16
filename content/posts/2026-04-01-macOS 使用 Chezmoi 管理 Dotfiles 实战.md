@@ -5,7 +5,7 @@ slug: chezmoi-dotfiles-macos
 categories: [ "tech" ]
 tags: [ "dotfiles", "macos" ]
 draft: false
-description: "在 macOS 上用 chezmoi 管理 dotfiles：Git 版本控制、GPG 加密、多机器同步，以及新机器恢复完整流程。"
+description: "在 macOS 上用 chezmoi 管理 dotfiles：Git 版本控制、GPG/age 双加密支持、多机器同步，以及新机器恢复完整流程。"
 favicon: "chezmoi.svg"
 ---
 
@@ -19,7 +19,7 @@ favicon: "chezmoi.svg"
 |-------------|--------------------------|
 | 手动 symlink  | 难以追踪变更，多机器同步靠 `rsync`    |
 | GNU Stow    | 不支持加密，目录结构受限             |
-| **Chezmoi** | Git 版本控制 + GPG 加密 + 原子操作 |
+| **Chezmoi** | Git 版本控制 + GPG/age 加密 + 原子操作 |
 
 Chezmoi 的核心优势：
 
@@ -99,18 +99,55 @@ chezmoi apply
 
 ### 4.1 加密敏感信息
 
-**使用 GPG 加密：**
+Chezmoi 支持 **GPG** 和 **age** 两种加密方式。推荐使用 **age**（更简单、更快），但如果已有 GPG 密钥也可继续使用。
+
+#### 方案一：使用 age 加密（推荐）
+
+**为什么选择 age：**
+- 密钥管理简单：单个文本文件，无需密钥环
+- 加密速度快：比 GPG 快 3-5 倍
+- 跨平台友好：无需复杂安装
+- 更安全：现代化设计，无历史包袱
 
 ```bash
-# 生成 GPG 密钥
+# 1. 安装 age
+brew install age
+
+# 2. 生成密钥
+age-keygen -o ~/.age-key.txt
+# 输出：
+# # created: 2026-04-01T10:00:00+08:00
+# # public key: age1xyz...
+# AGEC1...（私钥）
+
+# 3. 配置 chezmoi（将 age1xyz... 替换为你的公钥）
+cat > ~/.config/chezmoi/chezmoi.toml <<EOF
+encryption = "age"
+[age]
+recipient = "age1xyz..."
+EOF
+
+# 4. 添加加密文件
+chezmoi add --encrypt ~/.wakatime.cfg
+```
+
+#### 方案二：使用 GPG 加密
+
+```bash
+# 1. 生成 GPG 密钥
 gpg --full-generate-key
 
-# 配置 chezmoi
-echo 'encryption = "gpg"' > ~/.config/chezmoi/chezmoi.toml
-echo '[gpg]' >> ~/.config/chezmoi/chezmoi.toml
-echo 'recipient = "your@email.com"' >> ~/.config/chezmoi/chezmoi.toml
+# 2. 查看密钥 ID
+gpg --list-secret-keys --keyid-format LONG
 
-# 添加加密文件
+# 3. 配置 chezmoi（将 YOUR-KEY-ID 替换为你的密钥 ID）
+cat > ~/.config/chezmoi/chezmoi.toml <<EOF
+encryption = "gpg"
+[gpg]
+recipient = "YOUR-KEY-ID"
+EOF
+
+# 4. 添加加密文件
 chezmoi add --encrypt ~/.wakatime.cfg
 ```
 
@@ -149,19 +186,25 @@ chezmoi init --apply username
 chezmoi doctor
 ```
 
-如果有加密文件，需要先导入 GPG/age 密钥：
+如果有加密文件，需要先导入密钥：
 
 ```bash
 # GPG
 gpg --import ~/backup/gpg-secret-keys.asc
 
-# age
+# age（私钥文件格式）
 cat ~/backup/age-key.txt >> ~/.age-key.txt
+chmod 600 ~/.age-key.txt
 ```
 
-## 六、当前配置示例
+**密钥备份建议：**
+- GPG：`gpg --export-secret-keys > gpg-secret-keys.asc`
+- age：直接备份 `~/.age-key.txt` 文件
+- 存储到密码管理器或加密 U 盘
 
-### 6.1 Sheldon 插件管理器
+## 五、当前配置示例
+
+### 5.1 Sheldon 插件管理器
 
 使用 **Sheldon** 替代 oh-my-zsh 管理 zsh 插件，配置更简洁、加载更快。
 
@@ -209,7 +252,7 @@ eval "$(command sheldon source)"
 - Lock 文件固定版本，跨机器一致
 - 无需 git clone 插件仓库
 
-### 6.2 Ghostty 终端配置
+### 5.2 Ghostty 终端配置
 
 **config**（`~/.config/ghostty/config`）：
 
@@ -232,7 +275,7 @@ copy-on-select = true
 confirm-close-surface = true
 ```
 
-## 七、常用命令速查
+## 六、常用命令速查
 
 ```bash
 # ===== 基础操作 =====
