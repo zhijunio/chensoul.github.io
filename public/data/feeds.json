@@ -15,6 +15,20 @@
       "favicon": "/feeds/feeds_feedburner_com_50579811ddcd4b8c.ico"
     },
     {
+      "title": "Skill 和 CLI：经验指导能力，能力丰富经验",
+      "link": "https://mp.weixin.qq.com/s?__biz=MjM5ODU1MzQzOQ==&mid=2451429487&idx=1&sn=6f64be2e50338fe2b838f241e9cf23a4",
+      "published": "2026-04-16 23:02:00",
+      "name": "@AI产品黄叔",
+      "favicon": "/feeds/wechat2rss_bestblogs_dev_275db3e14384b21c.ico"
+    },
+    {
+      "title": "AI 分叉了：从今天起，最强的那个 Claude，你永远用不上",
+      "link": "https://mp.weixin.qq.com/s?__biz=MzI1MTUxNzgxMA==&mid=2247501750&idx=1&sn=c6f30592705c207827bb1fb3f452ba2b",
+      "published": "2026-04-16 18:12:00",
+      "name": "@刘小排r",
+      "favicon": "/feeds/wechat2rss_bestblogs_dev_067bf24ee0a7ae95.ico"
+    },
+    {
       "title": "A Guide to Relational Database Design",
       "link": "https://blog.bytebytego.com/p/a-guide-to-relational-database-design",
       "published": "2026-04-16 15:31:26",
@@ -673,13 +687,6 @@
       "favicon": "/feeds/jolestar_com_94dca8e6fb6ff52e.svg"
     },
     {
-      "title": "AI眼中的人类迷惑行为",
-      "link": "https://mp.weixin.qq.com/s?__biz=MzI1MTUxNzgxMA==&mid=2247501636&idx=1&sn=8866f401e025745fcd1a63e95d6e537d",
-      "published": "2026-03-30 12:41:00",
-      "name": "@刘小排r",
-      "favicon": "/feeds/wechat2rss_bestblogs_dev_067bf24ee0a7ae95.ico"
-    },
-    {
       "title": "Redis 自动化运维最佳实践｜得物技术",
       "link": "https://mp.weixin.qq.com/s?__biz=MzkxNTE3ODU0NA==&mid=2247544006&idx=1&sn=77bc608620d81c44a996464dae407857",
       "published": "2026-03-30 10:30:00",
@@ -860,13 +867,6 @@
       "published": "2026-03-24 08:08:15",
       "name": "@Piotr's TechBlog",
       "favicon": "/feeds/piotrminkowski_com_8c608688efa7cd8a.ico"
-    },
-    {
-      "title": "APP 是功能的软件化，Skill 是经验的软件化",
-      "link": "https://mp.weixin.qq.com/s?__biz=MjM5ODU1MzQzOQ==&mid=2451429324&idx=1&sn=667950f91ff58af907ac463f7ae5a03e",
-      "published": "2026-03-24 03:49:00",
-      "name": "@AI产品黄叔",
-      "favicon": "/feeds/wechat2rss_bestblogs_dev_275db3e14384b21c.ico"
     },
     {
       "title": "Claude Code + OpenSpec 正在加速 AICoding 落地：从模型博弈到工程化的范式转移｜得物技术",
@@ -2612,5 +2612,5 @@
       "favicon": "/feeds/tech_youzan_com_9f45551d47de6b8c.ico"
     }
   ],
-  "updated": "2026-04-17 06:13:32"
+  "updated": "2026-04-17 09:45:43"
 }
