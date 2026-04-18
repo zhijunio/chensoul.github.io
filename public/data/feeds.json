@@ -8,6 +8,13 @@
       "favicon": "/feeds/justlovemaki_github_io_660978058ae7ef6c.ico"
     },
     {
+      "title": "Integrating Bounded Contexts",
+      "link": "https://www.arhohuttunen.com/domain-driven-design-integrating-bounded-contexts/",
+      "published": "2026-04-18 00:00:00",
+      "name": "@Shouldn't Be Hard",
+      "favicon": "/feeds/www_arhohuttunen_com_b3cc870244818c51.ico"
+    },
+    {
       "title": "没想到，Claude Opus 4.7发布，竟是大型翻车现场",
       "link": "https://mp.weixin.qq.com/s?__biz=MzI1MTUxNzgxMA==&mid=2247501755&idx=1&sn=7212fca54e438c5c1961eb16cca1fd97",
       "published": "2026-04-17 16:07:00",
@@ -2542,13 +2549,6 @@
       "favicon": "/feeds/tech_youzan_com_9f45551d47de6b8c.ico"
     },
     {
-      "title": "Introduction to Testing Spring Boot Applications",
-      "link": "https://www.arhohuttunen.com/spring-boot-testing-introduction/",
-      "published": "2022-09-20 00:00:00",
-      "name": "@Shouldn't Be Hard",
-      "favicon": "/feeds/www_arhohuttunen_com_b3cc870244818c51.ico"
-    },
-    {
       "title": "Spark App 血缘解析方案",
       "link": "https://tech.youzan.com/spark-app-xie-yuan-jie-xi-fang-an/",
       "published": "2022-09-16 05:03:20",
@@ -2612,5 +2612,5 @@
       "favicon": "/feeds/tech_youzan_com_9f45551d47de6b8c.ico"
     }
   ],
-  "updated": "2026-04-18 09:04:11"
+  "updated": "2026-04-18 10:59:07"
 }
