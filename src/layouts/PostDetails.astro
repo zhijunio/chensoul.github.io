@@ -286,19 +286,6 @@ const linkPreloadOnLoad = "this.onload=null;this.rel='stylesheet'";
 
   <article id="article" class="post w-full min-w-0" data-pagefind-body>
     <header class="w-full">
-      {
-        bannerSrc && (
-          <img
-            class="mx-auto mb-5 block h-auto w-full max-w-[min(100%,56rem)] rounded-lg"
-            src={bannerSrc}
-            alt={bannerAltText}
-            fetchpriority="high"
-            decoding="async"
-            sizes="(max-width: 768px) 100vw, min(100%, 56rem)"
-          />
-        )
-      }
-
       <div
         class="mb-4 text-sm text-muted [&_a]:text-muted [&_a:hover]:text-accent"
         aria-label="面包屑导航"
@@ -337,13 +324,28 @@ const linkPreloadOnLoad = "this.onload=null;this.rel='stylesheet'";
       </section>
     </header>
 
-    <div class="post-layout flex min-w-0 flex-col gap-5">
-      <div class="post-content min-w-0 pb-4">
+    {
+      bannerSrc && (
+        <img
+          id="post-banner"
+          class="mx-auto my-6 block h-auto w-full max-w-[min(100%,56rem)] rounded-lg"
+          src={bannerSrc}
+          alt={bannerAltText}
+          fetchpriority="high"
+          decoding="async"
+          sizes="(max-width: 768px) 100vw, min(100%, 56rem)"
+        />
+      )
+    }
+
+    <div class="post-layout flex min-w-0 flex-col gap-5 lg:items-start lg:flex-row">
+      <div class="post-content min-w-0 flex-1 pb-4">
         <Content />
       </div>
       <ArticleToc />
     </div>
   </article>
+
 
   <!-- 正文以下：共用一条顶部分割线，子块之间只用间距，避免多条「横线」叠在一起 -->
   <div
@@ -524,44 +526,21 @@ const linkPreloadOnLoad = "this.onload=null;this.rel='stylesheet'";
   }
   <style is:global>
     /**
-     * 正文 + 目录（≥lg）：负 margin 拉宽容器；正文 flex-basis 用 calc；目录 sticky。
-     * 移动端布局由 HTML 上 flex / gap 工具类负责。
+     * 正文 + 目录（≥lg）：TOC fixed 定位到页面右侧空白区。
+     * 移动端隐藏 TOC。
      */
-    .post-layout .post-toc {
+    #article-toc {
       display: none;
     }
 
     @media (min-width: 1024px) {
-      .post-layout {
-        --post-toc-aside-w: 16rem;
-        --post-toc-aside-gap: 2rem;
-
-        flex-direction: row;
-        align-items: flex-start;
-        gap: var(--post-toc-aside-gap);
-        box-sizing: border-box;
-        width: calc(100% + var(--post-toc-aside-w) + var(--post-toc-aside-gap));
-        max-width: none;
-        margin-right: calc(
-          -1 * (var(--post-toc-aside-w) + var(--post-toc-aside-gap))
-        );
-      }
-
-      .post-layout .post-content {
-        flex: 0 0
-          calc(100% - var(--post-toc-aside-w) - var(--post-toc-aside-gap));
-        min-width: 0;
-      }
-
-      .post-layout .post-toc {
+      #article-toc {
         display: block;
-        flex: 0 0 var(--post-toc-aside-w);
-        position: sticky;
-        top: var(--site-header-sticky-offset);
-        max-height: min(
-          calc(100vh - var(--site-header-sticky-offset) - 1rem),
-          85vh
-        );
+        position: fixed;
+        right: 2rem;
+        top: 6rem;
+        width: 15rem;
+        max-height: calc(100vh - 10rem);
         overflow-y: auto;
         margin: 0;
       }
