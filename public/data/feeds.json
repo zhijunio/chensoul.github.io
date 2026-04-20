@@ -29,6 +29,13 @@
       "favicon": "/feeds/rsshub_zhijun_io_95563b7e43eb3b13.ico"
     },
     {
+      "title": "Build a Price Monitoring Service with Spring Boot and Rotating Proxies",
+      "link": "https://www.youtube.com/watch?v=4H72_xBNxQY",
+      "published": "2026-04-20 12:00:06",
+      "name": "@Ali Bouali - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8c72f4c8fc87a4e6.ico"
+    },
+    {
       "title": "刚刚，GPT-5.5 的风声突然传开了",
       "link": "https://mp.weixin.qq.com/s?__biz=MzIwNzc2NTk0NQ==&mid=2247616426&idx=1&sn=32989f0a58ae81b91f3e4e7e8170005b",
       "published": "2026-04-20 10:38:00",
@@ -106,6 +113,13 @@
       "favicon": "/feeds/justlovemaki_github_io_660978058ae7ef6c.ico"
     },
     {
+      "title": "10 Steps to Scale Your App to Millions of Users | Backend Challenge Series",
+      "link": "https://www.youtube.com/watch?v=fIEMi-C8hzI",
+      "published": "2026-04-19 05:30:30",
+      "name": "@Learn Code With Durgesh - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_adbdc111669ff2c4.ico"
+    },
+    {
       "title": "BestBlogs 周刊第 91 期：基建周",
       "link": "https://ginonotes.com/posts/bestblogs-weekly-issue-91",
       "published": "2026-04-19 00:00:00",
@@ -139,6 +153,13 @@
       "published": "2026-04-18 12:47:08",
       "name": "@AI超元域 的 bilibili 空间",
       "favicon": "/feeds/rsshub_zhijun_io_860f640b7c026127.ico"
+    },
+    {
+      "title": "🔥Stop Paying for AI Tools | Best FREE AI for Coding in 2026 | Best AI Coding Setup for Free",
+      "link": "https://www.youtube.com/watch?v=tzK8bzruxVc",
+      "published": "2026-04-18 12:38:06",
+      "name": "@Learn Code With Durgesh - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_adbdc111669ff2c4.ico"
     },
     {
       "title": "2026-04-18日刊",
@@ -246,6 +267,20 @@
       "favicon": "/feeds/rsshub_zhijun_io_0731322f6e0d4833.ico"
     },
     {
+      "title": "AI is Changing Coding Jobs | What You Must Do as Fresher and Experience to Service in 2026 [Hindi]",
+      "link": "https://www.youtube.com/watch?v=lHHSp60f7AI",
+      "published": "2026-04-16 14:16:05",
+      "name": "@Learn Code With Durgesh - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_adbdc111669ff2c4.ico"
+    },
+    {
+      "title": "How to Add API Keys to ANY AI App in Minutes! (Scopes, Auth & Permissions)",
+      "link": "https://www.youtube.com/watch?v=lOeDlzgjwmI",
+      "published": "2026-04-16 13:01:31",
+      "name": "@Sonny Sangha - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_a08d608af547cc9c.ico"
+    },
+    {
       "title": "AI：数字时代最后的效率压榨",
       "link": "https://atbug.com/ai-digital-era-efficiency-squeeze/",
       "published": "2026-04-16 12:14:25",
@@ -288,6 +323,13 @@
       "favicon": "/feeds/wechat2rss_bestblogs_dev_067bf24ee0a7ae95.ico"
     },
     {
+      "title": "I'm Building an AI Dark Factory That Ships Its Own Code (Public Experiment)",
+      "link": "https://www.youtube.com/watch?v=6woc6ii-zoE",
+      "published": "2026-04-16 00:00:14",
+      "name": "@Cole Medin - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_09b5853a9e40ec90.ico"
+    },
+    {
       "title": "The new team",
       "link": "https://callistaenterprise.se/blogg/teknik/2026/04/16/the-new-team/",
       "published": "2026-04-16 00:00:00",
@@ -300,6 +342,13 @@
       "published": "2026-04-15 17:37:09",
       "name": "@TechWithEmma - YouTube",
       "favicon": "/feeds/rsshub_zhijun_io_36f742dabf41db22.ico"
+    },
+    {
+      "title": "Best Way to Use AWS S3 in Projects 🔥 E-Commerce File Storage | Step-by-Step Tutorial | Spring Boot",
+      "link": "https://www.youtube.com/watch?v=WNZl5Qn0aNc",
+      "published": "2026-04-15 14:54:41",
+      "name": "@Learn Code With Durgesh - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_adbdc111669ff2c4.ico"
     },
     {
       "title": "How to Build a Paid Membership Web App (Full Wix Studio Tutorial)",
@@ -498,11 +547,25 @@
       "favicon": "/feeds/rsshub_zhijun_io_fcba247737d39463.ico"
     },
     {
+      "title": "I Let AI Build My Spring Boot App. Here's What It Missed",
+      "link": "https://www.youtube.com/watch?v=zNZqPp1kNNE",
+      "published": "2026-04-13 07:16:10",
+      "name": "@Devtiro - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_763566e80f12382e.ico"
+    },
+    {
       "title": "开源一个Skill管理神器",
       "link": "https://mp.weixin.qq.com/s?__biz=MjM5ODU1MzQzOQ==&mid=2451429465&idx=1&sn=3ed12d7bb32f2e664a231a0d1b545572",
       "published": "2026-04-13 03:33:00",
       "name": "@AI产品黄叔",
       "favicon": "/feeds/wechat2rss_bestblogs_dev_275db3e14384b21c.ico"
+    },
+    {
+      "title": "Mochi - A SaaS That Ai Can't Kill",
+      "link": "https://www.youtube.com/watch?v=78_wjRw7124",
+      "published": "2026-04-12 18:38:25",
+      "name": "@Web Prodigies - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2ff1d2f9c82392f4.ico"
     },
     {
       "title": "🚀Hermes Agent高级玩法！微信扫码即用+LLM Wiki知识库+Obsidian图谱，AI知识管理终极方案！人人都可以打造自己的数据飞轮！",
@@ -568,6 +631,13 @@
       "favicon": "/feeds/jolestar_com_94dca8e6fb6ff52e.svg"
     },
     {
+      "title": "🚀 Learn MinIO in just 80 minutes and run AWS S3 locally like a pro | Using MinIO in Project [Hindi]",
+      "link": "https://www.youtube.com/watch?v=7orBkIQ15q0",
+      "published": "2026-04-11 13:08:55",
+      "name": "@Learn Code With Durgesh - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_adbdc111669ff2c4.ico"
+    },
+    {
       "title": "Build AI Course Generator App (Gamified) | React Native + Expo + Neon DB (Free)",
       "link": "https://www.youtube.com/watch?v=HlR15YZM7fg",
       "published": "2026-04-11 12:00:34",
@@ -594,6 +664,20 @@
       "published": "2026-04-10 16:00:00",
       "name": "@Joe 的折腾日记",
       "favicon": "/feeds/houjoe_me_2edbd1b0b3a9f2d3.ico"
+    },
+    {
+      "title": "Embabel Tools & MCP Servers: Supercharge Your Java AI Agents",
+      "link": "https://www.youtube.com/watch?v=2mGr7kdstJs",
+      "published": "2026-04-10 15:25:35",
+      "name": "@Dan Vega - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_30d61cd6cf8017bc.ico"
+    },
+    {
+      "title": "You’re Not Job Ready Until You Know These 5 Things",
+      "link": "https://www.youtube.com/watch?v=ahmRBjZ9Q5Y",
+      "published": "2026-04-10 13:00:21",
+      "name": "@Ali Bouali - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8c72f4c8fc87a4e6.ico"
     },
     {
       "title": "How to learn programming and CS in the AI hype era – interview with prof Mark Mahoney [Podcast #215]",
@@ -750,6 +834,13 @@
       "favicon": "/feeds/wechat2rss_bestblogs_dev_067bf24ee0a7ae95.ico"
     },
     {
+      "title": "The Next Evolution of AI Coding Is Harnesses - Here's How to Build Them",
+      "link": "https://www.youtube.com/watch?v=qMnClynCAmM",
+      "published": "2026-04-09 00:01:33",
+      "name": "@Cole Medin - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_09b5853a9e40ec90.ico"
+    },
+    {
       "title": "Scaling Managed Agents：将大脑与双手解耦[译述]",
       "link": "https://ginonotes.com/posts/anthropic-managed-agents",
       "published": "2026-04-09 00:00:00",
@@ -813,6 +904,13 @@
       "favicon": "/feeds/wechat2rss_bestblogs_dev_70cfbe4795db294d.ico"
     },
     {
+      "title": "Best Way to Handle Files in Backend | Stop Using Local Storage for Files ❌",
+      "link": "https://www.youtube.com/watch?v=3zzASgfWofI",
+      "published": "2026-04-08 08:17:13",
+      "name": "@Learn Code With Durgesh - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_adbdc111669ff2c4.ico"
+    },
+    {
       "title": "Field Theory CLI：把 X Bookmarks 同步到本地，变成可搜索的个人知识库",
       "link": "https://blog.einverne.info/post/2026/04/field-theory-cli-x-bookmarks-local-sync.html",
       "published": "2026-04-08 05:00:00",
@@ -869,6 +967,13 @@
       "favicon": "/feeds/rsshub_zhijun_io_860f640b7c026127.ico"
     },
     {
+      "title": "My Indie Game Made $2,500… Here’s What It Actually Taught Me!",
+      "link": "https://www.youtube.com/watch?v=prwn0lb4vhs",
+      "published": "2026-04-07 13:02:13",
+      "name": "@Simon Grimm - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8aa6154ea4426c4d.ico"
+    },
+    {
       "title": "Learn Drone Programming with Python – Tutorial",
       "link": "https://www.youtube.com/watch?v=k-yDYgc8AmU",
       "published": "2026-04-07 12:19:56",
@@ -918,6 +1023,13 @@
       "favicon": "/feeds/tech_meituan_com_c43bf0e0dd930bc7.ico"
     },
     {
+      "title": "I Built Self-Evolving Claude Code Memory w/ Karpathy's LLM Knowledge Bases",
+      "link": "https://www.youtube.com/watch?v=7huCP6RkcY4",
+      "published": "2026-04-06 20:47:12",
+      "name": "@Cole Medin - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_09b5853a9e40ec90.ico"
+    },
+    {
       "title": "A Guide to Context Engineering for LLMs",
       "link": "https://blog.bytebytego.com/p/a-guide-to-context-engineering-for",
       "published": "2026-04-06 15:30:52",
@@ -925,11 +1037,25 @@
       "favicon": "/feeds/blog_bytebytego_com_a9f456d1e25a66fe.ico"
     },
     {
+      "title": "This AI Can Plan, Design and Build an Entire App at the Same Time! (Replit Agent 4 Tutorial)",
+      "link": "https://www.youtube.com/watch?v=r2vIvUm6I4A",
+      "published": "2026-04-06 13:01:25",
+      "name": "@Sonny Sangha - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_a08d608af547cc9c.ico"
+    },
+    {
       "title": "this website hard resets your attention",
       "link": "https://www.youtube.com/watch?v=GstqR_Chq08",
       "published": "2026-04-06 13:00:32",
       "name": "@Smoljames - YouTube",
       "favicon": "/feeds/rsshub_zhijun_io_c767531305a5f95e.ico"
+    },
+    {
+      "title": "Copy these techniques to build Spring Boot apps with AI",
+      "link": "https://www.youtube.com/watch?v=3Y-WL_g1w2w",
+      "published": "2026-04-06 09:14:41",
+      "name": "@Devtiro - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_763566e80f12382e.ico"
     },
     {
       "title": "Magyarországi Web Konferencia 2026",
@@ -1002,6 +1128,13 @@
       "favicon": "/feeds/www_ginonotes_com_240a935d053c4184.ico"
     },
     {
+      "title": "✅ Microservices, DevOps Cloud Live Bootcamp | Project and Architecture Demostrations [Hindi]",
+      "link": "https://www.youtube.com/watch?v=_AoQK7hz7lk",
+      "published": "2026-04-04 15:18:29",
+      "name": "@Learn Code With Durgesh - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_adbdc111669ff2c4.ico"
+    },
+    {
       "title": "I Killed a Tech Company with AI",
       "link": "https://www.youtube.com/watch?v=ctg1Uo-Px9w",
       "published": "2026-04-04 04:05:26",
@@ -1051,6 +1184,13 @@
       "favicon": "/feeds/rsshub_zhijun_io_84467c035814402d.ico"
     },
     {
+      "title": "Oracle Fired 30,000 Employees | What to do Next ?",
+      "link": "https://www.youtube.com/watch?v=2BX912DQjig",
+      "published": "2026-04-03 07:44:52",
+      "name": "@Learn Code With Durgesh - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_adbdc111669ff2c4.ico"
+    },
+    {
       "title": "opencode-telegram-bot 无响应？可能是被 Telegram 限流了",
       "link": "https://atbug.com/opencode-telegram-bot-not-responding-telegram-rate-limit-429/",
       "published": "2026-04-03 03:17:31",
@@ -1093,6 +1233,13 @@
       "favicon": "/feeds/jolestar_com_94dca8e6fb6ff52e.svg"
     },
     {
+      "title": "Building AI Agents in Java with Embabel (Getting Started)",
+      "link": "https://www.youtube.com/watch?v=G5VDQCZu6t0",
+      "published": "2026-04-02 21:22:20",
+      "name": "@Dan Vega - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_30d61cd6cf8017bc.ico"
+    },
+    {
       "title": "Do Websites Charge You More Based on Where You Live? I Tested 30 Countries With Code",
       "link": "https://www.youtube.com/watch?v=1QPqZ-tX2_o",
       "published": "2026-04-02 15:30:01",
@@ -1121,11 +1268,74 @@
       "favicon": "/feeds/www_danvega_dev_51896a27fecfe2ce.ico"
     },
     {
+      "title": "Full Guide - Build Your Own AI Second Brain with Claude Code",
+      "link": "https://www.youtube.com/watch?v=1FiER-40zng",
+      "published": "2026-04-02 00:00:03",
+      "name": "@Cole Medin - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_09b5853a9e40ec90.ico"
+    },
+    {
       "title": "美团发布原生多模态 LongCat-Next：当视觉和语音成为AI的母语",
       "link": "https://tech.meituan.com/2026/04/02/longcat-next.html",
       "published": "2026-04-02 00:00:00",
       "name": "@美团技术团队",
       "favicon": "/feeds/tech_meituan_com_c43bf0e0dd930bc7.ico"
+    },
+    {
+      "title": "GraphQL for Java Developers: 10 - Course Conclusion and Next Steps",
+      "link": "https://www.youtube.com/watch?v=-T841yn7Mgo",
+      "published": "2026-04-01 18:45:12",
+      "name": "@Dan Vega - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_30d61cd6cf8017bc.ico"
+    },
+    {
+      "title": "GraphQL for Java Developers: 08 - Client Integration with HttpSyncGraphQlClient",
+      "link": "https://www.youtube.com/watch?v=FIOxzyDl6FU",
+      "published": "2026-04-01 18:45:12",
+      "name": "@Dan Vega - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_30d61cd6cf8017bc.ico"
+    },
+    {
+      "title": "GraphQL for Java Developers: 07 - Data Integration (GraphQLRepository + AOT Repositories)",
+      "link": "https://www.youtube.com/watch?v=QVkS0h26ugk",
+      "published": "2026-04-01 18:45:12",
+      "name": "@Dan Vega - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_30d61cd6cf8017bc.ico"
+    },
+    {
+      "title": "GraphQL for Java Developers: 09 - Observability",
+      "link": "https://www.youtube.com/watch?v=k7lGRzdAc1I",
+      "published": "2026-04-01 18:45:12",
+      "name": "@Dan Vega - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_30d61cd6cf8017bc.ico"
+    },
+    {
+      "title": "GraphQL for Java Developers: 06 - N+1 Problem and Virtual Threads",
+      "link": "https://www.youtube.com/watch?v=WQHhXf0uwWE",
+      "published": "2026-04-01 16:48:20",
+      "name": "@Dan Vega - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_30d61cd6cf8017bc.ico"
+    },
+    {
+      "title": "GraphQL for Java Developers: 05 - Unions",
+      "link": "https://www.youtube.com/watch?v=zLXOXXU8uHI",
+      "published": "2026-04-01 16:46:56",
+      "name": "@Dan Vega - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_30d61cd6cf8017bc.ico"
+    },
+    {
+      "title": "GraphQL for Java Developers: 04 - Data Fetchers",
+      "link": "https://www.youtube.com/watch?v=WNrt8nHk1MI",
+      "published": "2026-04-01 16:11:36",
+      "name": "@Dan Vega - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_30d61cd6cf8017bc.ico"
+    },
+    {
+      "title": "GraphQL for Java Developers: 03 - The GraphQL Schema",
+      "link": "https://www.youtube.com/watch?v=Lt8CtEugpqc",
+      "published": "2026-04-01 16:04:31",
+      "name": "@Dan Vega - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_30d61cd6cf8017bc.ico"
     },
     {
       "title": "破记录！Claude code源码被重写出python版本，24小时破100K Star",
@@ -1275,6 +1485,20 @@
       "favicon": "/feeds/jolestar_com_94dca8e6fb6ff52e.svg"
     },
     {
+      "title": "Coding Agent Reliability EXPLODES When They Argue (New Adversarial Dev Technique)",
+      "link": "https://www.youtube.com/watch?v=HAkSUBdsd6M",
+      "published": "2026-03-30 16:30:05",
+      "name": "@Cole Medin - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_09b5853a9e40ec90.ico"
+    },
+    {
+      "title": "Here's why your AI writes BAD code! (And the 3 layers that fix It)",
+      "link": "https://www.youtube.com/watch?v=1i5ERDY2R2A",
+      "published": "2026-03-30 13:00:02",
+      "name": "@Sonny Sangha - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_a08d608af547cc9c.ico"
+    },
+    {
       "title": "Redis 自动化运维最佳实践｜得物技术",
       "link": "https://mp.weixin.qq.com/s?__biz=MzkxNTE3ODU0NA==&mid=2247544006&idx=1&sn=77bc608620d81c44a996464dae407857",
       "published": "2026-03-30 10:30:00",
@@ -1373,6 +1597,13 @@
       "favicon": "/feeds/rsshub_zhijun_io_4677f419a807c71c.ico"
     },
     {
+      "title": "🔴 N+1 Query Problem | Fix this in your backend Project | Backend Challenge Series",
+      "link": "https://www.youtube.com/watch?v=Kx8-gSnNbnw",
+      "published": "2026-03-28 14:10:52",
+      "name": "@Learn Code With Durgesh - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_adbdc111669ff2c4.ico"
+    },
+    {
       "title": "Codex 的上下文压缩与连续性",
       "link": "https://jolestar.com/codex-context-compression-continuity/",
       "published": "2026-03-28 13:19:24",
@@ -1392,6 +1623,13 @@
       "published": "2026-03-28 00:00:00",
       "name": "@Shouldn't Be Hard",
       "favicon": "/feeds/www_arhohuttunen_com_b3cc870244818c51.ico"
+    },
+    {
+      "title": "🔥Industry Ready MICROSERVICES + DEVOPS +CLOUD Live Bootcamp with Real world projects in Hinglish",
+      "link": "https://www.youtube.com/watch?v=jdiYXZeW8ns",
+      "published": "2026-03-27 11:43:08",
+      "name": "@Learn Code With Durgesh - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_adbdc111669ff2c4.ico"
     },
     {
       "title": "What happens when the model CAN'T fix it? Interview w/ software engineer Landon Gray [Podcast #213]",
@@ -1436,11 +1674,25 @@
       "favicon": "/feeds/houjoe_me_2edbd1b0b3a9f2d3.ico"
     },
     {
+      "title": "How I Run 8 AI Employees 24/7 with OpenClaw - Multi-Agent Setup for Beginners",
+      "link": "https://www.youtube.com/watch?v=CYBZmwOmsk8",
+      "published": "2026-03-26 13:00:30",
+      "name": "@Sonny Sangha - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_a08d608af547cc9c.ico"
+    },
+    {
       "title": "命令行四件套：fd/rg/fzf/bat",
       "link": "https://atbug.com/cli-essentials-fd-rg-fzf-bat/",
       "published": "2026-03-26 03:00:10",
       "name": "@乱世浮生",
       "favicon": "/feeds/atbug_com_32618c21a3351a20.ico"
+    },
+    {
+      "title": "Everything You Thought About Building AI Agents is Wrong",
+      "link": "https://www.youtube.com/watch?v=gmaHRwijOXs",
+      "published": "2026-03-26 00:00:46",
+      "name": "@Cole Medin - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_09b5853a9e40ec90.ico"
     },
     {
       "title": "AI 让我的卡片写作法速度翻了几倍……语音输入&OpenClaw记录",
@@ -1499,6 +1751,20 @@
       "favicon": "/feeds/jolestar_com_94dca8e6fb6ff52e.svg"
     },
     {
+      "title": "Does AI make Developers dumb?",
+      "link": "https://www.youtube.com/watch?v=8rdjYrfj2V4",
+      "published": "2026-03-24 14:00:12",
+      "name": "@Simon Grimm - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8aa6154ea4426c4d.ico"
+    },
+    {
+      "title": "How to Build a SaaS in 2026 | Masterclass (B2B, Multi Tenant, Next.js, Roles / Permissions, Billing)",
+      "link": "https://www.youtube.com/watch?v=Dl8ad3aSFoE",
+      "published": "2026-03-24 13:00:21",
+      "name": "@Sonny Sangha - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_a08d608af547cc9c.ico"
+    },
+    {
       "title": "🚀Claude新功能降维打击OpenClaw！桌面版Cowork+Code支持Computer Use功能！6大实战场景全面测试：从手机操控电脑到自动做表格",
       "link": "https://www.bilibili.com/video/BV1i6QBBcEW2",
       "published": "2026-03-24 11:56:42",
@@ -1511,6 +1777,13 @@
       "published": "2026-03-24 08:08:15",
       "name": "@Piotr's TechBlog",
       "favicon": "/feeds/piotrminkowski_com_8c608688efa7cd8a.ico"
+    },
+    {
+      "title": "You're Hardly Using What Claude Code Has to Offer, it's Insane",
+      "link": "https://www.youtube.com/watch?v=uegyRTOrXSU",
+      "published": "2026-03-23 16:37:20",
+      "name": "@Cole Medin - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_09b5853a9e40ec90.ico"
     },
     {
       "title": "Full Stack AI DevOps Course + Real Projects 🚀 | Docker + Kubernetes + CI/CD + Terraform | Job Ready",
@@ -1681,6 +1954,13 @@
       "favicon": "/feeds/atbug_com_32618c21a3351a20.ico"
     },
     {
+      "title": "The Subagent Era Is Officially Here - Learn this Now",
+      "link": "https://www.youtube.com/watch?v=GX_EsbcXfw8",
+      "published": "2026-03-19 00:00:28",
+      "name": "@Cole Medin - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_09b5853a9e40ec90.ico"
+    },
+    {
       "title": "JavaOne 2026: Day 1 (the keynote)",
       "link": "https://www.youtube.com/watch?v=CY7c8u5gCzI",
       "published": "2026-03-18 17:38:16",
@@ -1702,6 +1982,13 @@
       "favicon": "/feeds/rsshub_zhijun_io_fc15d6f31c1329dd.ico"
     },
     {
+      "title": "I found an AI App Builder that can build ANYTHING! (Chrome Extensions, AI Agents, Slack Bots & more)",
+      "link": "https://www.youtube.com/watch?v=7Cmh30ISmrY",
+      "published": "2026-03-18 12:00:12",
+      "name": "@Sonny Sangha - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_a08d608af547cc9c.ico"
+    },
+    {
       "title": "大禹平台：流批一体离线Dump平台的设计与应用｜得物技术",
       "link": "https://mp.weixin.qq.com/s?__biz=MzkxNTE3ODU0NA==&mid=2247543834&idx=1&sn=1f5dab2bdd20e7fd77e9fe1102986d1c",
       "published": "2026-03-18 10:30:00",
@@ -1716,6 +2003,13 @@
       "favicon": "/feeds/www_sivalabs_in_30f8ca319a651c2b.ico"
     },
     {
+      "title": "I Built a Fire TV App with React Native using VegaOS",
+      "link": "https://www.youtube.com/watch?v=Z3FoZ4r_WY8",
+      "published": "2026-03-17 17:01:00",
+      "name": "@Simon Grimm - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8aa6154ea4426c4d.ico"
+    },
+    {
       "title": "Agent 作为账户，而不是 Bot",
       "link": "https://jolestar.com/agent-account-not-app-bot/",
       "published": "2026-03-17 11:09:15",
@@ -1728,6 +2022,13 @@
       "published": "2026-03-16 23:00:00",
       "name": "@Zalando Engineering Blog",
       "favicon": "/feeds/engineering_zalando_com_b56e2c064f7378db.ico"
+    },
+    {
+      "title": "I've Used Claude Code for 2,000+ Hours - Here's How I Build Anything With It",
+      "link": "https://www.youtube.com/watch?v=nxHKBq5ZU9U",
+      "published": "2026-03-16 19:15:03",
+      "name": "@Cole Medin - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_09b5853a9e40ec90.ico"
     },
     {
       "title": "Local AI Models with LM Studio and Spring AI",
@@ -1905,6 +2206,13 @@
       "favicon": "/feeds/rsshub_zhijun_io_aefd5ec13cce80fd.ico"
     },
     {
+      "title": "Stripe's Coding Agents Ship 1,300 PRs EVERY Week - Here's How They Do It",
+      "link": "https://www.youtube.com/watch?v=NMWgXvm--to",
+      "published": "2026-03-12 00:00:32",
+      "name": "@Cole Medin - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_09b5853a9e40ec90.ico"
+    },
+    {
       "title": "编程智能体如何重塑工程、产品与设计 [译]",
       "link": "https://ginonotes.com/posts/coding-agents-reshaping-engineering-product-design",
       "published": "2026-03-12 00:00:00",
@@ -1947,6 +2255,13 @@
       "favicon": "/feeds/rsshub_zhijun_io_145825a0a71ec9ce.ico"
     },
     {
+      "title": "Stop Writing Tests Manually — This AI Does It For You!",
+      "link": "https://www.youtube.com/watch?v=va47H19Mlow",
+      "published": "2026-03-11 13:01:54",
+      "name": "@Sonny Sangha - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_a08d608af547cc9c.ico"
+    },
+    {
       "title": "The Complete DevOps Workflow Explained (CI/CD, Deployments & Tracing)",
       "link": "https://www.youtube.com/watch?v=eFZY7u1RMQI",
       "published": "2026-03-11 12:45:06",
@@ -1959,6 +2274,20 @@
       "published": "2026-03-11 11:00:55",
       "name": "@SivaLabs - YouTube",
       "favicon": "/feeds/rsshub_zhijun_io_aefd5ec13cce80fd.ico"
+    },
+    {
+      "title": "(2/2) Build a Language Learning Mobile App: Expo, Supabase, OpenRouter, React, TypeScript (2026)",
+      "link": "https://www.youtube.com/watch?v=d3EuvEtkM0M",
+      "published": "2026-03-10 19:09:43",
+      "name": "@Andreas Trolle - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_b99527cd48e7bb20.ico"
+    },
+    {
+      "title": "This AI Builds Full Apps… Should You Use It?",
+      "link": "https://www.youtube.com/watch?v=kteF7s2d7pE",
+      "published": "2026-03-10 17:01:11",
+      "name": "@Simon Grimm - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8aa6154ea4426c4d.ico"
     },
     {
       "title": "Industry-Ready Spring Boot, React & Gen AI -Live Course",
@@ -2066,11 +2395,25 @@
       "favicon": "/feeds/rsshub_zhijun_io_145825a0a71ec9ce.ico"
     },
     {
+      "title": "Stop Building Stripe From Scratch — Use This Instead (1 Line of Code)",
+      "link": "https://www.youtube.com/watch?v=SWW0CHlcLEQ",
+      "published": "2026-03-04 13:00:52",
+      "name": "@Sonny Sangha - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_a08d608af547cc9c.ico"
+    },
+    {
       "title": "Full Stack AI Recruiter Voice Agent app using NextJs, Murf Falcon, Cline Bot | Vibe Coding Tutorial",
       "link": "https://www.youtube.com/watch?v=DEUi_8e7GLk",
       "published": "2026-03-04 12:00:17",
       "name": "@TubeGuruji - YouTube",
       "favicon": "/feeds/rsshub_zhijun_io_ad5c754fff674565.ico"
+    },
+    {
+      "title": "Build a Language Learning Mobile App: Expo, Supabase, OpenRouter, React, TypeScript (2026)",
+      "link": "https://www.youtube.com/watch?v=lpFcNQpH81Q",
+      "published": "2026-03-04 08:41:29",
+      "name": "@Andreas Trolle - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_b99527cd48e7bb20.ico"
     },
     {
       "title": "那些影响我的咒语",
@@ -2085,6 +2428,13 @@
       "published": "2026-03-03 23:00:00",
       "name": "@Zalando Engineering Blog",
       "favicon": "/feeds/engineering_zalando_com_b56e2c064f7378db.ico"
+    },
+    {
+      "title": "Add Virtual Currencies to Your App with RevenueCat",
+      "link": "https://www.youtube.com/watch?v=CFkIFiwM2Cs",
+      "published": "2026-03-03 17:00:16",
+      "name": "@Simon Grimm - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8aa6154ea4426c4d.ico"
     },
     {
       "title": "Build an AI Agent Workflow Builder using NextJs, Mongodb, React, Prisma, Upstash",
@@ -2148,6 +2498,20 @@
       "published": "2026-03-01 00:00:00",
       "name": "@Yiran's Blog",
       "favicon": "/feeds/blog_zhouyiran_link_05b9ef69660ad7c1.ico"
+    },
+    {
+      "title": "Build and Deploy a Full Stack ElevenLabs Clone with Next.js 16",
+      "link": "https://www.youtube.com/watch?v=e_MO-Rcz_MA",
+      "published": "2026-02-28 13:17:25",
+      "name": "@Code With Antonio - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_fe619f61c838f267.ico"
+    },
+    {
+      "title": "Stop Accepting Bad Data in Your Spring Boot App",
+      "link": "https://www.youtube.com/watch?v=3QTYRGEJjZg",
+      "published": "2026-02-28 09:30:19",
+      "name": "@Devtiro - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_763566e80f12382e.ico"
     },
     {
       "title": "软件会消亡么？",
@@ -2225,6 +2589,13 @@
       "published": "2026-02-25 15:00:27",
       "name": "@IntelliJ IDEA, a JetBrains IDE - YouTube",
       "favicon": "/feeds/rsshub_zhijun_io_0731322f6e0d4833.ico"
+    },
+    {
+      "title": "This AI Just Solved Browser Automation Forever",
+      "link": "https://www.youtube.com/watch?v=DUAPXWhA7vs",
+      "published": "2026-02-25 13:00:33",
+      "name": "@Sonny Sangha - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_a08d608af547cc9c.ico"
     },
     {
       "title": "Ta kontroll med OpenTelemetry – nyckeln till observerbarhet med öppna standarder",
@@ -2381,6 +2752,13 @@
       "favicon": "/feeds/soulteary_com_a5f60b76fca87b33.ico"
     },
     {
+      "title": "React Native Crash Course For 2026!",
+      "link": "https://www.youtube.com/watch?v=nARu6acI5kM",
+      "published": "2026-02-17 19:34:58",
+      "name": "@Simon Grimm - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8aa6154ea4426c4d.ico"
+    },
+    {
       "title": "Create Apps with Claude Code on Ollama",
       "link": "https://piotrminkowski.com/2026/02/17/create-apps-with-claude-code-on-ollama/",
       "published": "2026-02-17 16:25:18",
@@ -2435,6 +2813,13 @@
       "published": "2026-02-14 05:30:01",
       "name": "@Coffee + Software - YouTube",
       "favicon": "/feeds/rsshub_zhijun_io_880f2fdbd3613f98.ico"
+    },
+    {
+      "title": "Why Coding Courses Aren’t Enough Anymore (And What Still Is)",
+      "link": "https://www.youtube.com/watch?v=7Tc63wQ58n4",
+      "published": "2026-02-13 16:00:10",
+      "name": "@Simon Grimm - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8aa6154ea4426c4d.ico"
     },
     {
       "title": "IntelliJ IDEA x Scala: Write Scaladoc with Markdown",
@@ -2521,6 +2906,13 @@
       "favicon": "/feeds/houjoe_me_2edbd1b0b3a9f2d3.ico"
     },
     {
+      "title": "How to Setup OpenClaw Securely That Runs 24/7 - The SAFE way! (Clawdbot VPS Setup for Beginners)",
+      "link": "https://www.youtube.com/watch?v=AWu68zRcHHk",
+      "published": "2026-02-10 13:00:19",
+      "name": "@Sonny Sangha - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_a08d608af547cc9c.ico"
+    },
+    {
       "title": "美团发布基于 N-gram 全新模型：嵌入扩展新范式，实现轻量化 MoE 高效进化",
       "link": "https://tech.meituan.com/2026/02/10/longcat-flash-lite.html",
       "published": "2026-02-10 00:00:00",
@@ -2549,11 +2941,25 @@
       "favicon": "/feeds/blog_zhouyiran_link_05b9ef69660ad7c1.ico"
     },
     {
+      "title": "Building YouTube-style Playlist System with Spring Boot | Part 11",
+      "link": "https://www.youtube.com/watch?v=aq55FR0z0tA",
+      "published": "2026-02-06 14:58:20",
+      "name": "@Sudarshan Shah - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2051ca78298ffe6e.ico"
+    },
+    {
       "title": "Spring AI with External MCP Servers",
       "link": "https://piotrminkowski.com/2026/02/06/spring-ai-with-external-mcp-servers/",
       "published": "2026-02-06 10:00:53",
       "name": "@Piotr's TechBlog",
       "favicon": "/feeds/piotrminkowski_com_8c608688efa7cd8a.ico"
+    },
+    {
+      "title": "Build an MCP AI Automation Testing SaaS with Next.js 16",
+      "link": "https://www.youtube.com/watch?v=urDktBbBcf0",
+      "published": "2026-02-05 23:40:33",
+      "name": "@Web Prodigies - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2ff1d2f9c82392f4.ico"
     },
     {
       "title": "Production-worthy AI with Spring AI, MCP, and Spring Security",
@@ -2589,6 +2995,13 @@
       "published": "2026-02-04 04:03:02",
       "name": "@AlgoMaster Newsletter",
       "favicon": "/feeds/blog_algomaster_io_364e34913eb43f5f.ico"
+    },
+    {
+      "title": "10 Tips You NEED For Expo Router in 2026!",
+      "link": "https://www.youtube.com/watch?v=mzRgSxf5oRk",
+      "published": "2026-02-03 17:01:14",
+      "name": "@Simon Grimm - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8aa6154ea4426c4d.ico"
     },
     {
       "title": "No.217 请回答 2025：在世界的褶皱里，寻找内心的安宁",
@@ -2640,11 +3053,25 @@
       "favicon": "/feeds/tw93_fun_9843080d5e0c03ca.ico"
     },
     {
+      "title": "Building Subscription System with Spring Boot | Custom JPA methods & JPQL Queries | Part 10",
+      "link": "https://www.youtube.com/watch?v=IgAE_CUfuLE",
+      "published": "2026-01-31 11:52:37",
+      "name": "@Sudarshan Shah - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2051ca78298ffe6e.ico"
+    },
+    {
       "title": "hexo-rs：玩 Vibe Coding",
       "link": "http://catcoding.me/p/hexo-rs/",
       "published": "2026-01-30 23:00:00",
       "name": "@CatCoding",
       "favicon": "/feeds/catcoding_me_82c4bcb6bba028cf.ico"
+    },
+    {
+      "title": "Build and Deploy an AI Coding Agent | Cursor Clone with Next.js 16 | Full Course 2026",
+      "link": "https://www.youtube.com/watch?v=_y_ixdk9aRg",
+      "published": "2026-01-30 13:45:11",
+      "name": "@Code With Antonio - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_fe619f61c838f267.ico"
     },
     {
       "title": "🎬 Full-Stack AI Short Video Generator & Auto Scheduler App (Next.js + Google Antigravity)",
@@ -2668,11 +3095,25 @@
       "favicon": "/feeds/rsshub_zhijun_io_0731322f6e0d4833.ico"
     },
     {
+      "title": "Copy This Pattern to Build Your App Like a Pro",
+      "link": "https://www.youtube.com/watch?v=Y-aB6XvRPto",
+      "published": "2026-01-27 18:03:35",
+      "name": "@Devtiro - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_763566e80f12382e.ico"
+    },
+    {
       "title": "No.216 手机热点如果够用，我们为什么还需要随身WiFi？",
       "link": "https://www.xiaoyuzhoufm.com/episode/69788224cbeabe94f34495af",
       "published": "2026-01-27 12:08:21",
       "name": "@三五环",
       "favicon": "/feeds/rsshub_bestblogs_dev_42995d2a92336d07.ico"
+    },
+    {
+      "title": "Upload, Store and Stream Videos with Spring Boot & AWS S3 | Postman | Part 9",
+      "link": "https://www.youtube.com/watch?v=4-3EUuqQ7Cc",
+      "published": "2026-01-26 11:30:29",
+      "name": "@Sudarshan Shah - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2051ca78298ffe6e.ico"
     },
     {
       "title": "为什么 flutter 的字体在 iOS 系统上更「细」？",
@@ -2703,6 +3144,13 @@
       "favicon": "/feeds/tw93_fun_9843080d5e0c03ca.ico"
     },
     {
+      "title": "8. Video Entity, DTO and AWS S3 setup | Refresh Token implementation",
+      "link": "https://www.youtube.com/watch?v=MgQXG83tdwU",
+      "published": "2026-01-23 12:40:56",
+      "name": "@Sudarshan Shah - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2051ca78298ffe6e.ico"
+    },
+    {
       "title": "Creating your first Java application with IntelliJ IDEA",
       "link": "https://www.youtube.com/watch?v=V_vXRRydnYI",
       "published": "2026-01-22 14:01:00",
@@ -2724,6 +3172,13 @@
       "favicon": "/feeds/rsshub_zhijun_io_fc15d6f31c1329dd.ico"
     },
     {
+      "title": "How I Test In-App Purchases While Building an App with AI",
+      "link": "https://www.youtube.com/watch?v=XaMUNPzwFwo",
+      "published": "2026-01-20 17:01:02",
+      "name": "@Simon Grimm - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8aa6154ea4426c4d.ico"
+    },
+    {
       "title": "If you have multiple interests, do not waste the next 2-3 years",
       "link": "https://www.youtube.com/watch?v=ExNWGF-q64M",
       "published": "2026-01-20 16:26:17",
@@ -2736,6 +3191,13 @@
       "published": "2026-01-20 12:00:00",
       "name": "@三五环",
       "favicon": "/feeds/rsshub_bestblogs_dev_42995d2a92336d07.ico"
+    },
+    {
+      "title": "7. Building Controllers for Register, Verify User and Login | Testing APIs with Postman",
+      "link": "https://www.youtube.com/watch?v=_EcYAlSTjS8",
+      "published": "2026-01-19 15:39:31",
+      "name": "@Sudarshan Shah - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2051ca78298ffe6e.ico"
     },
     {
       "title": "IntelliJ IDEA turns 25!",
@@ -2757,6 +3219,13 @@
       "published": "2026-01-16 13:00:55",
       "name": "@TubeGuruji - YouTube",
       "favicon": "/feeds/rsshub_zhijun_io_ad5c754fff674565.ico"
+    },
+    {
+      "title": "Why EVERY Developer Needs AI on Their Server (Gemini CLI Setup)",
+      "link": "https://www.youtube.com/watch?v=84moPZ8zybw",
+      "published": "2026-01-16 13:00:14",
+      "name": "@Ali Bouali - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8c72f4c8fc87a4e6.ico"
     },
     {
       "title": "Paper Announcement: A Practical Approach to Replenishment Optimization with Extended (R, s, Q) Policy and Probabilistic Models",
@@ -2785,6 +3254,13 @@
       "published": "2026-01-13 23:17:00",
       "name": "@pseudoyu",
       "favicon": "/feeds/www_pseudoyu_com_57d6ecebab1bb0a5.ico"
+    },
+    {
+      "title": "Complete Registration and Login with JWT & Email Verification | Part 6",
+      "link": "https://www.youtube.com/watch?v=6Fjl43Yxa98",
+      "published": "2026-01-13 15:28:46",
+      "name": "@Sudarshan Shah - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2051ca78298ffe6e.ico"
     },
     {
       "title": "我的2025：新阶段",
@@ -2822,11 +3298,32 @@
       "favicon": "/feeds/rsshub_zhijun_io_880f2fdbd3613f98.ico"
     },
     {
+      "title": "5. Writing Configuration and Utility classes for S3, Email, JWT and Auth",
+      "link": "https://www.youtube.com/watch?v=Iobv4CEgLf0",
+      "published": "2026-01-09 11:38:47",
+      "name": "@Sudarshan Shah - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2051ca78298ffe6e.ico"
+    },
+    {
+      "title": "4. Understanding JPA Entities and Repositories, DTO classes",
+      "link": "https://www.youtube.com/watch?v=3uarZyW431k",
+      "published": "2026-01-07 14:15:56",
+      "name": "@Sudarshan Shah - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2051ca78298ffe6e.ico"
+    },
+    {
       "title": "2025 的号与外",
       "link": "https://frostming.com/posts/2026/2025-recap/",
       "published": "2026-01-07 00:00:00",
       "name": "@Frost's Blog",
       "favicon": "/feeds/frostming_com_50393b8a2dc4f344.ico"
+    },
+    {
+      "title": "Choosing the Right React Native Stack in 2026",
+      "link": "https://www.youtube.com/watch?v=LZFEr9QDIVg",
+      "published": "2026-01-06 17:00:36",
+      "name": "@Simon Grimm - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8aa6154ea4426c4d.ico"
     },
     {
       "title": "Istio Spring Boot Library Released",
@@ -2850,6 +3347,20 @@
       "favicon": "/feeds/api_joshlong_com_181686d7964bc476.ico"
     },
     {
+      "title": "Build and Deploy a Cursor Clone | Next.js 16, React, Convex | Full Course 2026",
+      "link": "https://www.youtube.com/watch?v=Xf9rHPNBMyQ",
+      "published": "2026-01-05 13:45:03",
+      "name": "@Code With Antonio - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_fe619f61c838f267.ico"
+    },
+    {
+      "title": "3. Setting up the Mega Project for learning backend",
+      "link": "https://www.youtube.com/watch?v=HXMFPaFMdBg",
+      "published": "2026-01-05 13:16:31",
+      "name": "@Sudarshan Shah - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2051ca78298ffe6e.ico"
+    },
+    {
       "title": "The Power of Value Objects",
       "link": "https://www.sivalabs.in/blog/the-power-of-value-objects/",
       "published": "2026-01-03 23:29:17",
@@ -2869,6 +3380,20 @@
       "published": "2026-01-03 20:16:08",
       "name": "@Dan Koe - YouTube",
       "favicon": "/feeds/rsshub_zhijun_io_4677f419a807c71c.ico"
+    },
+    {
+      "title": "How to Build Your First Spring Boot App (Theory Explained)",
+      "link": "https://www.youtube.com/watch?v=M2U4_t_PSRM",
+      "published": "2026-01-03 17:21:24",
+      "name": "@Devtiro - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_763566e80f12382e.ico"
+    },
+    {
+      "title": "2. How Spring Boot works under the hood? | First Spring Boot App",
+      "link": "https://www.youtube.com/watch?v=lrYnC_wtgz8",
+      "published": "2026-01-03 11:30:57",
+      "name": "@Sudarshan Shah - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2051ca78298ffe6e.ico"
     },
     {
       "title": "Introduction to Model Context Protocol",
@@ -2962,6 +3487,13 @@
       "favicon": "/feeds/www_danvega_dev_51896a27fecfe2ce.ico"
     },
     {
+      "title": "I Built a Customer Service Voice Agent with Murf Falcon",
+      "link": "https://www.youtube.com/watch?v=0EbTaAgRhTE",
+      "published": "2025-12-22 13:00:06",
+      "name": "@Ali Bouali - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8c72f4c8fc87a4e6.ico"
+    },
+    {
       "title": "Startup CPU Boost in Kubernetes with In-Place Pod Resize",
       "link": "https://piotrminkowski.com/2025/12/22/startup-cpu-boost-in-kubernetes-with-in-place-pod-resize/",
       "published": "2025-12-22 08:22:48",
@@ -3039,6 +3571,13 @@
       "favicon": "/feeds/www_pseudoyu_com_57d6ecebab1bb0a5.ico"
     },
     {
+      "title": "This Trae 3.0 with SOLO Coder Features Shocked Me And It’s UNBELIEVABLE & Super Affordable!",
+      "link": "https://www.youtube.com/watch?v=GGfc_pWETc0",
+      "published": "2025-12-12 13:00:30",
+      "name": "@Ali Bouali - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8c72f4c8fc87a4e6.ico"
+    },
+    {
       "title": "基于飞书 Aily 搭建 sls日志分析助手",
       "link": "https://tech.qimao.com/ji-yu-fei-shu-aily-da-jian-slsri-zhi-fen-xi-zhu-shou/",
       "published": "2025-12-10 02:35:34",
@@ -3102,6 +3641,13 @@
       "favicon": "/feeds/vladmihalcea_com_16d1a0395c43a507.ico"
     },
     {
+      "title": "Buy Skills Not Gadgets: Best Cyber Monday Deals for Developers (2025)",
+      "link": "https://www.youtube.com/watch?v=68FHj_VqJxA",
+      "published": "2025-12-02 02:41:09",
+      "name": "@aiwithbrandon - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_0f36ea1d2be4d8a1.ico"
+    },
+    {
       "title": "周报 #103 - 工作随想与被吞噬的生活",
       "link": "https://www.pseudoyu.com/posts/weekly_review_103",
       "published": "2025-12-02 02:40:00",
@@ -3121,6 +3667,13 @@
       "published": "2025-11-29 04:05:27",
       "name": "@Huong Dan Java",
       "favicon": "/feeds/huongdanjava_com_80ebb4e293eb6645.ico"
+    },
+    {
+      "title": "How to Deploy a Laravel 10 App on Cloudways in Under 20 Minutes | Complete Step-by-Step Guide",
+      "link": "https://www.youtube.com/watch?v=3L2u576ud1k",
+      "published": "2025-11-28 13:00:07",
+      "name": "@Ali Bouali - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8c72f4c8fc87a4e6.ico"
     },
     {
       "title": "AI 编程演进综述 v202510",
@@ -3144,6 +3697,13 @@
       "favicon": "/feeds/huongdanjava_com_80ebb4e293eb6645.ico"
     },
     {
+      "title": "How to Make AI Videos (Free Source Code + Full Walkthrough)",
+      "link": "https://www.youtube.com/watch?v=QQNQc7cIbu0",
+      "published": "2025-11-26 19:04:05",
+      "name": "@aiwithbrandon - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_0f36ea1d2be4d8a1.ico"
+    },
+    {
       "title": "在开源中使用 LLM",
       "link": "http://catcoding.me/p/llm-in-open-source/",
       "published": "2025-11-26 10:15:38",
@@ -3158,6 +3718,20 @@
       "favicon": "/feeds/huongdanjava_com_80ebb4e293eb6645.ico"
     },
     {
+      "title": "TRAE Solo Coder: The Most Powerful AI Coder | Full review",
+      "link": "https://www.youtube.com/watch?v=lyQ9HCCFFSA",
+      "published": "2025-11-25 13:01:39",
+      "name": "@Ali Bouali - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8c72f4c8fc87a4e6.ico"
+    },
+    {
+      "title": "ShipKit.ai Black Friday Deal: $100 Off (Ends Cyber Monday)",
+      "link": "https://www.youtube.com/watch?v=jZF_PZRAmT4",
+      "published": "2025-11-25 00:14:46",
+      "name": "@aiwithbrandon - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_0f36ea1d2be4d8a1.ico"
+    },
+    {
       "title": "Book Review – Just Use Postgres!",
       "link": "https://vladmihalcea.com/book-review-just-use-postgres/",
       "published": "2025-11-24 09:00:34",
@@ -3165,11 +3739,39 @@
       "favicon": "/feeds/vladmihalcea_com_16d1a0395c43a507.ico"
     },
     {
+      "title": "Google Nano Banana Pro: MIND-BLOWING AI Images",
+      "link": "https://www.youtube.com/watch?v=S3XGlgNRWbM",
+      "published": "2025-11-20 15:54:09",
+      "name": "@aiwithbrandon - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_0f36ea1d2be4d8a1.ico"
+    },
+    {
       "title": "Rust 背锅了：Cloudflare 故障分析",
       "link": "http://catcoding.me/p/rust-in-cloudflare-incident/",
       "published": "2025-11-20 07:07:23",
       "name": "@CatCoding",
       "favicon": "/feeds/catcoding_me_82c4bcb6bba028cf.ico"
+    },
+    {
+      "title": "Is Gemini 3 Pro the best AI model ever?",
+      "link": "https://www.youtube.com/watch?v=sXXbySqIguA",
+      "published": "2025-11-18 16:15:09",
+      "name": "@aiwithbrandon - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_0f36ea1d2be4d8a1.ico"
+    },
+    {
+      "title": "Google Antigravity: The New Best AI Editor?",
+      "link": "https://www.youtube.com/watch?v=j0UPItO6BX4",
+      "published": "2025-11-18 16:15:06",
+      "name": "@aiwithbrandon - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_0f36ea1d2be4d8a1.ico"
+    },
+    {
+      "title": "🚀 Load Testing with JMeter: Can Your API Handle 10,000 Users? (Complete Tutorial) | JMeter Tutorial",
+      "link": "https://www.youtube.com/watch?v=zIU2ijiS9xs",
+      "published": "2025-11-18 13:02:08",
+      "name": "@Ali Bouali - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8c72f4c8fc87a4e6.ico"
     },
     {
       "title": "通过 AI Agent 自动排查 K8s 问题",
@@ -3200,11 +3802,32 @@
       "favicon": "/feeds/rsshub_zhijun_io_aefd5ec13cce80fd.ico"
     },
     {
+      "title": "How TestSprite MCP Turns Your IDE into an Autonomous QA Machine",
+      "link": "https://www.youtube.com/watch?v=aOasWJhHHBw",
+      "published": "2025-11-13 13:00:01",
+      "name": "@Ali Bouali - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8c72f4c8fc87a4e6.ico"
+    },
+    {
       "title": "The best way to clean up test data with Spring and Hibernate",
       "link": "https://vladmihalcea.com/clean-up-test-data-spring/",
       "published": "2025-11-11 08:05:24",
       "name": "@Vlad Mihalcea",
       "favicon": "/feeds/vladmihalcea_com_16d1a0395c43a507.ico"
+    },
+    {
+      "title": "He Made $65,000 With Code As a Student",
+      "link": "https://www.youtube.com/watch?v=jkBkIDkkL8o",
+      "published": "2025-11-10 16:08:18",
+      "name": "@Web Prodigies - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2ff1d2f9c82392f4.ico"
+    },
+    {
+      "title": "Production Deployment On VPS Using Docker & Github Actions pipeline",
+      "link": "https://www.youtube.com/watch?v=QI7ZAlwJ2rY",
+      "published": "2025-11-10 13:00:06",
+      "name": "@Ali Bouali - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_8c72f4c8fc87a4e6.ico"
     },
     {
       "title": "Advisors in Spring AI",
@@ -3221,6 +3844,13 @@
       "favicon": "/feeds/api_joshlong_com_181686d7964bc476.ico"
     },
     {
+      "title": "Build and Deploy an AI Automation Platform | Next.js 15, React, Better Auth | Zapier & N8N Clone",
+      "link": "https://www.youtube.com/watch?v=S-4DrLHtL1s",
+      "published": "2025-11-07 13:00:53",
+      "name": "@Code With Antonio - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_fe619f61c838f267.ico"
+    },
+    {
       "title": "AIOps 通用 Agent 探索（Simple）",
       "link": "https://tech.qimao.com/aiops-tong-yong-agent-tan-suo-simple/",
       "published": "2025-11-03 02:39:17",
@@ -3235,11 +3865,32 @@
       "favicon": "/feeds/rsshub_zhijun_io_5c3b17eab0b10c05.ico"
     },
     {
+      "title": "Cursor 2.0 is INSANE: First Look at Multi-Agents, New 4x faster Model, & Browser Mode",
+      "link": "https://www.youtube.com/watch?v=ywanp9bsvXg",
+      "published": "2025-10-30 13:29:47",
+      "name": "@aiwithbrandon - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_0f36ea1d2be4d8a1.ico"
+    },
+    {
+      "title": "Claude Code Skills: Automate Everything You Do",
+      "link": "https://www.youtube.com/watch?v=vOW1xAVbuNI",
+      "published": "2025-10-28 18:46:56",
+      "name": "@aiwithbrandon - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_0f36ea1d2be4d8a1.ico"
+    },
+    {
       "title": "周报 #102 - 我是如何使用 AI 的",
       "link": "https://www.pseudoyu.com/posts/weekly_review_102",
       "published": "2025-10-27 18:38:00",
       "name": "@pseudoyu",
       "favicon": "/feeds/www_pseudoyu_com_57d6ecebab1bb0a5.ico"
+    },
+    {
+      "title": "Best AI Coding Tool in 2025? (Cursor vs Claude Code)",
+      "link": "https://www.youtube.com/watch?v=sqj2ATbL7x8",
+      "published": "2025-10-24 15:58:14",
+      "name": "@aiwithbrandon - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_0f36ea1d2be4d8a1.ico"
     },
     {
       "title": "MERN Stack Realtime Chat App - Socket.io, Gemini AI, React.js & Group Chat | Full Course",
@@ -3282,6 +3933,20 @@
       "published": "2025-10-15 08:28:01",
       "name": "@Vlad Mihalcea",
       "favicon": "/feeds/vladmihalcea_com_16d1a0395c43a507.ico"
+    },
+    {
+      "title": "How I Won Google's AI Agent Challenge in 5 Hours! [Free Code + 5 AI Dev Strategies]",
+      "link": "https://www.youtube.com/watch?v=g8s6HZZLQsk",
+      "published": "2025-10-13 20:58:37",
+      "name": "@aiwithbrandon - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_0f36ea1d2be4d8a1.ico"
+    },
+    {
+      "title": "Build and Deploy an N8N & Zapier Clone | Next.js 15, React, Better Auth, Polar | Full Course 2025",
+      "link": "https://www.youtube.com/watch?v=ED2H_y6dmC8",
+      "published": "2025-10-13 15:43:32",
+      "name": "@Code With Antonio - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_fe619f61c838f267.ico"
     },
     {
       "title": "The only good kind of Javascript is a Java Script",
@@ -3354,11 +4019,39 @@
       "favicon": "/feeds/rsshub_zhijun_io_5c3b17eab0b10c05.ico"
     },
     {
+      "title": "Build a HeyGen Clone: Next.js, AWS, Python, Tailwind, BetterAuth, React, Modal, Neon, Polar (2025)",
+      "link": "https://www.youtube.com/watch?v=s4P-H-ptKr0",
+      "published": "2025-09-15 01:32:45",
+      "name": "@Andreas Trolle - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_b99527cd48e7bb20.ico"
+    },
+    {
+      "title": "AI SaaS - Sketch To Design | CodeRabbit, Convex, Inngest, Sevalla, Polar",
+      "link": "https://www.youtube.com/watch?v=Ak1ACaqNtM0",
+      "published": "2025-09-13 19:00:41",
+      "name": "@Web Prodigies - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2ff1d2f9c82392f4.ico"
+    },
+    {
       "title": "西班牙之行",
       "link": "https://1byte.io/articles/spain-trip-2025/",
       "published": "2025-09-05 00:00:00",
       "name": "@0x01 byte",
       "favicon": "/feeds/1byte_io_5ba80ae77c5bb6c1.ico"
+    },
+    {
+      "title": "Build and Deploy a B2B SaaS AI Support Platform | Next.js 15, React, Convex, Turborepo, Vapi, AWS",
+      "link": "https://www.youtube.com/watch?v=HUfZNPzI-rw",
+      "published": "2025-08-22 12:40:54",
+      "name": "@Code With Antonio - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_fe619f61c838f267.ico"
+    },
+    {
+      "title": "What is Service Discovery?",
+      "link": "https://www.youtube.com/watch?v=T89EzyCFUM8",
+      "published": "2025-08-15 15:02:14",
+      "name": "@Devtiro - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_763566e80f12382e.ico"
     },
     {
       "title": "SpringOne 2025 Spotlights",
@@ -3368,11 +4061,46 @@
       "favicon": "/feeds/rsshub_zhijun_io_78499b104770914f.ico"
     },
     {
+      "title": "How to Model an Application's Domain (With Example)",
+      "link": "https://www.youtube.com/watch?v=62oYauCnc18",
+      "published": "2025-08-08 17:26:30",
+      "name": "@Devtiro - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_763566e80f12382e.ico"
+    },
+    {
       "title": "周报 #100 - 过去这十年",
       "link": "https://www.pseudoyu.com/posts/weekly_review_100",
       "published": "2025-08-05 10:43:00",
       "name": "@pseudoyu",
       "favicon": "/feeds/www_pseudoyu_com_57d6ecebab1bb0a5.ico"
+    },
+    {
+      "title": "Build and Deploy a B2B AI SaaS Support Platform | Next.js 15, React, Convex, Turborepo, Vapi, AWS",
+      "link": "https://www.youtube.com/watch?v=CAr02YlEJUc",
+      "published": "2025-08-04 13:43:17",
+      "name": "@Code With Antonio - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_fe619f61c838f267.ico"
+    },
+    {
+      "title": "How to Design a REST APIs (With Example)",
+      "link": "https://www.youtube.com/watch?v=02MOJax2Hdc",
+      "published": "2025-08-01 18:16:16",
+      "name": "@Devtiro - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_763566e80f12382e.ico"
+    },
+    {
+      "title": "Build an AI Music Generation SaaS: Python, Next.js, AWS, Polar, Tailwind, TS, Modal, Inngest (2025)",
+      "link": "https://www.youtube.com/watch?v=fC3_Luf7wVA",
+      "published": "2025-07-28 05:38:51",
+      "name": "@Andreas Trolle - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_b99527cd48e7bb20.ico"
+    },
+    {
+      "title": "Spring Boot Microservices Explained - What & Why?",
+      "link": "https://www.youtube.com/watch?v=EM0dJSvPRO0",
+      "published": "2025-07-27 18:13:10",
+      "name": "@Devtiro - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_763566e80f12382e.ico"
     },
     {
       "title": "如何像极客一样使用你的Mac？分享下我的Mac工作流",
@@ -3387,6 +4115,13 @@
       "published": "2025-07-21 14:27:00",
       "name": "@pseudoyu",
       "favicon": "/feeds/www_pseudoyu_com_57d6ecebab1bb0a5.ico"
+    },
+    {
+      "title": "Exactly How to Solve Java and Spring Boot Errors (in 5 steps)",
+      "link": "https://www.youtube.com/watch?v=SpAHoFzWBvw",
+      "published": "2025-07-18 11:40:55",
+      "name": "@Devtiro - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_763566e80f12382e.ico"
     },
     {
       "title": "NextJS 15 Full Course | Build & Deploy a Markdown Notes App w/ Firebase & FantaCSS",
@@ -3408,6 +4143,20 @@
       "published": "2025-07-03 00:30:00",
       "name": "@OnBoard!",
       "favicon": "/feeds/rsshub_bestblogs_dev_cc99a81d98c464d2.ico"
+    },
+    {
+      "title": "Train a Convolutional Neural Network from Scratch: PyTorch, Next.js, React, Tailwind, Python (2025)",
+      "link": "https://www.youtube.com/watch?v=KLYfwigQPuY",
+      "published": "2025-06-30 20:45:51",
+      "name": "@Andreas Trolle - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_b99527cd48e7bb20.ico"
+    },
+    {
+      "title": "Build and Deploy a SaaS AI Website Builder | Next.js 15, React, Inngest, Prisma | Lovable clone",
+      "link": "https://www.youtube.com/watch?v=xs8mWnbMcmc",
+      "published": "2025-06-26 11:30:05",
+      "name": "@Code With Antonio - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_fe619f61c838f267.ico"
     },
     {
       "title": "构建稳定的 CAN 网络通信桥梁：CAN-Bridge",
@@ -3459,6 +4208,13 @@
       "favicon": "/feeds/rsshub_zhijun_io_c767531305a5f95e.ico"
     },
     {
+      "title": "Build and Deploy a SaaS AI Agent Platform | Next.js 15, React, Better Auth, Polar | Part 2/2",
+      "link": "https://www.youtube.com/watch?v=Kh2FjTFzxJc",
+      "published": "2025-06-09 11:39:07",
+      "name": "@Code With Antonio - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_fe619f61c838f267.ico"
+    },
+    {
       "title": "Protect Your Mental Health While Being On Social Media",
       "link": "https://www.sivalabs.in/blog/protecting-your-mental-health-while-being-on-social-media/",
       "published": "2025-06-08 23:29:17",
@@ -3494,6 +4250,13 @@
       "favicon": "/feeds/feeds_feedburner_com_884a13546e12a02f.ico"
     },
     {
+      "title": "Build and Deploy a SaaS AI Agent Platform | Next.js 15, React, Better Auth, Polar | Full Course 2025",
+      "link": "https://www.youtube.com/watch?v=xEDCEmqyvC8",
+      "published": "2025-05-27 12:19:29",
+      "name": "@Code With Antonio - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_fe619f61c838f267.ico"
+    },
+    {
       "title": "TailwindCSS Course for Beginners | Learn TailwindCSS in 90 minutes",
       "link": "https://www.youtube.com/watch?v=GcX4iEhDgM8",
       "published": "2025-05-19 12:00:29",
@@ -3513,6 +4276,20 @@
       "published": "2025-05-15 17:34:21",
       "name": "@ZenYarn同学 - YouTube",
       "favicon": "/feeds/rsshub_zhijun_io_30ce9061d0b36141.ico"
+    },
+    {
+      "title": "Build an AI Podcast Clipping SaaS: Python, Next.js, AWS, Stripe, Tailwind, TS, Modal, Inngest (2025)",
+      "link": "https://www.youtube.com/watch?v=PeFZcvWucoU",
+      "published": "2025-05-15 17:17:15",
+      "name": "@Andreas Trolle - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_b99527cd48e7bb20.ico"
+    },
+    {
+      "title": "SaaS Webinar Platform With AI Sales Agents - Nextjs 15, Vapi AI, Hostinger, Clerk, Stream, Neon",
+      "link": "https://www.youtube.com/watch?v=ZVJlD2-qOQE",
+      "published": "2025-05-14 07:11:37",
+      "name": "@Web Prodigies - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2ff1d2f9c82392f4.ico"
     },
     {
       "title": "MySQL Query Optimization with Releem",
@@ -3562,6 +4339,13 @@
       "published": "2025-04-30 06:47:50",
       "name": "@ZenYarn同学 - YouTube",
       "favicon": "/feeds/rsshub_zhijun_io_30ce9061d0b36141.ico"
+    },
+    {
+      "title": "Build and Deploy a Biotech AI Tool: Python, Next.js 15, React, Tailwind, Modal, Typescript (2025)",
+      "link": "https://www.youtube.com/watch?v=3dCZxmd5bvs",
+      "published": "2025-04-24 15:38:09",
+      "name": "@Andreas Trolle - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_b99527cd48e7bb20.ico"
     },
     {
       "title": "Build AI Agents in 33 minutes - NEW OpenAI SDK",
@@ -3620,6 +4404,13 @@
       "favicon": "/feeds/rsshub_zhijun_io_2950669240493e69.ico"
     },
     {
+      "title": "(2/2) Build an ElevenLabs Clone: PyTorch, Next.js 15, AWS, Inngest, FastAPI, React, Tailwind (2025)",
+      "link": "https://www.youtube.com/watch?v=9kkcaPiNjHU",
+      "published": "2025-03-30 13:30:14",
+      "name": "@Andreas Trolle - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_b99527cd48e7bb20.ico"
+    },
+    {
       "title": "Sorcery with WebAssembly, GraalVM, and Java!",
       "link": "https://joshlong.com/jl/blogpost/my-first-java-script-script-with-graalvm-and-webassembly.html",
       "published": "2025-03-28 00:00:00",
@@ -3632,6 +4423,13 @@
       "published": "2025-03-27 08:30:00",
       "name": "@Rss Feed - 苏洋博客",
       "favicon": "/feeds/soulteary_com_a5f60b76fca87b33.ico"
+    },
+    {
+      "title": "Build an ElevenLabs Clone: PyTorch, Next.js 15, AWS, Inngest, FastAPI, React, Tailwind (2025)",
+      "link": "https://www.youtube.com/watch?v=48A-E-xJPMo",
+      "published": "2025-03-26 17:17:56",
+      "name": "@Andreas Trolle - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_b99527cd48e7bb20.ico"
     },
     {
       "title": "小米路由器 BE3600 Pro 笔记：初步分析、折腾路由 Docker（一）",
@@ -3669,6 +4467,13 @@
       "favicon": "/feeds/vladmihalcea_com_16d1a0395c43a507.ico"
     },
     {
+      "title": "Building Yeezy.com - Nextjs15, Rapyd Cloud, WordPress Headless, WooCommerce",
+      "link": "https://www.youtube.com/watch?v=OVxNwpQWdyA",
+      "published": "2025-03-17 23:26:27",
+      "name": "@Web Prodigies - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2ff1d2f9c82392f4.ico"
+    },
+    {
       "title": "Spring AI (Part 3): Tool Calling and Model Context Protocol",
       "link": "https://www.youtube.com/watch?v=e-xNf3PdYTg",
       "published": "2025-03-14 07:53:22",
@@ -3697,6 +4502,13 @@
       "favicon": "/feeds/rsshub_bestblogs_dev_cc99a81d98c464d2.ico"
     },
     {
+      "title": "AI Presentation Builder (PART 2/2) - Nextjs 15, OpenAI, LemonSqueezy, Prisma, Clerk, Neon",
+      "link": "https://www.youtube.com/watch?v=9qNFnppDB_c",
+      "published": "2025-02-14 02:36:31",
+      "name": "@Web Prodigies - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2ff1d2f9c82392f4.ico"
+    },
+    {
       "title": "MySQL Performance Tuning with Releem",
       "link": "https://vladmihalcea.com/mysql-performance-tuning-releem/",
       "published": "2025-02-10 18:04:50",
@@ -3711,6 +4523,13 @@
       "favicon": "/feeds/rsshub_zhijun_io_5c3b17eab0b10c05.ico"
     },
     {
+      "title": "AI Presentation Builder (PART 1/2) - Nextjs 15, OpenAI, LemonSqueezy, Prisma, Clerk, Neon",
+      "link": "https://www.youtube.com/watch?v=kKa-AtjsmXQ",
+      "published": "2025-02-07 06:43:46",
+      "name": "@Web Prodigies - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2ff1d2f9c82392f4.ico"
+    },
+    {
       "title": "Spring AI (Part 1) : An Introduction with Ollama, LLama and DeepSeek-R1",
       "link": "https://www.youtube.com/watch?v=ur1hrVpidQ8",
       "published": "2025-02-01 19:20:19",
@@ -3723,6 +4542,13 @@
       "published": "2025-01-18 19:37:05",
       "name": "@Himanshu Sharma - YouTube",
       "favicon": "/feeds/rsshub_zhijun_io_5c3b17eab0b10c05.ico"
+    },
+    {
+      "title": "Train and Deploy a Multimodal AI Model: PyTorch, AWS, SageMaker, Next.js 15, React, Tailwind (2025)",
+      "link": "https://www.youtube.com/watch?v=Myo5kizoSk0",
+      "published": "2025-01-14 13:43:24",
+      "name": "@Andreas Trolle - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_b99527cd48e7bb20.ico"
     },
     {
       "title": "Spring Modulith: Playing with Events - Part 2",
@@ -3816,6 +4642,13 @@
       "favicon": "/feeds/rsshub_zhijun_io_2950669240493e69.ico"
     },
     {
+      "title": "SAAS Instagram DM Automations - Nextjs, Tailwind, Instagram API, Relume, Prisma, Webhooks",
+      "link": "https://www.youtube.com/watch?v=iaxekGfUzvk",
+      "published": "2024-12-02 09:25:10",
+      "name": "@Web Prodigies - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2ff1d2f9c82392f4.ico"
+    },
+    {
       "title": "荐书：The Blind Watchmaker",
       "link": "https://1byte.io/articles/the-blind-watchmaker/",
       "published": "2024-11-19 00:00:00",
@@ -3856,6 +4689,13 @@
       "published": "2024-10-29 04:38:19",
       "name": "@webdecoded - YouTube",
       "favicon": "/feeds/rsshub_zhijun_io_2950669240493e69.ico"
+    },
+    {
+      "title": "AI SAAS Realtime Video Sharing + Desktop App: AWS, Cloudfront, Nextjs, Electron, Express, Socket.io",
+      "link": "https://www.youtube.com/watch?v=3R63m4sTpKo",
+      "published": "2024-10-23 01:35:22",
+      "name": "@Web Prodigies - YouTube",
+      "favicon": "/feeds/rsshub_zhijun_io_2ff1d2f9c82392f4.ico"
     },
     {
       "title": "EP 62. Google Deepmind 与LLM研究员深度解读OpenAI o1 及LLM+强化学习新范式",
@@ -4208,5 +5048,5 @@
       "favicon": "/feeds/rsshub_zhijun_io_f283a53ccee879fd.ico"
     }
   ],
-  "updated": "2026-04-20 15:45:14"
+  "updated": "2026-04-20 17:18:16"
 }
