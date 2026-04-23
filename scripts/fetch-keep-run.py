@@ -540,13 +540,30 @@ def main():
         logger.error("未提供密码：设置 KEEP_PASSWORD 环境变量或使用 --password")
         sys.exit(1)
 
-    records = fetch_runs(mobile, password, limit=args.limit, debug=args.debug)
-    if not records:
+    # 加载已有数据
+    existing_records = []
+    out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), args.output)
+    if os.path.exists(out_path):
+        with open(out_path, "r", encoding="utf-8") as f:
+            old_data = json.load(f)
+        existing_records = old_data.get("runs", [])
+        logger.info("已加载 %d 条已有记录", len(existing_records))
+
+    new_records = fetch_runs(mobile, password, limit=args.limit, debug=args.debug)
+    if not new_records and not existing_records:
         logger.error("没有读取到任何记录")
         sys.exit(1)
 
-    # 按时间倒序
-    records.sort(key=lambda x: x["startTime"], reverse=True)
+    # 合并并去重
+    all_records = existing_records + new_records
+    seen = set()
+    deduped = []
+    for r in all_records:
+        key = (r.get("startTime", ""), r.get("distance", 0))
+        if key not in seen:
+            seen.add(key)
+            deduped.append(r)
+    records = sorted(deduped, key=lambda x: x["startTime"], reverse=True)
 
     output = {
         "statistics_time": datetime.now(TZ_SH).strftime("%Y-%m-%d %H:%M:%S"),

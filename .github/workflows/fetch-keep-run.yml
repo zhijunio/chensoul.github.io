@@ -39,7 +39,7 @@ jobs:
             echo "::error::Configure repository secrets KEEP_MOBILE and KEEP_PASSWORD (Settings → Secrets and variables → Actions)."
             exit 1
           fi
-          python scripts/fetch-keep-run.py
+          python scripts/fetch-keep-run.py --limit 5
 
       - name: Commit and push if changed
         run: |
