@@ -539,10 +539,13 @@ def main():
     existing_records = []
     out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), args.output)
     if os.path.exists(out_path):
-        with open(out_path, "r", encoding="utf-8") as f:
-            old_data = json.load(f)
-        existing_records = old_data.get("runs", [])
-        logger.info("已加载 %d 条已有记录", len(existing_records))
+        try:
+            with open(out_path, "r", encoding="utf-8") as f:
+                old_data = json.load(f)
+            existing_records = old_data.get("runs", [])
+            logger.info("已加载 %d 条已有记录", len(existing_records))
+        except json.JSONDecodeError as e:
+            logger.warning("已有 running.json 解析失败 (%s)，从空记录开始", e)
 
     if not new_records and not existing_records:
         logger.error("没有读取到任何记录")

@@ -14,6 +14,7 @@ concurrency:
 
 jobs:
   sync:
+    name: Fetch Keep → running.json
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
