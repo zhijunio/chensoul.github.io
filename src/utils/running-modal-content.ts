@@ -4,33 +4,37 @@
 
 export interface RunningSegment {
   km?: number;
-  pace?: string;
-  cadence?: number;
-  heart_rate?: number;
-  hr_zone?: number | null;
+  averagePace?: number;
+  averageSpeed?: number;
+  averageHeartRate?: number;
+  heartRateZone?: number | null;
+  stepFrequency?: number;
 }
 
 export interface RunningRecord {
-  date: string;
-  duration?: string;
-  durationShort?: string;
+  startTime: string;
+  endTime?: string;
+  type?: string;
   distance?: number;
-  pace?: string;
-  heart_rate?: number;
-  max_heart_rate?: number;
-  cadence?: number;
-  stride_length?: number;
-  avg_power?: number;
-  max_power?: number;
-  calories?: number;
-  elevation_gain?: number;
-  vdot?: number;
-  training_load?: number;
-  hr_zone?: number;
-  workout_name?: string;
-  activity_type?: string;
-  route?: string;
-  weather?: string;
+  duration?: number;
+  durationShort?: string;
+  averagePace?: number;
+  averageSpeed?: number;
+  averageHeartRate?: number;
+  maxHeartRate?: number;
+  stepFrequency?: number;
+  strideLength?: number;
+  averagePower?: number;
+  maxPower?: number;
+  calorie?: number;
+  elevationGain?: number;
+  vDOT?: number;
+  trainingLoadScore?: number;
+  heartRateZone?: number;
+  name?: string;
+  activityType?: string;
+  region?: string;
+  weatherInfo?: string;
   segments?: RunningSegment[];
 }
 
@@ -56,43 +60,48 @@ const DETAIL_ICONS = {
   load: `<svg ${SVG_ATTR}><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path></svg>`,
 } as const;
 
-function paceToSeconds(paceStr: string): number {
-  if (!paceStr || paceStr === "0'00\"") return 0;
-  const match = paceStr.match(/(\d+)'(\d+)/);
-  if (match) {
-    return parseInt(match[1], 10) * 60 + parseInt(match[2], 10);
-  }
-  return 0;
+function _formatPaceDetail(sec: number): string {
+  if (!sec || sec <= 0) return "0'00\"";
+  return `${Math.floor(sec / 60)}'${Math.floor(sec % 60).toString().padStart(2, "0")}"`;
 }
 
-function getPaceBarWidth(paceStr: string, allPaces: string[]): number {
-  const paceSeconds = paceToSeconds(paceStr);
-  if (paceSeconds === 0) return 0;
+function formatDuration(seconds: number): string {
+  if (seconds <= 0) return "0m";
+  const minutes = Math.round(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const mins = minutes % 60;
 
-  if (allPaces.length > 1) {
-    const allSeconds = allPaces.map(p => paceToSeconds(p)).filter(s => s > 0);
-    if (allSeconds.length > 1) {
-      const minPace = Math.min(...allSeconds);
-      const maxPace = Math.max(...allSeconds);
-      const range = maxPace - minPace;
-      if (range > 0) {
-        const ratio = (maxPace - paceSeconds) / range;
-        return Math.max(30, Math.min(100, 30 + ratio * 70));
-      }
+  if (hours > 0 && mins > 0) {
+    return `${hours}h${mins}m`;
+  } else if (hours > 0) {
+    return `${hours}h`;
+  } else {
+    return `${mins}m`;
+  }
+}
+
+function getPaceBarWidthFromSec(sec: number, allSecs: number[]): number {
+  if (sec <= 0) return 0;
+  const valid = allSecs.filter((s: number) => s > 0);
+  if (valid.length > 1) {
+    const minPace = Math.min(...valid);
+    const maxPace = Math.max(...valid);
+    const range = maxPace - minPace;
+    if (range > 0) {
+      const ratio = (maxPace - sec) / range;
+      return Math.max(30, Math.min(100, 30 + ratio * 70));
     }
   }
-
-  const minSeconds = 240;
-  const maxSeconds = 480;
-  const ratio = (maxSeconds - paceSeconds) / (maxSeconds - minSeconds);
+  const minSec = 240;
+  const maxSec = 480;
+  const ratio = (maxSec - sec) / (maxSec - minSec);
   return Math.max(20, Math.min(100, 20 + ratio * 80));
 }
 
-function getPaceBarClass(paceStr: string): "fast" | "medium" | "slow" {
-  const paceSeconds = paceToSeconds(paceStr);
-  if (paceSeconds === 0) return "medium";
-  if (paceSeconds < 330) return "fast";
-  if (paceSeconds > 420) return "slow";
+function getPaceBarClassFromSec(sec: number): "fast" | "medium" | "slow" {
+  if (sec <= 0) return "medium";
+  if (sec < 330) return "fast";
+  if (sec > 420) return "slow";
   return "medium";
 }
 
@@ -109,7 +118,7 @@ export function buildRunDetailModalHtml(
 ): string {
   const icons = DETAIL_ICONS;
   const hrZoneBadge =
-    run.hr_zone && run.hr_zone > 0 ? hrZoneBadgeHtml(run.hr_zone, ctx) : "";
+    run.heartRateZone && run.heartRateZone > 0 ? hrZoneBadgeHtml(run.heartRateZone, ctx) : "";
 
   const detailStats: { icon: string; label: string; value: string }[] = [];
 
@@ -121,117 +130,114 @@ export function buildRunDetailModalHtml(
   detailStats.push({
     icon: icons.duration,
     label: "移动时间",
-    value: String(run.durationShort ?? ""),
-  });
-  detailStats.push({
-    icon: icons.duration,
-    label: "总时间",
-    value: String(run.durationShort ?? ""),
+    value: formatDuration(run.duration ?? 0),
   });
   detailStats.push({
     icon: icons.pace,
     label: "配速",
-    value: `${run.pace ?? ""} /km`,
+    value: `${_formatPaceDetail(run.averagePace ?? 0)} /km`,
   });
 
-  if (run.heart_rate && run.heart_rate > 0) {
+  if (run.averageHeartRate && run.averageHeartRate > 0) {
     detailStats.push({
       icon: icons.heartRate,
       label: "平均心率",
-      value: `${Math.round(run.heart_rate)} bpm`,
+      value: `${Math.round(run.averageHeartRate)} bpm`,
     });
   }
-  if (run.max_heart_rate && run.max_heart_rate > 0) {
+  if (run.maxHeartRate && run.maxHeartRate > 0) {
     detailStats.push({
       icon: icons.heartRate,
       label: "最大心率",
-      value: `${Math.round(run.max_heart_rate)} bpm`,
+      value: `${Math.round(run.maxHeartRate)} bpm`,
     });
   }
-  if (run.cadence && run.cadence > 0) {
+  if (run.stepFrequency && run.stepFrequency > 0) {
     detailStats.push({
       icon: icons.cadence,
-      label: "步频",
-      value: `${Math.round(run.cadence)} spm`,
+      label: "平均步频",
+      value: `${Math.round(run.stepFrequency)} spm`,
     });
   }
-  if (run.stride_length && run.stride_length > 0) {
+  if (run.strideLength && run.strideLength > 0) {
     detailStats.push({
       icon: icons.stride,
       label: "步幅",
-      value: `${run.stride_length.toFixed(2)} m`,
+      value: `${run.strideLength.toFixed(2)} m`,
     });
   }
-  if (run.avg_power && run.avg_power > 0) {
+  if (run.averagePower && run.averagePower > 0) {
     detailStats.push({
       icon: icons.power,
       label: "平均功率",
-      value: `${Math.round(run.avg_power)} w`,
+      value: `${Math.round(run.averagePower)} w`,
     });
   }
-  if (run.max_power && run.max_power > 0) {
+  if (run.maxPower && run.maxPower > 0) {
     detailStats.push({
       icon: icons.power,
       label: "最大功率",
-      value: `${Math.round(run.max_power)} w`,
+      value: `${Math.round(run.maxPower)} w`,
     });
   }
-  if (run.calories && run.calories > 0) {
+  if (run.calorie && run.calorie > 0) {
     detailStats.push({
       icon: icons.calories,
       label: "热量消耗",
-      value: `${Math.round(run.calories)} kcal`,
+      value: `${Math.round(run.calorie)} kcal`,
     });
   }
-  if (run.elevation_gain && run.elevation_gain > 0) {
+  if (run.elevationGain && run.elevationGain > 0) {
     detailStats.push({
       icon: icons.elevation,
       label: "累计爬升",
-      value: `${Math.round(run.elevation_gain)} m`,
+      value: `${Math.round(run.elevationGain)} m`,
     });
   }
-  if (run.vdot && run.vdot > 0) {
+  if (run.vDOT && run.vDOT > 0) {
     detailStats.push({
       icon: icons.vdot,
       label: "VDOT",
-      value: run.vdot.toFixed(1),
+      value: run.vDOT.toFixed(1),
     });
   }
-  if (run.training_load && run.training_load > 0) {
+  if (run.trainingLoadScore && run.trainingLoadScore > 0) {
     detailStats.push({
       icon: icons.load,
       label: "训练负荷",
-      value: String(run.training_load),
+      value: String(run.trainingLoadScore),
     });
   }
 
   let segmentsHtml = "";
   if (run.segments && run.segments.length > 0) {
-    const allSegmentPaces = run.segments
-      .map(s => s.pace)
-      .filter((p): p is string => Boolean(p && p !== "0'00\""));
+    const allPaces = run.segments
+      .map(s => s.averagePace ?? 0)
+      .filter((p: number) => p > 0);
 
     const segmentRows = run.segments
       .map((seg, idx) => {
-        const zoneClass = seg.hr_zone != null ? `zone-${seg.hr_zone}` : "";
+        const zoneClass = seg.heartRateZone != null ? `zone-${seg.heartRateZone}` : "";
         const zoneLabel =
-          seg.hr_zone != null
-            ? (ctx.hrZoneLabels[seg.hr_zone] || "").split(" ")[0]
+          seg.heartRateZone != null
+            ? (ctx.hrZoneLabels[seg.heartRateZone] || "").split(" ")[0]
             : "";
-        const barWidth = getPaceBarWidth(seg.pace ?? "", allSegmentPaces);
-        const barClass = getPaceBarClass(seg.pace ?? "");
+        const paceSec = seg.averagePace ?? 0;
+        const paceStr = _formatPaceDetail(paceSec);
+        const barWidth = getPaceBarWidthFromSec(paceSec, allPaces);
+        const barClass = getPaceBarClassFromSec(paceSec);
         return `
           <tr>
             <td>${seg.km ?? idx + 1}</td>
             <td>
               <div class="pace-bar">
                 <div class="pace-bar-fill ${barClass}" style="width: ${barWidth}%"></div>
-                <span>${seg.pace ?? ""}</span>
+                <span>${paceStr}</span>
               </div>
             </td>
-            <td>${seg.cadence ? seg.cadence : "-"}</td>
+            <td>${seg.stepFrequency ? seg.stepFrequency : "-"}</td>
             <td>
-              <span class="hr-zone-tag ${zoneClass}">${seg.heart_rate ?? "-"} ${zoneLabel}</span>
+              <span class="hr-zone-tag ${zoneClass}">${seg.averageHeartRate ?? "-"} ${zoneLabel}</span>
             </td>
           </tr>`;
       })
@@ -259,11 +265,11 @@ export function buildRunDetailModalHtml(
   }
 
   const detailMetaExtras = [
-    run.route
-      ? `<span class="detail-route" title="路线">${run.route}</span>`
+    run.region
+      ? `<span class="detail-route" title="路线">${run.region}</span>`
       : "",
-    run.weather
-      ? `<span class="detail-weather" title="天气">${run.weather}</span>`
+    run.weatherInfo
+      ? `<span class="detail-weather" title="天气">${run.weatherInfo}</span>`
       : "",
   ]
     .filter(Boolean)
@@ -282,9 +288,9 @@ export function buildRunDetailModalHtml(
 
   return `
       <div class="detail-header">
-        <h3 class="detail-title">${run.workout_name || "室外跑步"}</h3>
+        <h3 class="detail-title">${run.name || "户外跑步"}</h3>
         <div class="detail-meta">
-          <span class="detail-date">${run.date}</span>
+          <span class="detail-date">${run.startTime}</span>
           ${hrZoneBadge}
           ${detailMetaExtras ? `<span class="detail-meta-sep" aria-hidden="true">·</span>${detailMetaExtras}` : ""}
         </div>
