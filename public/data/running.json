@@ -11,7 +11,7 @@
       "bestVdot": null,
       "longestDistance": 0,
       "totalTrainingLoadScore": 0,
-      "totalCalories": 0
+      "totalCalorie": 0
     },
     "week": {
       "totalActivities": 0,
@@ -23,7 +23,7 @@
       "bestVdot": null,
       "longestDistance": 0,
       "totalTrainingLoadScore": 0,
-      "totalCalories": 0
+      "totalCalorie": 0
     },
     "month": {
       "totalActivities": 1,
@@ -35,7 +35,7 @@
       "bestVdot": 22.1,
       "longestDistance": 6.02,
       "totalTrainingLoadScore": 141,
-      "totalCalories": 655
+      "totalCalorie": 655
     },
     "year": {
       "totalActivities": 1,
@@ -47,7 +47,7 @@
       "bestVdot": 22.1,
       "longestDistance": 6.02,
       "totalTrainingLoadScore": 141,
-      "totalCalories": 655
+      "totalCalorie": 655
     },
     "total": {
       "totalActivities": 1,
@@ -59,7 +59,7 @@
       "bestVdot": 22.1,
       "longestDistance": 6.02,
       "totalTrainingLoadScore": 141,
-      "totalCalories": 655
+      "totalCalorie": 655
     }
   },
   "runs": [

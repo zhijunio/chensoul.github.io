@@ -525,7 +525,7 @@ _EMPTY_PERIOD = {
     "bestVdot": None,
     "longestDistance": 0,
     "totalTrainingLoadScore": 0,
-    "totalCalories": 0,
+    "totalCalorie": 0,
 }
 
 
@@ -572,7 +572,7 @@ def _period_stats(runs: List[Dict], start: datetime, end: datetime) -> Dict:
         "bestVdot": round(best_vdot, 1) if vdot_cnt > 0 else None,
         "longestDistance": longest,
         "totalTrainingLoadScore": total_tl,
-        "totalCalories": total_cal,
+        "totalCalorie": total_cal,
     }
 
 
