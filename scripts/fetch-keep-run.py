@@ -530,7 +530,10 @@ def main():
     p.add_argument("--output", default="../public/data/running.json")
     p.add_argument("--mobile", default=os.environ.get("KEEP_MOBILE", ""))
     p.add_argument("--password", default=os.environ.get("KEEP_PASSWORD", ""))
-    p.add_argument("--limit", type=int, default=None, metavar="N")
+    p.add_argument("--mode", choices=["full", "incremental"], default="full",
+                   help="full: 分页获取所有记录; incremental: 仅获取最新 5 条 (默认 full)")
+    p.add_argument("--limit", type=int, default=None, metavar="N",
+                   help="覆盖增量模式的数量上限 (默认 5)")
     p.add_argument("--debug", action="store_true")
     args = p.parse_args()
 
@@ -543,7 +546,10 @@ def main():
         logger.error("未提供密码：设置 KEEP_PASSWORD 环境变量或使用 --password")
         sys.exit(1)
 
-    new_records = fetch_runs(mobile, password, limit=args.limit, debug=args.debug)
+    limit = None if args.mode == "full" else (args.limit or 5)
+    logger.info("模式: %s", "全量" if limit is None else f"增量 ({limit} 条)")
+
+    new_records = fetch_runs(mobile, password, limit=limit, debug=args.debug)
     logger.info("获取 %d 条新记录", len(new_records))
 
     # 加载已有数据
