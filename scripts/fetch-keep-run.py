@@ -143,22 +143,22 @@ def _fetch_with_retry(session, url: str, headers: Dict, max_retries: int = 3) ->
     return r
 
 
-def _fetch_run_ids(
+def _fetch_run_stats(
     session,
     headers,
     sport_type: str,
     last_date: int = 0,
     limit: Optional[int] = None,
     existing_keys: Optional[set] = None,
-) -> List[str]:
-    """分页获取跑步 ID 列表。
+) -> List[Dict]:
+    """分页获取跑步 stats 列表。
 
     Args:
         last_date: 分页起始时间戳 (毫秒)。0 = 从最新记录开始。
         limit: 客户端安全上限，超过后停止翻页。
         existing_keys: 已有记录的 startTime 集合。遇到已存在的记录时提前停止翻页。
     """
-    result: List[str] = []
+    result: List[Dict] = []
     page = 0
     hit_existing = False
     while True:
@@ -177,7 +177,7 @@ def _fetch_run_ids(
                 if isinstance(entry, dict):
                     stats = entry.get("stats")
                     if isinstance(stats, dict) and not stats.get("isDoubtful") and stats.get("id"):
-                        result.append(stats["id"])
+                        result.append(stats)
                         # 增量检查：遇到已有记录 → 标记停止
                         if existing_keys:
                             start_ms = stats.get("startTime")
@@ -204,9 +204,9 @@ def _fetch_run_ids(
         last_date = data.get("lastTimestamp") or 0
         if not last_date or hit_existing:
             reason = "(末页)" if not last_date else "(遇到已有记录)"
-            logger.info("第 %d 页获取 %d 条 ID，共 %d 条 %s", page, len(data.get("records", [])), page_count, reason)
+            logger.info("第 %d 页获取 %d 条，共 %d 条 %s", page, len(data.get("records", [])), page_count, reason)
             break
-        logger.info("第 %d 页获取 %d 条 ID，共 %d 条", page, len(data.get("records", [])), len(result))
+        logger.info("第 %d 页获取 %d 条，共 %d 条", page, len(data.get("records", [])), len(result))
         time.sleep(1.0)
     return result
 
@@ -507,78 +507,68 @@ def fetch_runs(
     full: bool = False,
     existing_keys: Optional[set] = None,
 ) -> List[Dict]:
-    """从 Keep API 拉取跑步数据。
-
-    Args:
-        last_date: 分页起始时间戳 (毫秒). 0 = 从最新记录开始 (全量)
-        limit: 客户端安全上限 (可选)
-        full: 全量模式. True 时翻遍所有页获取全部记录; False 时增量检测在遇到已有记录后停止.
-        existing_keys: 已有记录的 startTime 集合，用于增量检测.
-    """
+    """从 Keep API 拉取跑步数据（登录入口）。"""
     session, headers = _login(requests.Session(), mobile, password)
+    return _fetch_runs_with_session(
+        session, headers, sport_type=sport_type,
+        last_date=last_date, limit=limit, debug=debug,
+        full=full, existing_keys=existing_keys,
+    )
 
-    # 全量模式下不使用增量检测（始终翻遍所有页）
+
+def _fetch_runs_with_session(
+    session,
+    headers,
+    sport_type: str = "running",
+    last_date: int = 0,
+    limit: Optional[int] = None,
+    debug: bool = False,
+    full: bool = False,
+    existing_keys: Optional[set] = None,
+) -> List[Dict]:
+    """从 Keep API 拉取跑步数据（使用已有 session）。
+
+    阶段 1: 分页获取 stats（列表 API 已包含大部分字段）
+    阶段 2: 逐条获取详情（仅补充 region/weatherInfo/totalSteps）
+    """
     if full:
         logger.info("全量模式: 将获取所有记录")
 
-    # 阶段 1: 收集所有记录 ID（非全量模式下增量检测在遇到已有记录后停止）
-    run_ids = _fetch_run_ids(
+    run_stats = _fetch_run_stats(
         session, headers, sport_type,
         last_date=last_date, limit=limit,
         existing_keys=(existing_keys if (not full) and existing_keys else None),
     )
-    if not run_ids:
+    if not run_stats:
         logger.error("Keep API 未返回任何记录")
         sys.exit(1)
-    logger.info("获取 %d 条记录 ID", len(run_ids))
+    logger.info("获取 %d 条记录", len(run_stats))
 
-    # 阶段 2: 批量获取详情
-    logger.info("开始获取 %d 条跑步详情 (间隔 1s/条)", len(run_ids))
+    logger.info("开始获取 %d 条跑步详情 (间隔 1s/条)", len(run_stats))
 
     vc = VDCCalculator()
     records = []
-    for i, run_id in enumerate(run_ids):
+    for i, stats in enumerate(run_stats):
         if i > 0:
             time.sleep(1.0)
+        run_id = stats.get("id", "")
         detail = _fetch_detail(session, headers, sport_type, run_id)
-        if detail:
-            # 从 detail 中提取 stats 信息用于 _build_record
-            stats = {
-                "id": run_id,
-                "duration": detail.get("duration"),
-                "distance": detail.get("distance"),
-                "averagePace": detail.get("averagePace"),
-                "averageSpeed": detail.get("averageSpeed"),
-                "heartRate": detail.get("heartRate"),
-                "startTime": detail.get("startTime"),
-                "dataType": detail.get("dataType"),
-                "type": detail.get("type"),
-                "calorie": detail.get("calorie"),
-                "accumulativeUpliftedHeight": detail.get("accumulativeUpliftedHeight"),
-                "avgPower": detail.get("averagePower"),
-                "averagePower": detail.get("averagePower"),
-                "maxPower": detail.get("peakPower"),
-                "peakPower": detail.get("peakPower"),
-                "averageStepFrequency": detail.get("averageStepFrequency"),
-                "strideLength": detail.get("strideLength"),
-                "avgStrideLength": detail.get("avgStrideLength"),
-                "averageStrideLength": detail.get("averageStrideLength"),
-                "trainingLoadScore": detail.get("trainingLoadScore"),
-                "crossKmPoints": detail.get("crossKmPoints"),
-            }
-            rec = _build_record(stats, vc, detail)
-            if debug and rec:
-                print("\n" + "=" * 60)
-                print("【detail】")
+        rec = _build_record(stats, vc, detail)
+        if debug and rec:
+            print("\n" + "=" * 60)
+            print("【stats】")
+            print(json.dumps(stats, ensure_ascii=False, indent=2, default=str))
+            if detail:
+                print("\n【detail】")
                 print(json.dumps(detail, ensure_ascii=False, indent=2, default=str))
-                print("\n【output】")
-                print(json.dumps(rec, ensure_ascii=False, indent=2, default=str))
-            if rec:
-                records.append(rec)
+            print("\n【output】")
+            print(json.dumps(rec, ensure_ascii=False, indent=2, default=str))
+        if rec:
+            records.append(rec)
         if (i + 1) % 20 == 0:
-            logger.info("已解析 %d/%d (有效 %d 条)", i + 1, len(run_ids), len(records))
+            logger.info("已解析 %d/%d (有效 %d 条)", i + 1, len(run_stats), len(records))
 
-    logger.info("解析完成: %d/%d 条有效 (%d 条被丢弃)", len(records), len(run_ids), len(run_ids) - len(records))
+    logger.info("解析完成: %d/%d 条有效 (%d 条被丢弃)", len(records), len(run_stats), len(run_stats) - len(records))
     return records
 
 
@@ -603,7 +593,10 @@ def main():
         logger.error("未提供密码：设置 KEEP_PASSWORD 环境变量或使用 --password")
         sys.exit(1)
 
-    # 加载已有数据
+    # 先登录
+    session, headers = _login(requests.Session(), mobile, password)
+
+    # 登录后再加载已有数据
     existing_records: List[Dict] = []
     out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), args.output)
     if os.path.exists(out_path):
@@ -635,8 +628,9 @@ def main():
     existing_keys = {r["startTime"] for r in existing_records}
 
     # 获取新数据（使用 last_date 作为分页起点 + 增量检测）
-    new_records = fetch_runs(
-        mobile, password,
+    new_records = _fetch_runs_with_session(
+        session, headers,
+        sport_type="running",
         last_date=last_date, limit=args.limit,
         debug=args.debug,
         full=args.full,
