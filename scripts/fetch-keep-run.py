@@ -143,6 +143,16 @@ def _fetch_with_retry(session, url: str, headers: Dict, max_retries: int = 3) ->
     return r
 
 
+def _stats_key(stats: Dict) -> str:
+    """将 stats 的 startTime (ms timestamp) 转为本地时间字符串。"""
+    start_ms = stats.get("startTime")
+    if isinstance(start_ms, (int, float)):
+        return datetime.fromtimestamp(
+            start_ms / 1000, tz=timezone.utc
+        ).astimezone(TZ_SH).strftime("%Y-%m-%d %H:%M:%S")
+    return ""
+
+
 def _fetch_run_stats(
     session,
     headers,
@@ -156,11 +166,10 @@ def _fetch_run_stats(
     Args:
         last_date: 分页起始时间戳 (毫秒)。0 = 从最新记录开始。
         limit: 客户端安全上限，超过后停止翻页。
-        existing_keys: 已有记录的 startTime 集合。遇到已存在的记录时提前停止翻页。
+        existing_keys: 已有记录的 startTime 集合。遇到已存在记录时停止翻页。
     """
     result: List[Dict] = []
     page = 0
-    hit_existing = False
     while True:
         page += 1
         r = _fetch_with_retry(
@@ -177,35 +186,22 @@ def _fetch_run_stats(
                 if isinstance(entry, dict):
                     stats = entry.get("stats")
                     if isinstance(stats, dict) and not stats.get("isDoubtful") and stats.get("id"):
+                        # 增量检查：命中已有记录 → 停止翻页
+                        if existing_keys and _stats_key(stats) in existing_keys:
+                            logger.info("增量数据已全部覆盖，停止翻页")
+                            return result
                         result.append(stats)
-                        # 增量检查：遇到已有记录 → 标记停止
-                        if existing_keys:
-                            start_ms = stats.get("startTime")
-                            if isinstance(start_ms, (int, float)):
-                                key = datetime.fromtimestamp(
-                                    start_ms / 1000, tz=timezone.utc
-                                ).astimezone(TZ_SH).strftime("%Y-%m-%d %H:%M:%S")
-                                if key in existing_keys:
-                                    hit_existing = True
-                                    logger.info(
-                                        "第 %d 页遇到已有记录 %s，增量数据已全部覆盖",
-                                        page, key,
-                                    )
-                                    break
                         if limit and len(result) >= limit:
                             logger.info(
                                 "第 %d 页后触发 limit(%d)，提前返回 %d 条",
                                 page, limit, len(result),
                             )
                             return result
-            if hit_existing:
-                break
         page_count = len(result)
         last_date = data.get("lastTimestamp") or 0
-        time.sleep(1)  # spider rule
-        if not last_date or hit_existing:
-            reason = "(末页)" if not last_date else "(遇到已有记录)"
-            logger.info("第 %d 页获取 %d 条，共 %d 条 %s", page, len(data.get("records", [])), page_count, reason)
+        time.sleep(1)  # 页间暂停
+        if not last_date:
+            logger.info("第 %d 页获取 %d 条，共 %d 条 (末页)", page, len(data.get("records", [])), page_count)
             break
         logger.info("第 %d 页获取 %d 条，共 %d 条", page, len(data.get("records", [])), len(result))
     return result
@@ -518,15 +514,12 @@ def fetch_runs(
     last_date: int = 0,
     limit: Optional[int] = None,
     debug: bool = False,
-    full: bool = False,
-    existing_keys: Optional[set] = None,
 ) -> List[Dict]:
     """从 Keep API 拉取跑步数据（登录入口）。"""
     session, headers = _login(requests.Session(), mobile, password)
     return _fetch_runs_with_session(
         session, headers, sport_type=sport_type,
         last_date=last_date, limit=limit, debug=debug,
-        full=full, existing_keys=existing_keys,
     )
 
 
@@ -537,21 +530,17 @@ def _fetch_runs_with_session(
     last_date: int = 0,
     limit: Optional[int] = None,
     debug: bool = False,
-    full: bool = False,
     existing_keys: Optional[set] = None,
 ) -> List[Dict]:
     """从 Keep API 拉取跑步数据（使用已有 session）。
 
     阶段 1: 分页获取 stats（列表 API 已包含大部分字段）
-    阶段 2: 逐条获取详情（仅补充 region/weatherInfo/totalSteps）
+    阶段 2: 逐条获取详情（仅补充 region/weatherInfo/totalSteps/movingDuration）
     """
-    if full:
-        logger.info("全量模式: 将获取所有记录")
-
     run_stats = _fetch_run_stats(
         session, headers, sport_type,
         last_date=last_date, limit=limit,
-        existing_keys=(existing_keys if (not full) and existing_keys else None),
+        existing_keys=existing_keys,
     )
     if not run_stats:
         logger.error("Keep API 未返回任何记录")
@@ -594,8 +583,6 @@ def main():
     p.add_argument("--limit", type=int, default=None, metavar="N",
                    help="客户端限制: 最多获取 N 条记录 (可选, 仅作为安全上限)")
     p.add_argument("--debug", action="store_true")
-    p.add_argument("--full", action="store_true",
-                   help="全量模式: 获取所有记录，忽略已有数据，重新拉取全部")
     args = p.parse_args()
 
     mobile = (args.mobile or "").strip()
@@ -624,31 +611,16 @@ def main():
     else:
         logger.info("running.json 不存在，仅使用新数据")
 
-    # 计算 last_date (基于已有数据中最新记录的 startTime)
-    # API 的 last_date 参数表示 "获取比这个时间更早的记录"
-    # last_date=0 表示从最新记录开始（全量模式）
-    last_date = 0
-    if existing_records:
-        newest = max(existing_records, key=lambda r: r.get("startTime", ""))
-        try:
-            dt = datetime.strptime(newest["startTime"], "%Y-%m-%d %H:%M:%S")
-            ts_ms = int(dt.replace(tzinfo=timezone.utc).timestamp()) * 1000
-            last_date = ts_ms
-            logger.info("基于最新记录 %s 计算 last_date=%d 毫秒", newest["startTime"], last_date)
-        except (ValueError, KeyError) as e:
-            logger.warning("无法计算 last_date: %s, 使用全量模式", e)
-
     # 构建已有记录的 startTime 集合（用于增量检测）
     existing_keys = {r["startTime"] for r in existing_records}
 
-    # 获取新数据（使用 last_date 作为分页起点 + 增量检测）
+    # 获取新数据（分页返回新记录，遇到已有记录即停止）
     new_records = _fetch_runs_with_session(
         session, headers,
         sport_type="running",
-        last_date=last_date, limit=args.limit,
+        last_date=0, limit=args.limit,
         debug=args.debug,
-        full=args.full,
-        existing_keys=existing_keys,
+        existing_keys=existing_keys if existing_keys else None,
     )
     logger.info("获取 %d 条新记录", len(new_records))
 
