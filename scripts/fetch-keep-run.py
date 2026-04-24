@@ -21,7 +21,7 @@ TZ_SH = timezone(timedelta(hours=8))
 LOGIN_API = "https://api.gotokeep.com/v1.1/users/login"
 RUN_DATA_API = (
     "https://api.gotokeep.com/pd/v3/stats/detail"
-    "?dateUnit=all&type={sport_type}&last_date={last_date}"
+    "?dateUnit=all&type={sport_type}&lastDate={last_date}"
 )
 RUN_LOG_API = "https://api.gotokeep.com/pd/v3/{sport_type}log/{run_id}"
 
