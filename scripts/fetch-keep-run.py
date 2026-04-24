@@ -504,6 +504,7 @@ def fetch_runs(
     last_date: int = 0,
     limit: Optional[int] = None,
     debug: bool = False,
+    full: bool = False,
     existing_keys: Optional[set] = None,
 ) -> List[Dict]:
     """从 Keep API 拉取跑步数据。
@@ -511,19 +512,20 @@ def fetch_runs(
     Args:
         last_date: 分页起始时间戳 (毫秒). 0 = 从最新记录开始 (全量)
         limit: 客户端安全上限 (可选)
+        full: 全量模式. True 时翻遍所有页获取全部记录; False 时增量检测在遇到已有记录后停止.
         existing_keys: 已有记录的 startTime 集合，用于增量检测.
     """
     session, headers = _login(requests.Session(), mobile, password)
 
-    # 构建已有记录的 startTime 集合
-    if existing_keys is None:
-        existing_keys = set()
+    # 全量模式下不使用增量检测（始终翻遍所有页）
+    if full:
+        logger.info("全量模式: 将获取所有记录")
 
-    # 阶段 1: 收集所有记录 ID（增量模式在遇到已有记录时停止）
+    # 阶段 1: 收集所有记录 ID（非全量模式下增量检测在遇到已有记录后停止）
     run_ids = _fetch_run_ids(
         session, headers, sport_type,
         last_date=last_date, limit=limit,
-        existing_keys=existing_keys if existing_keys else None,
+        existing_keys=(existing_keys if (not full) and existing_keys else None),
     )
     if not run_ids:
         logger.error("Keep API 未返回任何记录")
@@ -588,6 +590,8 @@ def main():
     p.add_argument("--limit", type=int, default=None, metavar="N",
                    help="客户端限制: 最多获取 N 条记录 (可选, 仅作为安全上限)")
     p.add_argument("--debug", action="store_true")
+    p.add_argument("--full", action="store_true",
+                   help="全量模式: 获取所有记录，忽略已有数据，重新拉取全部")
     args = p.parse_args()
 
     mobile = (args.mobile or "").strip()
@@ -635,6 +639,7 @@ def main():
         mobile, password,
         last_date=last_date, limit=args.limit,
         debug=args.debug,
+        full=args.full,
         existing_keys=existing_keys,
     )
     logger.info("获取 %d 条新记录", len(new_records))
