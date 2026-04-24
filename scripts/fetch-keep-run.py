@@ -87,13 +87,13 @@ def _time_label(hour: int) -> str:
 
 
 def _extract_weather(info: Any) -> str:
-    """从 weatherInfo 中提取温度字符串。"""
+    """从 weatherInfo 中提取温度和湿度字符串。"""
     if isinstance(info, str):
         return info.strip()
     if isinstance(info, dict):
-        temp = info.get("temperature")
-        if temp is not None:
-            return str(temp).strip()
+        temp = info.get("temperature", "").strip()
+        humidity = info.get("humidity", "").strip()
+        return f"{temp} {humidity}".strip()
     return ""
 
 
@@ -478,17 +478,13 @@ def fetch_runs(
         logger.error("Keep API 未返回任何记录")
         sys.exit(1)
 
-    logger.info("开始获取 %d 条跑步详情 (间隔 2s/条, 每 10 条暂停 5s)", len(ids))
+    logger.info("开始获取 %d 条跑步详情 (间隔 1s/条)", len(ids))
 
     vc = VDCCalculator()
     records = []
     for i, stat in enumerate(ids):
         if i > 0:
-            time.sleep(2.0)
-            # 每 10 条额外暂停
-            if i % 10 == 0:
-                logger.info("已处理 %d 条，暂停 5s 防限流...", i)
-                time.sleep(5.0)
+            time.sleep(1.0)
         detail = _fetch_detail(session, headers, sport_type, stat.get("id", ""))
         rec = _build_record(stat, vc, detail)
         if debug and rec:

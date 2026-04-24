@@ -32,7 +32,7 @@ export interface RunningRecord {
   trainingLoadScore?: number;
   heartRateZone?: number;
   name?: string;
-  activityType?: string;
+  dataType?: string;
   region?: string;
   weatherInfo?: string;
   segments?: RunningSegment[];
