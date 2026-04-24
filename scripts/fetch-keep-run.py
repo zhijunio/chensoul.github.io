@@ -143,16 +143,20 @@ def _fetch_with_retry(session, url: str, headers: Dict, max_retries: int = 3) ->
     return r
 
 
-def _fetch_run_ids(session, headers, sport_type: str, limit: Optional[int] = None) -> List[Dict]:
-    """分页获取跑步记录列表。"""
+def _fetch_run_ids(session, headers, sport_type: str, last_date: int = 0, limit: Optional[int] = None) -> List[Dict]:
+    """分页获取跑步记录列表。
+
+    Args:
+        last_date: 分页起始时间戳 (毫秒)。0 = 从最新记录开始。
+        limit: 客户端安全上限，超过后停止翻页。
+    """
     result = []
-    last_ts = 0
     page = 0
     while True:
         page += 1
         r = _fetch_with_retry(
             session,
-            RUN_DATA_API.format(sport_type=sport_type, last_date=last_ts),
+            RUN_DATA_API.format(sport_type=sport_type, last_date=last_date),
             headers,
         )
         if not r.ok:
@@ -170,9 +174,9 @@ def _fetch_run_ids(session, headers, sport_type: str, limit: Optional[int] = Non
                             if limit and len(result) >= limit:
                                 logger.info("第 %d 页后触发 limit(%d)，提前返回 %d 条", page, limit, len(result))
                                 return result
-        last_ts = data.get("lastTimestamp") or 0
         page_count = len(result) - count_before
-        if not last_ts:
+        last_date = data.get("lastTimestamp") or 0
+        if not last_date:
             logger.info("第 %d 页获取 %d 条，共 %d 条 (末页)", page, page_count, len(result))
             break
         logger.info("第 %d 页获取 %d 条，共 %d 条", page, page_count, len(result))
@@ -470,12 +474,18 @@ def fetch_runs(
     mobile: str,
     password: str = "",
     sport_type: str = "running",
+    last_date: int = 0,
     limit: Optional[int] = None,
     debug: bool = False,
 ) -> List[Dict]:
-    """从 Keep API 拉取跑步数据。"""
+    """从 Keep API 拉取跑步数据。
+
+    Args:
+        last_date: 分页起始时间戳 (毫秒). 0 = 从最新记录开始 (全量)
+        limit: 客户端安全上限 (可选)
+    """
     session, headers = _login(requests.Session(), mobile, password)
-    ids = _fetch_run_ids(session, headers, sport_type, limit=limit)
+    ids = _fetch_run_ids(session, headers, sport_type, last_date=last_date, limit=limit)
     if not ids:
         logger.error("Keep API 未返回任何记录")
         sys.exit(1)
@@ -512,8 +522,8 @@ def main():
     p.add_argument("--output", default="../public/data/running.json")
     p.add_argument("--mobile", default=os.environ.get("KEEP_MOBILE", ""))
     p.add_argument("--password", default=os.environ.get("KEEP_PASSWORD", ""))
-    p.add_argument("--limit", type=int, default=10, metavar="N",
-                   help="每次获取的记录数 (默认 10, 0 表示全量)")
+    p.add_argument("--limit", type=int, default=None, metavar="N",
+                   help="客户端限制: 最多获取 N 条记录 (可选, 仅作为安全上限)")
     p.add_argument("--debug", action="store_true")
     args = p.parse_args()
 
@@ -526,14 +536,8 @@ def main():
         logger.error("未提供密码：设置 KEEP_PASSWORD 环境变量或使用 --password")
         sys.exit(1)
 
-    limit = None if args.limit == 0 else (args.limit or 10)
-    logger.info("模式: %s", "全量" if limit is None else f"限 {limit} 条")
-
-    new_records = fetch_runs(mobile, password, limit=limit, debug=args.debug)
-    logger.info("获取 %d 条新记录", len(new_records))
-
     # 加载已有数据
-    existing_records = []
+    existing_records: List[Dict] = []
     out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), args.output)
     if os.path.exists(out_path):
         try:
@@ -545,6 +549,22 @@ def main():
             logger.warning("已有 running.json 解析失败 (%s)，从空记录开始", e)
     else:
         logger.info("running.json 不存在，仅使用新数据")
+
+    # 计算 last_date (基于已有数据中最新记录的 startTime, API 需要毫秒级时间戳)
+    last_date = 0
+    if existing_records:
+        newest = max(existing_records, key=lambda r: r.get("startTime", ""))
+        try:
+            dt = datetime.strptime(newest["startTime"], "%Y-%m-%d %H:%M:%S")
+            ts_ms = int(dt.replace(tzinfo=timezone.utc).timestamp()) * 1000
+            last_date = ts_ms
+            logger.info("基于最新记录 %s 计算 last_date=%d (毫秒)", newest["startTime"], last_date)
+        except (ValueError, KeyError) as e:
+            logger.warning("无法计算 last_date: %s, 使用全量模式", e)
+
+    # 获取新数据（使用 last_date 作为分页起点）
+    new_records = fetch_runs(mobile, password, last_date=last_date, limit=args.limit, debug=args.debug)
+    logger.info("获取 %d 条新记录", len(new_records))
 
     if not new_records and not existing_records:
         logger.error("没有读取到任何记录")
@@ -571,7 +591,7 @@ def main():
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    logger.info("已保存到 %s", out_path)
+    logger.info("已保存到文件")
 
 if __name__ == "__main__":
     main()
