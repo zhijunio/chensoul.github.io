@@ -12,6 +12,7 @@ import os
 import sys
 import time
 from datetime import datetime, timedelta, timezone
+from decimal import Decimal, ROUND_DOWN, ROUND_HALF_UP
 from typing import Any, Dict, List, Optional, Tuple
 
 import requests
@@ -67,6 +68,16 @@ def _f(val: Any) -> float:
         return float(val)
     except (TypeError, ValueError):
         return 0.0
+
+
+def _round_distance(val: float) -> float:
+    """公里数按常规四舍五入保留两位。"""
+    return float(Decimal(str(val)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP))
+
+
+def _truncate_distance(val: float) -> float:
+    """Keep 汇总距离展示为两位小数截断。"""
+    return float(Decimal(str(val)).quantize(Decimal("0.01"), rounding=ROUND_DOWN))
 
 
 def _time_label(hour: int) -> str:
@@ -302,15 +313,23 @@ def _estimate_power(
     return avg_pwr or None, max_pwr or None
 
 
+def _distance_km_for_stats(run: Dict) -> float:
+    """统计时优先使用米级原始距离，旧数据回退到展示距离。"""
+    distance_m = _f(run.get("distanceMeters"))
+    if distance_m > 0:
+        return distance_m / 1000.0
+    return _f(run.get("distance"))
+
+
 def _build_record(stats: Dict, vc: VDCCalculator, detail: Optional[Dict] = None) -> Optional[Dict]:
     """将 stats + detail API 数据转为 running.json 记录。"""
-    # 距离: kmDistance (km) > accurateDistance (m) > distance (m)
-    if stats.get("kmDistance"):
-        dist_km = _f(stats["kmDistance"])
-    elif stats.get("accurateDistance"):
-        dist_km = _f(stats["accurateDistance"]) / 1000.0
+    # 距离: 优先使用米级原始值；kmDistance 更接近展示值，逐条取两位后再求和会产生累计误差。
+    distance_m = _f(stats.get("accurateDistance")) or _f(stats.get("distance"))
+    if distance_m > 0:
+        dist_km = distance_m / 1000.0
     else:
-        dist_km = _f(stats.get("distance", 0)) / 1000.0
+        dist_km = _f(stats.get("kmDistance"))
+        distance_m = dist_km * 1000.0
     dist_m = dist_km * 1000.0
 
     # 时长: movingDuration (detail, 不含暂停) > duration (含暂停)
@@ -322,7 +341,7 @@ def _build_record(stats: Dict, vc: VDCCalculator, detail: Optional[Dict] = None)
 
     if dur_s <= 0 or dist_m <= 0:
         return None
-    dist_km = round(dist_km, 2)
+    display_dist_km = _f(stats.get("kmDistance")) or _round_distance(dist_km)
 
     # 配速 (秒/km)
     pace = _n(stats.get("averagePace"))
@@ -401,7 +420,8 @@ def _build_record(stats: Dict, vc: VDCCalculator, detail: Optional[Dict] = None)
         "startTime": start_local,
         "endTime": end_local,
         "type": stats.get("type", ""),
-        "distance": dist_km,
+        "distance": display_dist_km,
+        "distanceMeters": round(distance_m, 1),
         "duration": dur_s,
         "averagePace": pace,
         "averageSpeed": speed,
@@ -453,11 +473,11 @@ def _period_stats(runs: List[Dict], start: datetime, end: datetime) -> Dict:
     if not period:
         return dict(_EMPTY_PERIOD)
 
-    total_dist = sum(r["distance"] for r in period)
+    total_dist = sum(_distance_km_for_stats(r) for r in period)
     total_s = sum(r.get("duration", 0) for r in period)
     total_tl = sum(r.get("trainingLoadScore", 0) for r in period)
     total_cal = sum(r.get("calorie", 0) for r in period)
-    longest = max(r["distance"] for r in period)
+    longest = max(_distance_km_for_stats(r) for r in period)
 
     hr_sum = hr_cnt = vdot_sum = vdot_cnt = 0
     best_vdot = 0.0
@@ -474,13 +494,13 @@ def _period_stats(runs: List[Dict], start: datetime, end: datetime) -> Dict:
 
     return {
         "totalActivities": len(period),
-        "totalDistance": round(total_dist, 2),
+        "totalDistance": _truncate_distance(total_dist),
         "totalDuration": round(total_s / 3600, 2),
         "averagePace": round(total_s / total_dist) if total_dist > 0 else 0,
         "averageHeartRate": round(hr_sum / hr_cnt) if hr_cnt > 0 else None,
         "averageVdot": round(vdot_sum / vdot_cnt, 1) if vdot_cnt > 0 else None,
         "bestVdot": round(best_vdot, 1) if vdot_cnt > 0 else None,
-        "longestDistance": longest,
+        "longestDistance": _round_distance(longest),
         "totalTrainingLoadScore": total_tl,
         "totalCalorie": total_cal,
     }
@@ -615,6 +635,10 @@ def main():
 
     # 构建已有记录的 startTime 集合（用于增量检测）
     existing_keys = {r["startTime"] for r in existing_records}
+    missing_distance_meters = any("distanceMeters" not in r for r in existing_records)
+    force_full_refresh = bool(existing_records and missing_distance_meters and not args.full)
+    if force_full_refresh:
+        logger.info("已有记录缺少 distanceMeters，将执行一次全量刷新以修正累计距离统计")
 
     # 获取新数据
     # 增量: 从最新开始，遇到已有记录停止
@@ -625,7 +649,7 @@ def main():
         sport_type="running",
         last_date=0, limit=args.limit,
         debug=args.debug,
-        existing_keys=existing_keys if (not args.full and existing_keys) else None,
+        existing_keys=existing_keys if (not args.full and not force_full_refresh and existing_keys) else None,
     )
     logger.info("获取 %d 条新记录", len(new_records))
 
