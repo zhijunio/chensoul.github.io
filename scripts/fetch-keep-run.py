@@ -143,14 +143,14 @@ def _fetch_with_retry(session, url: str, headers: Dict, max_retries: int = 3) ->
     return r
 
 
-def _fetch_run_ids(session, headers, sport_type: str, last_date: int = 0, limit: Optional[int] = None) -> List[Dict]:
-    """分页获取跑步记录列表。
+def _fetch_run_ids(session, headers, sport_type: str, last_date: int = 0, limit: Optional[int] = None) -> List[str]:
+    """分页获取跑步 ID 列表。
 
     Args:
         last_date: 分页起始时间戳 (毫秒)。0 = 从最新记录开始。
         limit: 客户端安全上限，超过后停止翻页。
     """
-    result = []
+    result: List[str] = []
     page = 0
     while True:
         page += 1
@@ -163,24 +163,22 @@ def _fetch_run_ids(session, headers, sport_type: str, last_date: int = 0, limit:
             logger.warning("分页请求失败 (第 %d 页), HTTP %d", page, r.status_code)
             break
         data = r.json().get("data") or {}
-        count_before = len(result)
         for group in data.get("records") or []:
             for entry in group.get("logs") or []:
                 if isinstance(entry, dict):
                     stats = entry.get("stats")
-                    if isinstance(stats, dict) and not stats.get("isDoubtful"):
-                        if stats.get("id"):
-                            result.append(stats)
-                            if limit and len(result) >= limit:
-                                logger.info("第 %d 页后触发 limit(%d)，提前返回 %d 条", page, limit, len(result))
-                                return result
-        page_count = len(result) - count_before
+                    if isinstance(stats, dict) and not stats.get("isDoubtful") and stats.get("id"):
+                        result.append(stats["id"])
+                        if limit and len(result) >= limit:
+                            logger.info("第 %d 页后触发 limit(%d)，提前返回 %d 条", page, limit, len(result))
+                            return result
+        page_count = len(result)
         last_date = data.get("lastTimestamp") or 0
         if not last_date:
-            logger.info("第 %d 页获取 %d 条，共 %d 条 (末页)", page, page_count, len(result))
+            logger.info("第 %d 页获取 %d 条 ID，共 %d 条 (末页)", page, page_count, len(result))
             break
-        logger.info("第 %d 页获取 %d 条，共 %d 条", page, page_count, len(result))
-        time.sleep(1.0)  # 页间暂停
+        logger.info("第 %d 页获取 %d 条 ID，共 %d 条", page, len(data.get("records", [])), len(result))
+        time.sleep(1.0)
     return result
 
 
@@ -485,35 +483,61 @@ def fetch_runs(
         limit: 客户端安全上限 (可选)
     """
     session, headers = _login(requests.Session(), mobile, password)
-    ids = _fetch_run_ids(session, headers, sport_type, last_date=last_date, limit=limit)
-    if not ids:
+
+    # 阶段 1: 收集所有记录 ID
+    run_ids = _fetch_run_ids(session, headers, sport_type, last_date=last_date, limit=limit)
+    if not run_ids:
         logger.error("Keep API 未返回任何记录")
         sys.exit(1)
+    logger.info("获取 %d 条记录 ID", len(run_ids))
 
-    logger.info("开始获取 %d 条跑步详情 (间隔 1s/条)", len(ids))
+    # 阶段 2: 批量获取详情
+    logger.info("开始获取 %d 条跑步详情 (间隔 1s/条)", len(run_ids))
 
     vc = VDCCalculator()
     records = []
-    for i, stat in enumerate(ids):
+    for i, run_id in enumerate(run_ids):
         if i > 0:
             time.sleep(1.0)
-        detail = _fetch_detail(session, headers, sport_type, stat.get("id", ""))
-        rec = _build_record(stat, vc, detail)
-        if debug and rec:
-            print("\n" + "=" * 60)
-            print("【stats】")
-            print(json.dumps(stat, ensure_ascii=False, indent=2, default=str))
-            if detail:
-                print("\n【detail】")
+        detail = _fetch_detail(session, headers, sport_type, run_id)
+        if detail:
+            # 从 detail 中提取 stats 信息用于 _build_record
+            stats = {
+                "id": run_id,
+                "duration": detail.get("duration"),
+                "distance": detail.get("distance"),
+                "averagePace": detail.get("averagePace"),
+                "averageSpeed": detail.get("averageSpeed"),
+                "heartRate": detail.get("heartRate"),
+                "startTime": detail.get("startTime"),
+                "dataType": detail.get("dataType"),
+                "type": detail.get("type"),
+                "calorie": detail.get("calorie"),
+                "accumulativeUpliftedHeight": detail.get("accumulativeUpliftedHeight"),
+                "avgPower": detail.get("averagePower"),
+                "averagePower": detail.get("averagePower"),
+                "maxPower": detail.get("peakPower"),
+                "peakPower": detail.get("peakPower"),
+                "averageStepFrequency": detail.get("averageStepFrequency"),
+                "strideLength": detail.get("strideLength"),
+                "avgStrideLength": detail.get("avgStrideLength"),
+                "averageStrideLength": detail.get("averageStrideLength"),
+                "trainingLoadScore": detail.get("trainingLoadScore"),
+                "crossKmPoints": detail.get("crossKmPoints"),
+            }
+            rec = _build_record(stats, vc, detail)
+            if debug and rec:
+                print("\n" + "=" * 60)
+                print("【detail】")
                 print(json.dumps(detail, ensure_ascii=False, indent=2, default=str))
-            print("\n【output】")
-            print(json.dumps(rec, ensure_ascii=False, indent=2, default=str))
-        if rec:
-            records.append(rec)
+                print("\n【output】")
+                print(json.dumps(rec, ensure_ascii=False, indent=2, default=str))
+            if rec:
+                records.append(rec)
         if (i + 1) % 20 == 0:
-            logger.info("已解析 %d/%d (有效 %d 条)", i + 1, len(ids), len(records))
+            logger.info("已解析 %d/%d (有效 %d 条)", i + 1, len(run_ids), len(records))
 
-    logger.info("解析完成: %d/%d 条有效 (%d 条被丢弃)", len(records), len(ids), len(ids) - len(records))
+    logger.info("解析完成: %d/%d 条有效 (%d 条被丢弃)", len(records), len(run_ids), len(run_ids) - len(records))
     return records
 
 
@@ -550,7 +574,9 @@ def main():
     else:
         logger.info("running.json 不存在，仅使用新数据")
 
-    # 计算 last_date (基于已有数据中最新记录的 startTime, API 需要毫秒级时间戳)
+    # 计算 last_date (基于已有数据中最新记录的 startTime)
+    # API 的 last_date 参数表示 "获取比这个时间更早的记录"
+    # last_date=0 表示从最新记录开始（全量模式）
     last_date = 0
     if existing_records:
         newest = max(existing_records, key=lambda r: r.get("startTime", ""))
@@ -558,7 +584,7 @@ def main():
             dt = datetime.strptime(newest["startTime"], "%Y-%m-%d %H:%M:%S")
             ts_ms = int(dt.replace(tzinfo=timezone.utc).timestamp()) * 1000
             last_date = ts_ms
-            logger.info("基于最新记录 %s 计算 last_date=%d (毫秒)", newest["startTime"], last_date)
+            logger.info("基于最新记录 %s 计算 last_date=%d 毫秒", newest["startTime"], last_date)
         except (ValueError, KeyError) as e:
             logger.warning("无法计算 last_date: %s, 使用全量模式", e)
 
