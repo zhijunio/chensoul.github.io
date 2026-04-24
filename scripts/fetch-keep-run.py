@@ -307,9 +307,7 @@ def _build_record(stats: Dict, vc: VDCCalculator, detail: Optional[Dict] = None)
     dataType = DATATYPE_NAME.get(stats.get("dataType", ""), "户外跑步")
 
     # 名称
-    name = (stats.get("name") or "").strip()
-    if not name:
-        name = f"{_time_label(datetime.fromtimestamp(start_ms / 1000, tz=timezone.utc).hour)}{dataType}"
+    name = f"{_time_label(datetime.fromtimestamp(start_ms / 1000, tz=timezone.utc).hour)}{dataType}"
 
     # 天气 & 路线
     weather = ""
@@ -324,10 +322,13 @@ def _build_record(stats: Dict, vc: VDCCalculator, detail: Optional[Dict] = None)
     if detail:
         segs = _build_segments_from_cross_km(detail, vc) or _build_segments_from_cross_km(stats, vc)
 
-    # 步频（从 detail 补充）
-    step_freq = _n(_pick(stats, "averageStepFrequency"))
-    if step_freq == 0 and detail:
-        step_freq = _n(_pick(detail, "averageStepFrequency", "stepFrequency"))
+    # 步频（优先从 detail 获取）
+    step_freq = _n(_pick(detail, "averageStepFrequency", "stepFrequency")) if detail else 0
+    if step_freq == 0:
+        step_freq = _n(_pick(stats, "averageStepFrequency"))
+
+    # 总步数（从 detail 获取）
+    total_steps = _n(detail.get("totalSteps")) if detail else 0
 
     # 步幅（从 detail 补充）
     stride = _f(_pick(stats, "strideLength", "avgStrideLength", "averageStrideLength"))
@@ -372,6 +373,7 @@ def _build_record(stats: Dict, vc: VDCCalculator, detail: Optional[Dict] = None)
         "dataType": dataType,
         "name": name,
         "stepFrequency": step_freq,
+        "totalSteps": total_steps,
         "strideLength": round(stride, 2),
         "averagePower": avg_pwr,
         "maxPower": max_pwr,

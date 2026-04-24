@@ -23,6 +23,7 @@ export interface RunningRecord {
   averageHeartRate?: number;
   maxHeartRate?: number;
   stepFrequency?: number;
+  totalSteps?: number;
   strideLength?: number;
   averagePower?: number;
   maxPower?: number;
