@@ -564,8 +564,8 @@ def _fetch_runs_with_session(
         existing_keys=existing_keys,
     )
     if not run_stats:
-        logger.error("Keep API 未返回任何记录")
-        sys.exit(1)
+        logger.warning("Keep API 未返回任何记录，跳过本次同步")
+        sys.exit(0)
     logger.info("获取 %d 条记录", len(run_stats))
 
     logger.info("开始获取 %d 条跑步详情 (间隔 1s/条)", len(run_stats))
@@ -658,8 +658,8 @@ def main():
     logger.info("获取 %d 条新记录", len(new_records))
 
     if not new_records and not existing_records:
-        logger.error("没有读取到任何记录")
-        sys.exit(1)
+        logger.warning("没有读取到任何记录，跳过本次同步")
+        sys.exit(0)
 
     # 合并并去重（按 startTime 去重，新数据优先）
     merged: Dict[str, Dict] = {r["startTime"]: r for r in existing_records}
